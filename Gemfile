@@ -30,6 +30,12 @@ gem 'delayed_job_active_record'
 
 gem 'unicorn'
 
+
+group :staging, :production do
+  gem 'newrelic_rpm', '>= 3.6.7'
+  gem 'rails_12factor'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
