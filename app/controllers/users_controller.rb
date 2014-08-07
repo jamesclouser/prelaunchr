@@ -29,7 +29,7 @@ class UsersController < ApplicationController
             end
 
             if cur_ip.count > 2
-                return redirect_to root_path
+                #return redirect_to root_path
             else
                 cur_ip.count = cur_ip.count + 1
                 cur_ip.save
@@ -47,6 +47,7 @@ class UsersController < ApplicationController
 
             if !@referred_by.nil?
                 @user.referrer = @referred_by
+                @user.infusionsoft_affiliate_link = @referred_by.infusionsoft_affiliate_link
             end
 
             @user.save
@@ -56,7 +57,12 @@ class UsersController < ApplicationController
         respond_to do |format|
             if !@user.nil?
                 cookies[:h_email] = { :value => @user.email }
-                format.html { redirect_to '/refer-a-friend' }
+                #format.html { redirect_to '/refer-a-friend' }
+                unless @user.infusionsoft_affiliate_link.blank?
+                  format.html { redirect_to @user.infusionsoft_affiliate_link }
+                else
+                  format.html { redirect_to '/refer-a-friend' }
+                end
             else
                 format.html { redirect_to root_path, :alert => "Something went wrong!" }
             end
