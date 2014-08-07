@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  actions :index, :show, :edit, :update, :new
+  actions :index, :show, :edit, :update, :new, :create
   index do
     column :name
     column :email
@@ -15,7 +15,6 @@ ActiveAdmin.register User do
     f.inputs "User Details" do
       f.input :name
       f.input :email
-      f.input :referral_code
       f.input :infusionsoft_affiliate_link
     end
     f.actions
