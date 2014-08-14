@@ -3,12 +3,12 @@
   
     <div class="page-content clearfix">
         <div class="share-wrap">
-            <div class="copy-link brandon">http://mynewnormal.me?ref=<%= @user.referral_code %></div>
-            <% twitter_message = "#Shaving is evolving. Excited for @harrys to launch." %>
+            <div class="copy-link brandon">http://mynewnormal.me/?ref=<%= @user.referral_code %></div>
+            <% twitter_message = "#HealthyLiving is evolving. Excited for The Healthy Living Bundle to launch." %>
             <div class="social-links">
-                <a href="http://www.facebook.com/sharer/sharer.php?u=http://mynewnormal.me?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank"></a>
+                <a href="http://www.facebook.com/sharer/sharer.php?u=http://mynewnormal.me/?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank"></a>
                 <div class="sep"></div>
-                <a href="http://twitter.com/share?url=http://mynewnormal.me?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
+                <a href="http://twitter.com/share?url=http://mynewnormal.me/?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
             </div>
         </div>
     </div>
