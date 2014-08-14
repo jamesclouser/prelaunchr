@@ -46,8 +46,19 @@ html.home{
 #home .hero{
 	width: 100%;
 	height: 446px;
-	background: url(/assets/home/hero.jpg) center center no-repeat;
-	background-size: 1600px 446px;
+	background: url(/assets/home/hero-healthy.jpg) center center no-repeat;
+	background-size: 1683px 446px;
+	overflow: hidden;
+	position: relative;
+	letter-spacing: .09em;
+	margin: 0 auto;
+}
+
+#refer .hero-refer{
+	width: 100%;
+	height: 446px;
+	background: url(/assets/home/hero-refer.jpg) center right no-repeat;
+	background-size: 1683px 446px;
 	overflow: hidden;
 	position: relative;
 	letter-spacing: .09em;
@@ -331,11 +342,12 @@ html.home{
 
 #refer .share-wrap{
 	float: right;
-	width: 400px;
+	width: 500px;
 	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: .13em;
 	margin-right: 60px;
+  margin-top: 335px;
 }
 
 #refer .share-wrap .why{
@@ -375,7 +387,7 @@ html.home{
 #refer .share-wrap .social-links{
 	width: 120px;
 	height: 37px;
-	margin: 25px auto 0;
+	margin: 15px auto 0;
 	text-align: center;
 }
 
@@ -449,9 +461,9 @@ html.home{
 	background-size: 1px 4px;
 }
 
-#refer .prize-two .progress .mover .bar{ width: 312px; }
-#refer .prize-three .progress .mover .bar{ width: 566px; }
-#refer .prize-four .progress .mover .bar{ width: 820px; }
+#refer .prize-two .progress .mover .bar{ width: 340px; }
+#refer .prize-three .progress .mover .bar{ width: 676px; }
+#refer .prize-four .progress .mover .bar{ width: 1120px; }
 #refer .prize-five .progress .mover .bar{ width: 1120px; }
 
 
@@ -488,7 +500,7 @@ html.home{
 #refer .prizes .products li.product{
 	height: 100%;
 	color: #074E6F;
-	width: 125px;
+	width: 205px;
 	margin-right: 129px;
 	float: left;
 	position: relative;
@@ -626,6 +638,7 @@ html.home{
 /*
 	RETINA
 */
+/*
 @media only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-o-min-device-pixel-ratio: 2/1),
 only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -685,8 +698,7 @@ only screen and (min-device-pixel-ratio: 2) {
 		background-size: 16px 10px;
 	}
 }
-
-
+*/
 
 
 
