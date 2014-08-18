@@ -12,19 +12,19 @@ class User < ActiveRecord::Base
 
     REFERRAL_STEPS = [
         {
-            'count' => 5,
+            'count' => 1,
             "html" => "$7<br>Off",
             "class" => "two",
             "image" =>  "refer/hover1.jpg"
         },
         {
-            'count' => 10,
+            'count' => 5,
             "html" => "12 Week<br>Audio Course",
             "class" => "three",
             "image" => "refer/hover2.jpg"
         },
         {
-            'count' => 25,
+            'count' => 10,
             "html" => "Healthy Living<br>Bundle",
             "class" => "four",
             "image" => "refer/hover3.jpg"

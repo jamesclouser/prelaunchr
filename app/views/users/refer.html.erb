@@ -1,20 +1,33 @@
-
-<div class="hero-refer">
-  
-    <div class="page-content clearfix">
-        <div class="share-wrap">
-            <div class="copy-link brandon">http://mynewnormal.me/?ref=<%= @user.referral_code %></div>
-            <% twitter_message = "#HealthyLiving is evolving. Excited for The Healthy Living Bundle to launch." %>
-            <div class="social-links">
-                <a href="http://www.facebook.com/sharer/sharer.php?u=http://mynewnormal.me/?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank"></a>
-                <div class="sep"></div>
-                <a href="http://twitter.com/share?url=http://mynewnormal.me/?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
-            </div>
-        </div>
+<div class="header">
+  <div class="content">
+    <div class="col-xs-12">
+      <p class="logo brandon">THANK YOU FOR SIGNING UP</p>
     </div>
+  </div>
 </div>
 
-<% 
+<div class="hero-refer">
+  <div class="page-content">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-4 col-xs-12">
+        <div class="share-wrap">
+          <p class="why brandon">Don't leave your friends behind</p>
+          <p class="title brandon">INVITE FRIENDS &<br>Earn Rewards</p>
+          <p class="subtitle brandon">Share your unique link via email, Facebook<br>or Twitter and earn rewards for<br>each friend who signs up.</p>
+          <div class="copy-link brandon">http://mynewnormal.me/?ref=<%= @user.referral_code %></div>
+          <% twitter_message = "#HealthyLiving is evolving. Excited for The Healthy Living Bundle to launch." %>
+          <div class="social-links">
+            <a href="http://www.facebook.com/sharer/sharer.php?u=http://mynewnormal.me/?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank"></a>
+            <div class="sep"></div>
+            <a href="http://twitter.com/share?url=http://mynewnormal.me/?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%
     referrals_count = @user.referrals.count
 
     stops = User::REFERRAL_STEPS
@@ -28,50 +41,51 @@
         else
             stop["selected"] = false
         end
-    }   
+    }
  %>
-<div class="prizes <% if found %>prize-<%= found["class"] %><% end %>">
+
+<div class="col-md-10 col-md-offset-1 col-xs-12">
+  <div class="prizes <% if found %>prize-<%= found["class"] %><% end %>">
     <div class="page-content">
-        <p class="callout brandon">Here's How It Works:</p>
-        <ul class="products clearfix">
-            <li class="title brandon"><p class="friends">Friends Joined</p><p class="rewards">Rewards</p></li>
-            <% stops.each do |stop| %>
-                <li class="product brandon <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'four' %>last<% end %>">
-                    <div class="circle"><%= stop["count"] %></div>
-                    <div class="sep"></div>
-                    <p><%= stop["html"].html_safe %></p>
+      <p class="callout brandon">Here's How It Works:</p>
+      <ul class="products clearfix">
+        <li class="title brandon"><p class="friends">Friends Joined</p><p class="rewards">Rewards</p></li>
+        <% stops.each do |stop| %>
+          <li class="product brandon <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'four' %>last<% end %>">
+              <div class="circle"><%= stop["count"] %></div>
+              <div class="sep"></div>
+              <p><%= stop["html"].html_safe %></p>
 
-                    <div class="tooltip">
-                      <%= image_tag stop["image"], height: '254' %>
-                    </div>
-                </li>
-            <% end %>
-        </ul>
-
-        <div class="progress">
-            <div class="mover">
-                <div class="bar clearfix"></div>
-            </div>
-        </div>
-
-        <% 
-            words = ''
-            if referrals_count == 1
-                words = 'friend has'
-            elsif 
-                words = 'friends have'
-            end
-
-        %>
-
-        <% if referrals_count == 0 %>
-            <p class="place brandon"><span>No</span> friends have joined...Yet!</p>
-        <% else %>
-            <p class="place brandon"><span><%= referrals_count %></span> <%= words %> joined</p>
+              <div class="reward">
+                <%= image_tag stop["image"], height: '254' %>
+              </div>
+          </li>
         <% end %>
-        <p class="check brandon">Keep checking</p>
+      </ul>
 
-        <p class="ship brandon">We ship to the U.S. (& Canada Soon)</p>        
-        <a class="policy brandon" href="/privacy-policy" target="_blank">Privacy Policy</a>
+      <div class="progress">
+        <div class="mover">
+          <div class="bar clearfix"></div>
+        </div>
+      </div>
+
+      <%
+        words = ''
+        if referrals_count == 1
+          words = 'friend has'
+        elsif
+          words = 'friends have'
+        end
+      %>
+
+      <% if referrals_count == 0 %>
+        <p class="place brandon"><span>No</span> friends have joined...Yet!</p>
+      <% else %>
+        <p class="place brandon"><span><%= referrals_count %></span> <%= words %> joined</p>
+      <% end %>
+      <p class="check brandon">Keep checking</p>
+
+      <a class="policy brandon" href="/privacy-policy" target="_blank">Privacy Policy</a>
     </div>
+  </div>
 </div>

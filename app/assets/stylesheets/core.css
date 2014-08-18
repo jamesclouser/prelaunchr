@@ -1,17 +1,12 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require reset
- *= require_self
- */
+body {
+  margin: 0;
+  padding: 0;
+}
 
+.container-fluid {
+margin: 0;
+padding: 0;
+}
 
 form{
 	margin-bottom: 0;
@@ -31,7 +26,7 @@ form{
 /* Home */
 
 html.home{
-	background: #EDECEA;
+	background: #ffffff;
 }
 
 #home{
@@ -46,8 +41,12 @@ html.home{
 #home .hero{
 	width: 100%;
 	height: 446px;
-	background: url(/assets/home/hero-healthy.jpg) center right no-repeat;
-	background-size: 1683px 446px;
+	background: url(/assets/home/hero-healthy.jpg) center left no-repeat;
+	/*background-size: 1683px 446px;*/
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: top;
+  background-size: cover;
 	overflow: hidden;
 	position: relative;
 	letter-spacing: .09em;
@@ -58,37 +57,98 @@ html.home{
 	width: 100%;
 	height: 446px;
 	background: url(/assets/home/hero-refer.jpg) center right no-repeat;
-	background-size: 1683px 446px;
+	/*background-size: 1683px 446px;*/
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: top;
+  background-size: cover;
 	overflow: hidden;
 	position: relative;
 	letter-spacing: .09em;
 	margin: 0 auto;
+
 }
 
 #home .hero .large{
 	font-weight: bold;
 	font-size: 40px;
-	color: #074E6F;
+
+	color: #fffcea;
 	text-transform: uppercase;
-	margin: 85px 0 0 136px;
-	position: relative;
+	/*margin: 85px 0 0 136px;
+	position: relative;*/
 	z-index: 2;
 	letter-spacing: 2px;
+  margin-top: 50px;
+  text-align: right;
+  padding-right: 10px;
+
+  /*
+  width: 50%;
+
+  margin-left: 42%;
+  */
 }
 
 #home .hero .small{
 	font-weight: bold;
-	color: #955F5D;
+	color: #d9e471;
 	font-size: 18px;
+  /*
 	margin: 10px 0 0 115px;
+  position: relative;
+  */
 	line-height: 30px;
-	position: relative;
 	z-index: 2;
 	text-transform: uppercase;
-	text-align: center;
-	width: 375px;
+  text-align: right;
+  /*
+  width: 50%;
+  margin-left: 42%;
+  */
+  margin-top: 16px;
 	letter-spacing: 1px;
+  padding-right: 10px;
 }
+
+/* Landscape phone to portrait tablet */
+/*
+@media (max-width: 767px) {
+  #home .hero .large{
+    margin-top: 40px;
+    width: 70%;
+    text-align: right;
+    margin-left: 22%;
+  }
+
+  #home .hero .small{
+    margin-top: 20px;
+    width: 70%;
+    text-align: right;
+    margin-left: 22%;
+  }
+}
+*/
+
+/* Landscape phones and down */
+/*
+@media (max-width: 480px) { 
+  #home .hero .large{
+    margin-top: 30px;
+    width: 86%;
+    text-align: right;
+    margin-left: 8%;
+  }
+
+  #home .hero .small{
+    margin-top: 20px;
+    width: 86%;
+    text-align: right;
+    margin-left: 8%;
+  }
+}
+*/
+
 
 #home .form-wrap{
 	height: 80px;
@@ -104,7 +164,7 @@ html.home{
 	background-size: 46px 19px;
 }
 
-#home .form-wrap .byline{
+#home .byline{
 	font-size: 15px;
 	text-transform: uppercase;
 	color: #074E6F;
@@ -114,7 +174,7 @@ html.home{
 	margin: 15px 0;
 }
 
-#home .form-wrap .email{
+#home .email{
 	float: left;
 	font-size: 13px;
 	padding: 8px 0 8px 10px;
@@ -124,7 +184,7 @@ html.home{
 	letter-spacing: 1px;
 }
 
-#home .form-wrap .submit{
+#home .submit{
 	width: 143px;
 	background: #074E6F;
 	float: left;
@@ -137,12 +197,12 @@ html.home{
 	letter-spacing: 2px;
 }
 
-#home .form-wrap.ended{
+#home .ended{
 	width: 500px;
 	margin-top: 27px;
 }
 
-#home .form-wrap.ended .thanks{
+#home .ended .thanks{
 	text-transform: uppercase;
 	font-weight: 500;
 	color: #074e6f;
@@ -153,7 +213,7 @@ html.home{
 	margin-bottom: 14px;
 }
 
-#home .form-wrap.ended .compiling{
+#home .ended .compiling{
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-size: 14px;
@@ -164,7 +224,7 @@ html.home{
 	margin-bottom: 24px;
 }
 
-#home .form-wrap.ended .go-to{
+#home .ended .go-to{
 	font-style: italic;
 	font-size: 16px;
 	letter-spacing: 1px;
@@ -172,7 +232,7 @@ html.home{
 	margin-bottom: 25px;
 }
 
-#home .form-wrap.ended .go-to a{
+#home .ended .go-to a{
 	color: #074e6f;
 	font-size: 19px;
 	font-weight:bold;
@@ -181,11 +241,11 @@ html.home{
 	text-decoration: none;
 }
 
-#home .form-wrap.ended .go-to a:hover{
+#home .ended .go-to a:hover{
 	color: #955F5D;
 }
 
-#home .form-wrap.ended .again{
+#home .ended .again{
 	font-weight: 500;
 	color: #555556;
 	text-transform: uppercase;
@@ -193,12 +253,12 @@ html.home{
 	text-align: center;
 }
 
-#home .form-wrap.ended{
+#home .ended{
 	width: 500px;
 	margin-top: 27px;
 }
 
-#home .form-wrap.ended .thanks{
+#home .ended .thanks{
 	text-transform: uppercase;
 	font-weight: 500;
 	color: #074e6f;
@@ -209,7 +269,7 @@ html.home{
 	margin-bottom: 14px;
 }
 
-#home .form-wrap.ended .compiling{
+#home .ended .compiling{
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-size: 14px;
@@ -220,7 +280,7 @@ html.home{
 	margin-bottom: 24px;
 }
 
-#home .form-wrap.ended .go-to{
+#home .ended .go-to{
 	font-style: italic;
 	font-size: 16px;
 	letter-spacing: 1px;
@@ -228,7 +288,7 @@ html.home{
 	margin-bottom: 25px;
 }
 
-#home .form-wrap.ended .go-to a{
+#home .ended .go-to a{
 	color: #074e6f;
 	font-size: 19px;
 	font-weight:bold;
@@ -237,11 +297,11 @@ html.home{
 	text-decoration: none;
 }
 
-#home .form-wrap.ended .go-to a:hover{
+#home .ended .go-to a:hover{
 	color: #955F5D;
 }
 
-#home .form-wrap.ended .again{
+#home .ended .again{
 	font-weight: 500;
 	color: #555556;
 	text-transform: uppercase;
@@ -266,15 +326,17 @@ html.home{
 }
 
 #refer .page-content{
+/*
 	width: 1120px;
 	margin: 0 auto;
 	z-index: 0;
 	position: relative;
+  */
 }
 
 #refer .header{
 	height: 50px;
-	background: #074E6F;
+	background: #aa806c;
 	width: 100%;
 	overflow:hidden;
 	z-index: 1;
@@ -282,12 +344,10 @@ html.home{
 }
 
 #refer .header .content{
-	width: 315px;
 	margin: 0 auto;
 }
 
 #refer .header p{
-	float: left;
 	color: #FFF;
 	font-weight: 500;
 	text-transform: uppercase;
@@ -300,35 +360,28 @@ html.home{
 
 #refer .header .logo{
 	font-weight: normal;
-	font-size: 0;
+	font-size: 18px;
 	line-height: 0;
-	margin-right: 14px;
+	margin-left: 14px;
 	letter-spacing: 1px;
-	background: url(/assets/refer/logo.png) 0 0 no-repeat;
-	background-size: 106px 19px;
 	height: 19px;
-	width: 106px;
-	margin-top: 15px;
+	margin-top: 25px;
+  text-align: center;
 }
 
 #refer .hero{
 	background: #F1F0EE;
-	height: 391px;
 	overflow: hidden;
 }
 
 #refer .mammoth{
-	width: 612px;
-	height: 394px;
-	background: url(/assets/refer/mammoth.png) 0 0 no-repeat;
-	background-size: 610px 394px;
+	/*background: url(/assets/refer/mammoth.png) 0 0 no-repeat;*/
 	overflow: hidden;
 	margin-top: 15px;
-	float: left;
 }
 
 #refer .mammoth .need{
-	color: #FFF;
+	color: #f43933;
 	font-size: 38px;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -337,17 +390,13 @@ html.home{
 	line-height: 56px;
 	letter-spacing: 4px;
 	text-align: center;
-	width: 284px;
+	/*width: 284px;*/
 }
 
 #refer .share-wrap{
-	float: right;
-	width: 500px;
 	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: .13em;
-	margin-right: 60px;
-  margin-top: 335px;
 }
 
 #refer .share-wrap .why{
@@ -430,7 +479,7 @@ html.home{
 #refer .prizes .callout{
 	text-align: center;
 	font-size: 16px;
-	color: #074E6F;
+	color: #f43933;
 	font-weight: bold;
 	margin: 20px 0 0 0;
 	letter-spacing: 2px;
@@ -473,6 +522,7 @@ html.home{
 	margin-top: 30px;
 	position: relative;
 	z-index: 1;
+  list-style-type: none;
 }
 
 #refer .prizes .products li.title{
@@ -571,7 +621,7 @@ html.home{
 	border-color: #074E6F;
 }
 
-#refer .prizes .products li.product .tooltip{
+#refer .prizes .products li.product .reward{
 	height: 254px;
 	width: 190px;
 	border: 4px solid #074E6F;
@@ -582,12 +632,12 @@ html.home{
 	background: #FFF;
 }
 
-#refer .prizes .products li.product .tooltip img{
+#refer .prizes .products li.product .reward img{
 	margin: 0 auto;
 	display: block;
 }
 
-#refer .prizes .products li.product:hover .tooltip{
+#refer .prizes .products li.product:hover .reward{
 	display: block;
 }
 

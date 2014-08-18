@@ -6,27 +6,25 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="<%= @bodyId %>"> <!--<![endif]-->
 <head>
         <title>The Ultimate Healthy Living Bundle &ndash; Tell Friends, Earn Rewards</title>
-        <link rel="icon" href="<%= asset_path('favicon.ico') %>" type="image/x-icon">
-        <link rel="shortcut icon" href="<%= asset_path('favicon.ico') %>" type="image/x-icon">
+        <link rel="icon" href="<%= asset_path('favicon.jpg') %>" type="image/x-icon">
+        <link rel="shortcut icon" href="<%= asset_path('favicon.jpg') %>" type="image/x-icon">
 
         <meta property="og:title" content="The Healthy Living Bundle!"/>
         <meta property="og:description" content="The Ultimate Healthy Living Bundle is Coming Soon. Tell your friends."/>
         <meta property="og:image" content="<%= asset_path("refer/truman.png") %>"/>
         <meta property="og:url" content="<%= root_url %>"/>
-        <% if @is_mobile %>
-            <% if @bodyId == 'home' %>
-                <meta name="viewport" content="width=1600" />
-            <% else %>
-                <meta name="viewport" content="width=1120" />
-            <% end %>
-        <% end %>
-        <%= stylesheet_link_tag "core.css", :media => "all" %>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <%= stylesheet_link_tag "application", :media => "all" %>
+
         <%= csrf_meta_tags %>
 </head>
 <body id="<%= @bodyId %>">
 
+
 <%= yield %>
 
+
+<script type="text/javascript" src="https://us154.infusionsoft.com/app/webTracking/getTrackingCode?trackingId=b3ad10688513d9a38dc6aecf83c51f41"></script>
 
 </body>
 </html>
