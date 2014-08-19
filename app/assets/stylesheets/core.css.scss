@@ -22,7 +22,6 @@ form{
     clear: both;
 }
 
-
 /* Home */
 
 html.home{
@@ -167,7 +166,7 @@ html.home{
 #home .byline{
 	font-size: 15px;
 	text-transform: uppercase;
-	color: #074E6F;
+	color: #f24646;
 	text-align: center;
 	font-weight: bold;
 	letter-spacing: 2px;
@@ -528,7 +527,7 @@ html.home{
 #refer .prizes .products li.title{
 	height: 100%;
 	text-transform: uppercase;
-	color: #074E6F;
+	color: #f43933;
 	font-weight: 500;
 	font-size: 14px;
 	float: left;
@@ -549,7 +548,7 @@ html.home{
 
 #refer .prizes .products li.product{
 	height: 100%;
-	color: #074E6F;
+	color: #f43933;
 	width: 205px;
 	margin-right: 129px;
 	float: left;
@@ -617,14 +616,14 @@ html.home{
 
 #refer .prizes .products li.product:hover .circle{
 	color: #FFF;
-	background: #074E6F;
-	border-color: #074E6F;
+	background: #a30453;
+	border-color: #a30453;
 }
 
 #refer .prizes .products li.product .reward{
 	height: 254px;
 	width: 190px;
-	border: 4px solid #074E6F;
+	border: 4px solid #dff0b9;
 	position: absolute;
 	top: -285px;
 	left: -32px;
@@ -644,7 +643,7 @@ html.home{
 #refer .prizes p.place{
 	text-align: center;
 	font-size: 16px;
-	color: #074E6F;
+	color: #f43933;
 	width: 100%;
 	font-weight: 500;
 	margin-top: 30px;
