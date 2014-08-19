@@ -14,7 +14,7 @@
           <p class="why brandon">Don't leave your friends behind</p>
           <p class="title brandon">INVITE FRIENDS &<br>Earn Rewards</p>
           <p class="subtitle brandon">Share your unique link via email, Facebook<br>or Twitter and earn rewards for<br>each friend who signs up.</p>
-          <div class="copy-link brandon">http://mynewnormal.me/?ref=<%= @user.referral_code %></div>
+          <div id="sharable" class="copy-link brandon" onclick="selectText('sharable')">http://mynewnormal.me/?ref=<%= @user.referral_code %></div>
           <% twitter_message = "#HealthyLiving is evolving. Excited for The Healthy Living Bundle to launch." %>
           <div class="social-links">
             <a href="http://www.facebook.com/sharer/sharer.php?u=http://mynewnormal.me/?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank"></a>
@@ -89,3 +89,17 @@
     </div>
   </div>
 </div>
+
+<script>
+function selectText(containerid) {
+    if (document.selection) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(document.getElementById(containerid));
+        range.select();
+    } else if (window.getSelection) {
+        var range = document.createRange();
+        range.selectNode(document.getElementById(containerid));
+        window.getSelection().addRange(range);
+    }
+}
+</script>
