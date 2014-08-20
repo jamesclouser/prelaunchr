@@ -79,7 +79,7 @@ class UsersController < ApplicationController
 
         respond_to do |format|
             if !@user.nil?
-                format.html #refer.html.erb
+                format.html
             else
                 format.html { redirect_to root_path, :alert => "Something went wrong!" }
             end
