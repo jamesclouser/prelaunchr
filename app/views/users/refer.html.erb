@@ -14,10 +14,11 @@
           <p class="why brandon">Don't leave your friends behind</p>
           <p class="title brandon">INVITE FRIENDS &<br>Earn Rewards</p>
           <p class="subtitle brandon">Share your unique link via email, Facebook<br>or Twitter and earn rewards for<br>each friend who signs up.</p>
-          <div id="sharable" class="copy-link brandon" onclick="selectText('sharable')">http://mynewnormal.me/?ref=<%= @user.referral_code %></div>
-          <% twitter_message = "#HealthyLiving is evolving. Excited for The Healthy Living Bundle to launch." %>
+          <input id="sharable" readonly="readonly" class="copy-link brandon" type="text" value="http://mynewnormal.me/?ref=<%= @user.referral_code %>">
+
+          <% twitter_message = "Take Control of Your Health! The Ultimate Healthy Living Bundle is Coming Soon. Tell your friends. Earn Rewards." %>
           <div class="social-links">
-            <a href="http://www.facebook.com/sharer/sharer.php?u=http://mynewnormal.me/?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank"></a>
+            <a href="http://www.facebook.com/sharer/sharer.php?u=http://mynewnormal.me/?ref=<%= CGI::escape(@user.referral_code) %>&title=HealthyLiving" class="fb" target="_blank"></a>
             <div class="sep"></div>
             <a href="http://twitter.com/share?url=http://mynewnormal.me/?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
           </div>
@@ -68,7 +69,13 @@
           <div class="bar clearfix"></div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
+<div class="col-md-10 col-md-offset-1 col-xs-12">
+  <div class="prizes <% if found %>prize-<%= found["class"] %><% end %>">
+    <div class="page-content">
       <%
         words = ''
         if referrals_count == 1
@@ -90,16 +97,12 @@
   </div>
 </div>
 
-<script>
-function selectText(containerid) {
-    if (document.selection) {
-        var range = document.body.createTextRange();
-        range.moveToElementText(document.getElementById(containerid));
-        range.select();
-    } else if (window.getSelection) {
-        var range = document.createRange();
-        range.selectNode(document.getElementById(containerid));
-        window.getSelection().addRange(range);
-    }
-}
+<script type="text/javascript">
+
+$( document ).ready(function() {
+  $("#shareable").on("click", function () {
+    alert("Hello");
+     $(this).select();
+  });
+});
 </script>
