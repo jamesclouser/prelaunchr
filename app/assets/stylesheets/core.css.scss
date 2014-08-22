@@ -434,14 +434,14 @@ html.home{
 	border: 1px solid #D1D0C7;
 	background: #FFF;
 	padding: 14px 14px;
-	width: 300px;
+	width: 320px;
 	text-transform: none;
 	font-size: 12px;
 	margin: 20px auto 0;
 }
 
 #refer .share-wrap .social-links{
-	width: 120px;
+	width: 200px;
 	height: 37px;
 	margin: 15px auto 0;
 	text-align: center;
@@ -453,16 +453,23 @@ html.home{
 
 #refer .share-wrap .social-links .fb{
 	background: url(/assets/refer/facebook.png);
-	background-size: 27px 27px;
-	width: 27px;
-	height: 27px;
+	background-size: 32px 32px;
+	width: 32px;
+	height: 32px;
 }
 
 #refer .share-wrap .social-links .twit{
 	background: url(/assets/refer/twitter.png);
-	background-size: 27px 27px;
-	width: 27px;
-	height: 27px;
+	background-size: 32px 32px;
+	width: 32px;
+	height: 32px;
+}
+
+#refer .share-wrap .social-links .email{
+	background: url(/assets/refer/email.png);
+	background-size: 32px 32px;
+	width: 32px;
+	height: 32px;
 }
 
 #refer .share-wrap .social-links .sep{
