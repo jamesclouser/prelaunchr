@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
     REFERRAL_STEPS = [
         {
             'count' => 1,
-            "html" => "$7 Off<br>the Bundle",
+            "html" => "$5 Off<br>the Bundle",
             "class" => "two",
             "image" =>  "refer/hover1.jpg"
         },
