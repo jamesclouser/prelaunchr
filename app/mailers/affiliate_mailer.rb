@@ -1,4 +1,4 @@
-class UserMailer < ActionMailer::Base
+class AffiliateMailer < ActionMailer::Base
     default from: "Ultimate Bundles <customerservice@ultimate-bundles.com>"
 
     def signup_email(user)
