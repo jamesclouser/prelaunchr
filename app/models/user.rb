@@ -46,10 +46,10 @@ class User < ActiveRecord::Base
     end
 
     def send_welcome_email
-      if self.infusionsoft_affiliate_link.blank?
-        UserMailer.delay.signup_email(self)
-      else
+      if self.is_affiliate == true
         AffiliateMailer.delay.signup_email(self)
+      else
+        UserMailer.delay.signup_email(self)
       end
     end
 end
