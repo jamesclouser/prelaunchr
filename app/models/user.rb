@@ -46,10 +46,10 @@ class User < ActiveRecord::Base
     end
 
     def send_welcome_email
-      if self.is_affiliate == true
-        AffiliateMailer.delay.signup_email(self)
-      else
+      if self.referrer_id && self.referrer_id > 0
         UserMailer.delay.signup_email(self)
+      else
+        AffiliateMailer.delay.signup_email(self)
       end
     end
 end
