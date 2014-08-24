@@ -5,6 +5,6 @@ class AffiliateMailer < ActionMailer::Base
         @user = user
         @twitter_message = "Take Control of Your Health! The Ultimate Healthy Living Bundle is Coming Soon. Tell your friends. Earn Rewards."
 
-        mail(:to => user.email, :subject => "Thanks for signing up!")
+        mail(:to => user.email, :subject => "Welcome Authors and Affiliates!")
     end
 end
