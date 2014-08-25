@@ -64,7 +64,7 @@ Prelaunchr::Application.configure do
   config.active_support.deprecation = :notify
 
   config.action_mailer.default_url_options = {
-    :host => 'mynewnormal.me',
+    :host => 'healthylivingbundle.com',
     :only_path => false
   }
 
@@ -78,7 +78,7 @@ Prelaunchr::Application.configure do
     :authentication => :plain,
     :user_name      => ENV['SENDGRID_USERNAME'],
     :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'mynewnormal.me',
+    :domain         => 'healthylivingbundle.com',
     :enable_starttls_auto => true
   }
   ActionMailer::Base.delivery_method = :smtp

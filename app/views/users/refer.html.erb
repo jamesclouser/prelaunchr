@@ -14,15 +14,15 @@
           <p class="why brandon">Don't leave your friends behind</p>
           <p class="title brandon">INVITE FRIENDS &<br>Earn Rewards</p>
           <p class="subtitle brandon">Share your unique link via email, Facebook<br>or Twitter and earn rewards for<br>each friend who signs up.</p>
-          <div id="sharable" class="copy-link brandon" onclick="selectText('sharable')">http://mynewnormal.me/?ref=<%= @user.referral_code %></div>
+          <div id="sharable" class="copy-link brandon" onclick="selectText('sharable')">http://healthylivingbundle.com/?ref=<%= @user.referral_code %></div>
 
           <% twitter_message = "Take Control of Your Health! The Ultimate Healthy Living Bundle is Coming Soon. Tell your friends. Earn Rewards." %>
           <div class="social-links">
-            <a href="http://www.facebook.com/sharer/sharer.php?u=http://mynewnormal.me/?ref=<%= CGI::escape(@user.referral_code) %>&title=HealthyLiving" class="fb" target="_blank"></a>
+            <a href="http://www.facebook.com/sharer/sharer.php?u=http://healthylivingbundle.com/?ref=<%= CGI::escape(@user.referral_code) %>&title=HealthyLiving" class="fb" target="_blank"></a>
             <div class="sep"></div>
-            <a href="http://twitter.com/share?url=http://mynewnormal.me/?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
+            <a href="http://twitter.com/share?url=http://healthylivingbundle.com/?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
             <div class="sep"></div>
-            <a href="mailto:?subject=Check%20out%20the%20Healthy%20Living%20Bundle&body=<The Ultimate Healthy Living Bundle is coming soon.  I’ll be using it take control of my health!   Tell YOUR friends.  Earn Rewards.  <br><br>Find out more:  http://mynewnormal.me/?ref=<%= CGI::escape(@user.referral_code) %>" class="email"></a>
+            <a href="mailto:?subject=Check%20out%20the%20Healthy%20Living%20Bundle&body=<The Ultimate Healthy Living Bundle is coming soon.  I’ll be using it take control of my health!   Tell YOUR friends.  Earn Rewards.  <br><br>Find out more:  http://healthylivingbundle.com/?ref=<%= CGI::escape(@user.referral_code) %>" class="email"></a>
           </div>
         </div>
       </div>
