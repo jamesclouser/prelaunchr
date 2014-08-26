@@ -49,6 +49,11 @@
                             Share your unique link via email, Facebook or Twitter: 
                             <a href="http://healthylivingbundle.com/?ref=<%= @user.referral_code %>" style="font-family: 'Times', serif; font-size: 14px; letter-spacing: 0.05em; color: #6c6c6c; text-decoration: none" target="_blank">http://healthylivingbundle.com/?ref=<%= @user.referral_code %></a>
                           </p>
+                          
+                          <p><a href="http://www.facebook.com/sharer/sharer.php?u=http://healthylivingbundle.com/?ref=<%= CGI::escape(@user.referral_code) %>&title=Healthy" style="outline: 0; border: 0;" target="_blank">Share on Facebook</a>
+                            &nbsp;|&nbsp;
+                            <a href="http://twitter.com/share?url=http://healthylivingbundle.com?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(@twitter_message) %>" style="outline: 0; border: 0;" target="_blank">Share on Twitter</a>
+                          </p>
                         </td>
                     </tr>
                 </table>
