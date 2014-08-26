@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
         },
         {
             'count' => 5,
-            "html" => "12 Week<br>Healthy Living Audio Course<br>($27 value)",
+            "html" => "<span class='hidden-xs'>12 Week<br></span>Healthy Living Audio Course<br>($27 value)",
             "class" => "three",
             "image" => "refer/hover2.jpg"
         },
