@@ -7,6 +7,12 @@ class UsersController < ApplicationController
 
         @user = User.new
 
+        @ip_limit = false
+
+        if params.has_key?(:ip_limit)
+          @ip_limit = true
+        end
+
         respond_to do |format|
             format.html # new.html.erb
         end
@@ -29,7 +35,7 @@ class UsersController < ApplicationController
             end
 
             if cur_ip.count > 2
-                return redirect_to root_path
+                return redirect_to root_path, :ip_limit => true
             else
                 cur_ip.count = cur_ip.count + 1
                 cur_ip.save

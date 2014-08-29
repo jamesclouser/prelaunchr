@@ -16,7 +16,26 @@
     <p class="go-to brandon">In the meantime, head to  <a href="http://www.ultimate-bundles.com/">WWW.ULTIMATE-BUNDLES.COM</a></p>
     <p class="again brandon">Thank You Again!</p>
   </div>
+  
+<% elsif @ip_limit %>
+
+  <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+    <div class="ended">
+      <p class="thanks brandon">We’re sorry, but only 1 email sign-up is allowed per IP address / household.</p>
+
+      <p>To view your number of referrals, make sure to use the same browser on the same device that you used to sign up originally.</p>
+
+      <p>If you’ve cleared your browser history or cache, you will no longer be able to see the number of referrals you’ve received, but you will still receive credit for them, and any corresponding rewards that you’ve earned will be sent by the second week in September, 2014.</p>
+
+      <p>To continue to share your code and receive rewards, you can still access your referral code from the email you received when you first signed up, entitled: "The journey to perfect health starts here – bring your friends!”</p>
+
+      <p>We’re excited to share the Ultimate Healthy Living Bundle with you, and hope that you find it as life changing as we have.  We’ll send you more information about it very shortly, so be sure to look out for those emails.</p>
+
+      <p>Thanks so much for your interest!</p>
+    </div>
+  </div>
 <% else %>
+
 
   <div class="col-sm-5 col-sm-offset-1 col-xs-12">
     <br><br>
@@ -38,8 +57,8 @@
   <div class="col-sm-4 col-sm-offset-1 col-xs-12" style="padding-top: 12px;">
     <%= image_tag "home/logo.png", :class => "img-responsive", :style => "margin-left: auto; margin-right: auto;" %>
   </div>
-<% end %>
 
-<div class="col-md-10 col-md-offset-1 col-xs-12">
-  <p class="fine-print brandon"><em>* 1 sign-up per household</em></p>
-</div>
+  <div class="col-md-10 col-md-offset-1 col-xs-12">
+    <p class="fine-print brandon"><em>* 1 sign-up per household</em></p>
+  </div>
+<% end %>
