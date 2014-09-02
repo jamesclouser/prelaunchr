@@ -5,7 +5,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Prelaunchr"
+  config.site_title = "Healthy Living Bundle"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -150,3 +150,18 @@ ActiveAdmin.setup do |config|
   # Set the CSV builder options (default is {})
   # config.csv_options = {}
 end
+
+module ActiveAdmin
+  class ResourceController
+    module DataAccess
+      # in active admin 0.6
+      def max_csv_records
+        30_000
+      end
+      # needed for current active admin master
+      def max_per_page
+        30_000
+      end
+    end
+  end
+end 
