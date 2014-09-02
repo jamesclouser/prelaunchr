@@ -9,8 +9,10 @@ ActiveAdmin.register User do
     default_actions
   end
 
-  def max_csv_records
-    30_000
+  controller do
+    def max_csv_records
+      30_000
+    end
   end
 
   filter :email
