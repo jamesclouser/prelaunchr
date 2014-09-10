@@ -22,6 +22,8 @@ class ApplicationController < ActionController::Base
             if request.env["HTTP_USER_AGENT"] and !request.env["HTTP_USER_AGENT"].include?("facebookexternalhit/1.1")
                 redirect_to proc { url_for(params.except(:ref)) }  
             end
+        else
+          redirect_to "http://ultimate-bundles.com/healthy-living-bundle-2014/"
         end
     end
 end

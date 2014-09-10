@@ -9,8 +9,6 @@ class UsersController < ApplicationController
         @referred_by = User.find_by_referral_code(cookies[:h_ref])
         if @referred_by
           redirect_to @referred_by.infusionsoft_affiliate_link 
-        else
-          redirect_to "http://ultimate-bundles.com/healthy-living-bundle-2014/"
         end
         # end of remove this later
         
