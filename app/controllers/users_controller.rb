@@ -8,22 +8,25 @@ class UsersController < ApplicationController
         # remove this later
         @referred_by = User.find_by_referral_code(cookies[:h_ref])
         if @referred_by
-          redirect_to @referred_by.infusionsoft_affiliate_link 
+          redirection_url = @referred_by.infusionsoft_affiliate_link
+        else
+          redirection_url = "http://ultimate-bundles.com/healthy-living-bundle-2014/"
         end
+
+        redirect_to redirection_url
         # end of remove this later
-        
 
-        @user = User.new
+        #@user = User.new
 
-        @ip_limit = false
+        #@ip_limit = false
 
-        if params.has_key?(:ip_limit)
-          @ip_limit = true
-        end
+        #if params.has_key?(:ip_limit)
+        #  @ip_limit = true
+        #end
 
-        respond_to do |format|
-            format.html # new.html.erb
-        end
+        #respond_to do |format|
+        #    format.html # new.html.erb
+        #end
     end
 
     def create
