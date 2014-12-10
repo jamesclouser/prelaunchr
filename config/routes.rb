@@ -7,6 +7,7 @@ Prelaunchr::Application.routes.draw do
   root :to => "users#new"
 
   match 'users/create' => 'users#create'
+  #match 'users/index' => 'users#index'
 
   match 'refer-a-friend' => 'users#refer'
 
