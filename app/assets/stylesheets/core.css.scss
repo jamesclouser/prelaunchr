@@ -40,10 +40,10 @@ html.home{
 #home .hero{
 	width: 100%;
 	height: 446px;
-	background: url(/assets/4steps_banner.jpg) center left no-repeat;
+	background: url(/assets/4steps_banner.jpg);
 	/*background-size: 1683px 446px;*/
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: left center;
   background-attachment: top;
   background-size: cover;
 	overflow: hidden;
@@ -55,10 +55,10 @@ html.home{
 #refer .hero-refer{
 	width: 100%;
 	height: 446px;
-	background: url(/assets/4steps_banner.jpg) center right no-repeat;
+	background: url(/assets/4steps_banner.jpg);
 	/*background-size: 1683px 446px;*/
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: left center;
   background-attachment: top;
   background-size: cover;
 	overflow: hidden;
@@ -68,18 +68,18 @@ html.home{
 
 }
 
-#home .hero .large{
+#home .large{
 	font-weight: bold;
 	font-size: 40px;
 
-	color: #fffcea;
+	color: #999999;
 	text-transform: uppercase;
 	/*margin: 85px 0 0 136px;
 	position: relative;*/
 	z-index: 2;
 	letter-spacing: 2px;
   margin-top: 50px;
-  text-align: right;
+  text-align: center;
   padding-right: 10px;
 
   /*
@@ -89,8 +89,8 @@ html.home{
   */
 }
 
-#home .hero .small{
-	color: #d9e471;
+#home .small{
+	color: #f24646;
 	font-size: 18px;
   /*
 	margin: 10px 0 0 115px;
@@ -99,7 +99,7 @@ html.home{
 	line-height: 30px;
 	z-index: 2;
 	text-transform: uppercase;
-  text-align: right;
+  text-align: center;
   /*
   width: 50%;
   margin-left: 42%;
@@ -129,12 +129,12 @@ html.home{
     height: 306px;
   }
 
-  #home .hero .large{
+  #home .large{
     margin-top: 20px;
     font-size: 30px;
   }
 
-  #home .hero .small{
+  #home .small{
     font-size: 14px;
   }
 }
