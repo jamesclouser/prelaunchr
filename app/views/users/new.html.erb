@@ -1,14 +1,12 @@
 <div class="hero">
 
-
-
 </div>
 
 <div class="col-sm-6 col-sm-offset-3 col-xs-12">
-  <p class="large brandon">Take control of your health</p>
+  <p class="large brandon">Take Control of Your Health in 2015</p>
 </div>
 <div class="col-sm-6 col-sm-offset-3 col-xs-12">
-  <p class="small brandon">Get the knowledge you need with <br><strong>THE ULTIMATE HEALTHY LIVING BUNDLE</strong> - coming soon</p>
+  <p class="small brandon">Learn the 4 simple steps to having your healthiest year ever.</p>
 </div>
 
 <% if Rails.application.config.ended %>
@@ -41,7 +39,7 @@
   <div class="col-sm-5 col-sm-offset-1 col-xs-12">
     <br><br>
     <div class="col-xs-12">
-      <p class="byline brandon">Find out how to get it for free:</p>
+      <p class="byline brandon">Get it FREE now:</p>
     </div>
     <div class="col-xs-12">
       <%= form_for @user, :html => {  :role => 'form' }, :url => { :action => "create" } do |f| %>
@@ -52,7 +50,7 @@
           <%= f.text_field :email, :placeholder => "Your Email", :class => "form-control input-lg" %>
         </div>
         <div class="form-group">
-          <button class="btn btn-primary btn-lg btn-block" style="background-color: #f24646;" name="commit" type="submit">Yes, Let Me Know</button>
+          <button class="btn btn-primary btn-lg btn-block" style="background-color: #f24646;" name="commit" type="submit">Yes, I want the 4 steps </button>
         </div>
       <% end %>
     </div>
