@@ -44,9 +44,11 @@
     <div class="col-xs-12">
       <%= form_for @user, :html => {  :role => 'form' }, :url => { :action => "create" } do |f| %>
         <div class="form-group">
+          <label>First Name</label>
           <%= f.text_field :name, :placeholder => "Your First Name", :class => "form-control input-lg" %>
         </div>
         <div class="form-group">
+          <label>Email</label>
           <%= f.text_field :email, :placeholder => "Your Email", :class => "form-control input-lg" %>
         </div>
         <div class="form-group">
