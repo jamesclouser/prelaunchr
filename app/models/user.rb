@@ -14,21 +14,21 @@ class User < ActiveRecord::Base
     REFERRAL_STEPS = [
         {
             'count' => 1,
-            "html" => "$5 Off<br>the Healthy Living Bundle",
+            "html" => "$5 Off<br>Ultimate DIY Ultimate Bundle 2015",
             "class" => "two",
-            "image" =>  "refer/hover1.jpg"
+            "image" =>  "creativity/reward1.jpg"
         },
         {
             'count' => 5,
-            "html" => "<span class='hidden-xs'>12 Week<br></span>Healthy Living Audio Course<br>($27 value)",
+            "html" => "<span class='hidden-xs'>1-Year Subscription<br></span>to Better Homes and Gardens<br>",
             "class" => "three",
-            "image" => "refer/hover2.jpg"
+            "image" => "creativity/reward2.jpg"
         },
         {
             'count' => 10,
-            "html" => "FREE<br>Healthy Living Bundle<br>($1,000 value)",
+            "html" => "FREE<br>Ultimate DIY Bundle 2015<br>($34.95 Value)",
             "class" => "four",
-            "image" => "refer/hover3.jpg"
+            "image" => "creativity/reward3.jpg"
         }
     ]
 

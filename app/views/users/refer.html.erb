@@ -16,15 +16,15 @@
       <p class="why brandon">Don't leave your friends behind</p>
       <p class="title brandon">INVITE FRIENDS & Earn Rewards</p>
       <p class="subtitle brandon">Share your unique link via email, Facebook or Twitter and earn rewards for each friend who signs up.</p>
-      <div id="sharable" class="copy-link brandon" onclick="selectText('sharable')">http://healthylivingbundle.com/?ref=<%= @user.referral_code %></div>
+      <div id="sharable" class="copy-link brandon" onclick="selectText('sharable')">http://4stepcreativity.com/?ref=<%= @user.referral_code %></div>
 
       <% twitter_message = "Take Control of Your Health! The Ultimate Healthy Living Bundle is Coming Soon. Tell your friends and get it free!" %>
       <div class="social-links">
-        <a href="http://www.facebook.com/sharer/sharer.php?u=http://healthylivingbundle.com/?ref=<%= CGI::escape(@user.referral_code) %>&title=The%20Ultimate%20Healthy%20Living%20Bundle%20is%20Coming%20Soon.%20Tell%20your%20friends%20and%20get%20it%20free! " class="fb" target="_blank"></a>
+        <a href="http://www.facebook.com/sharer/sharer.php?u=http://4stepcreativity.com/?ref=<%= CGI::escape(@user.referral_code) %>&title=The%20Ultimate%20Healthy%20Living%20Bundle%20is%20Coming%20Soon.%20Tell%20your%20friends%20and%20get%20it%20free! " class="fb" target="_blank"></a>
         <div class="sep"></div>
-        <a href="http://twitter.com/share?url=http://healthylivingbundle.com/?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
+        <a href="http://twitter.com/share?url=http://4stepcreativity.com/?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
         <div class="sep"></div>
-        <a href="mailto:?subject=You%20need%20to%20check%20this%20out&body=Hi,<br><br>The Ultimate Healthy Living Bundle is coming out soon, and I’ll be using it to get fitter, eat better and take control of my health!<br><br>Pass it on to your friends and you can get it for free! Go here to find out more:  http://healthylivingbundle.com/?ref=<%= CGI::escape(@user.referral_code) %>" class="email"></a>
+        <a href="mailto:?subject=You%20need%20to%20check%20this%20out&body=Hi,<br><br>The Ultimate Healthy Living Bundle is coming out soon, and I’ll be using it to get fitter, eat better and take control of my health!<br><br>Pass it on to your friends and you can get it for free! Go here to find out more:  http://4stepcreativity.com/?ref=<%= CGI::escape(@user.referral_code) %>" class="email"></a>
       </div>
     </div>
   </div>
