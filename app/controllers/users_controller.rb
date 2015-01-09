@@ -1,41 +1,41 @@
 class UsersController < ApplicationController
     before_filter :skip_first_page, :only => :new
 
-    #def index
-    #  @users = []
-    #  User.all.each do |user|
-        #if user.referrals.count >= 10
-    #    @users << user
-        #end
-    #  end
-    #end
+    def index
+      @users = []
+      User.all.each do |user|
+        if user.referrals.count >= 1 && user.referrals.count < 5
+          @users << user
+        end
+      end
+    end
 
     def new
         @bodyId = 'home'
         @is_mobile = mobile_device?
 
         # remove this later
-        @referred_by = User.find_by_referral_code(cookies[:h_ref])
-        if @referred_by
-          redirection_url = @referred_by.infusionsoft_affiliate_link
-        else
-          redirection_url = "http://ultimate-bundles.com/healthy-living-bundle-2014/"
-        end
+        #@referred_by = User.find_by_referral_code(cookies[:h_ref])
+        #if @referred_by
+        #  redirection_url = @referred_by.infusionsoft_affiliate_link
+        #else
+        #  redirection_url = "http://ultimate-bundles.com/healthy-living-bundle-2014/"
+        #end
 
-        redirect_to redirection_url
+        #redirect_to redirection_url
         # end of remove this later
 
-        #@user = User.new
+        @user = User.new
 
-        #@ip_limit = false
+        @ip_limit = false
 
-        #if params.has_key?(:ip_limit)
-        #  @ip_limit = true
-        #end
+        if params.has_key?(:ip_limit)
+          @ip_limit = true
+        end
 
-        #respond_to do |format|
-        #  format.html # new.html.erb
-        #end
+        respond_to do |format|
+          format.html # new.html.erb
+        end
     end
 
     def create
