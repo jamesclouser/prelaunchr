@@ -81,19 +81,19 @@ class UsersController < ApplicationController
 
           case @referred_by.referrals.count
           when 1
-            contact_id = Infusionsoft.contact_find_by_email(@referred_by.email, ['id']);
-            if contact_id
-              Infusionsoft.contact_add_to_group(contact_id, 1216)
+            contact = Infusionsoft.contact_find_by_email(@referred_by.email, ['id']);
+            if contact.count > 0
+              Infusionsoft.contact_add_to_group(contact[0]["id"], 1216)
             end
           when 5
-            contact_id = Infusionsoft.contact_find_by_email(@referred_by.email, ['id']);
-            if contact_id
-              Infusionsoft.contact_add_to_group(contact_id, 1218)
+            contact = Infusionsoft.contact_find_by_email(@referred_by.email, ['id']);
+            if contact.count > 0
+              Infusionsoft.contact_add_to_group(contact[0]["id"], 1218)
             end
           when 10
-            contact_id = Infusionsoft.contact_find_by_email(@referred_by.email, ['id']);
-            if contact_id
-              Infusionsoft.contact_add_to_group(contact_id, 1220)
+            contact = Infusionsoft.contact_find_by_email(@referred_by.email, ['id']);
+            if contact.count > 0
+              Infusionsoft.contact_add_to_group(contact[0]["id"], 1220)
             end
           end
         end
