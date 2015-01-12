@@ -79,10 +79,8 @@
   <div class="prizes <% if found %>prize-<%= found["class"] %><% end %>">
     <div class="page-content">
       <%
-        words = ''
-        if referrals_count == 1
-          words = 'friend has'
-        elsif
+        words = 'friend has'
+        if referrals_count > 1
           words = 'friends have'
         end
       %>
