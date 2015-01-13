@@ -32,6 +32,35 @@ class User < ActiveRecord::Base
         }
     ]
 
+    def add_to_infusionsoft
+      contact_id = Infusionsoft.contact_add_with_dup_check({:FirstName => self.name, :Email => self.email}, 'Email');
+      if contact_id
+        Kernel.sleep(0.3)
+        Infusionsoft.contact_add_to_group(contact_id, 1208)
+        Kernel.sleep(0.3)
+        Infusionsoft.email_optin(@user.email, "RAF App Opt-In")
+      end
+    end
+
+    def infusionsoft_referral
+      contact = Infusionsoft.contact_find_by_email(self.email, ['id'])
+      Kernel.sleep(0.3)
+      Rails.logger.debug '------------ CALLING INFUSIONSOFT'
+      Rails.logger.debug self.email
+      Rails.logger.debug contact.inspect
+
+      if contact.count > 0 && self.referrals.count == 1
+        ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1216)
+      elsif contact.count > 0 && self.referrals.count == 5
+        ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1218)
+      elsif contact.count > 0 && self.referrals.count == 10
+        ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1220)
+      end
+
+      Rails.logger.debug ifs_result
+      Rails.logger.debug '------------ END INFUSIONSOFT'
+    end
+    
     private
 
     def create_referral_code

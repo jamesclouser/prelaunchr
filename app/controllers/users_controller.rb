@@ -84,28 +84,31 @@ class UsersController < ApplicationController
         @user.save
 
         if @referred_by
-          contact = Infusionsoft.contact_find_by_email(@referred_by.email, ['id'])
-          puts '------------'
-          puts @referred_by.email
-          puts contact.inspect
+          @referred_by.delay.infusionsoft_referral
+          #contact = Infusionsoft.contact_find_by_email(@referred_by.email, ['id'])
+          #puts '------------ CALLING INFUSIONSOFT'
+          #puts @referred_by.email
+          #puts contact.inspect
 
-          if contact.count > 0 && @referred_by.referrals.count == 1
-            ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1216)
-          elsif contact.count > 0 && @referred_by.referrals.count == 5
-            ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1218)
-          elsif contact.count > 0 && @referred_by.referrals.count == 10
-            ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1220)
-          end
-          
-          puts ifs_result
-          puts '------------'
+          #if contact.count > 0 && @referred_by.referrals.count == 1
+          #  ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1216)
+          #elsif contact.count > 0 && @referred_by.referrals.count == 5
+          #  ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1218)
+          #elsif contact.count > 0 && @referred_by.referrals.count == 10
+          #  ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1220)
+          #end
+
+          #puts ifs_result
+          #puts '------------'
         end
 
-        contact_id = Infusionsoft.contact_add_with_dup_check({:FirstName => @user.name, :Email => @user.email}, 'Email');
-        if contact_id
-          Infusionsoft.contact_add_to_group(contact_id, 1208)
-        end
+        #contact_id = Infusionsoft.contact_add_with_dup_check({:FirstName => @user.name, :Email => @user.email}, 'Email');
+        #if contact_id
+        #  Infusionsoft.contact_add_to_group(contact_id, 1208)
+        #  Infusionsoft.email_optin(@user.email, "RAF App Opt-In")
+        #end
 
+        @user.delay.add_to_infusionsoft
       end
 
       # Send them over refer action
