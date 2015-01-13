@@ -33,21 +33,26 @@ class User < ActiveRecord::Base
     ]
 
     def add_to_infusionsoft
+      Rails.logger.info '------------ CALLING INFUSIONSOFT contact_add_with_dup_check'
       contact_id = Infusionsoft.contact_add_with_dup_check({:FirstName => self.name, :Email => self.email}, 'Email');
+      Rails.logger.info contact_id
       if contact_id
         Kernel.sleep(0.3)
-        Infusionsoft.contact_add_to_group(contact_id, 1208)
+        group_result = Infusionsoft.contact_add_to_group(contact_id, 1208)
+        Rails.logger.info group_result
         Kernel.sleep(0.3)
-        Infusionsoft.email_optin(self.email, "RAF App Opt-In")
+        optin_result = Infusionsoft.email_optin(self.email, "RAF App Opt-In")
+        Rails.logger.info optin_result
       end
+      Rails.logger.info '------------ END INFUSIONSOFT'
     end
 
     def infusionsoft_referral
       contact = Infusionsoft.contact_find_by_email(self.email, ['id'])
       Kernel.sleep(0.3)
-      Rails.logger.debug '------------ CALLING INFUSIONSOFT'
-      Rails.logger.debug self.email
-      Rails.logger.debug contact.inspect
+      Rails.logger.info '------------ CALLING INFUSIONSOFT'
+      Rails.logger.info self.email
+      Rails.logger.info contact.inspect
 
       if contact.count > 0 && self.referrals.count == 1
         ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1216)
@@ -57,8 +62,8 @@ class User < ActiveRecord::Base
         ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1220)
       end
 
-      Rails.logger.debug ifs_result
-      Rails.logger.debug '------------ END INFUSIONSOFT'
+      Rails.logger.info ifs_result
+      Rails.logger.info '------------ END INFUSIONSOFT'
     end
     
     private
