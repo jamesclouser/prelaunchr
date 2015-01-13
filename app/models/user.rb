@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
         },
         {
             'count' => 5,
-            "html" => "<span class='hidden-xs'>1-Year Subscription<br></span>to Better Homes and Gardens<br>",
+            "html" => "1-Year Subscription<br>to Better Homes and Gardens<br>",
             "class" => "three",
             "image" => "creativity/reward2.jpg"
         },
