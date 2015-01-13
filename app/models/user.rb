@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
         Kernel.sleep(0.3)
         Infusionsoft.contact_add_to_group(contact_id, 1208)
         Kernel.sleep(0.3)
-        Infusionsoft.email_optin(@user.email, "RAF App Opt-In")
+        Infusionsoft.email_optin(self.email, "RAF App Opt-In")
       end
     end
 
