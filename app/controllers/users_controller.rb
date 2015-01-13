@@ -83,16 +83,22 @@ class UsersController < ApplicationController
         @user.name = @user.name.titleize
         @user.save
 
-        if !@referred_by.nil?
+        if @referred_by
           contact = Infusionsoft.contact_find_by_email(@referred_by.email, ['id'])
+          puts '------------'
+          puts @referred_by.email
+          puts contact.inspect
 
-          if contact.count > 0 && @referred_by.referrals.count == 0
-            Infusionsoft.contact_add_to_group(contact[0]["id"], 1216)
+          if contact.count > 0 && @referred_by.referrals.count == 1
+            ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1216)
           elsif contact.count > 0 && @referred_by.referrals.count == 5
-            Infusionsoft.contact_add_to_group(contact[0]["id"], 1218)
+            ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1218)
           elsif contact.count > 0 && @referred_by.referrals.count == 10
-            Infusionsoft.contact_add_to_group(contact[0]["id"], 1220)
+            ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1220)
           end
+          
+          puts ifs_result
+          puts '------------'
         end
 
         contact_id = Infusionsoft.contact_add_with_dup_check({:FirstName => @user.name, :Email => @user.email}, 'Email');
