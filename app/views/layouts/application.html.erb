@@ -42,16 +42,18 @@ window._fbq.push(['track', 'PixelInitialized', {}]);
 <!-- END FB RET -->
 </script>
 
+<!-- GA -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-44717729-1', 'auto');
-  ga('send', 'pageview');
-
+  ga('create', 'UA-44717729-1', 'auto', {'allowLinker': true});
+  ga('require', 'linker');
+  ga('linker:autoLink', ['ultimate-bundles.com'] );
 </script>
+
 <script type="text/javascript" src="https://us154.infusionsoft.com/app/webTracking/getTrackingCode?trackingId=b3ad10688513d9a38dc6aecf83c51f41"></script>
 
 </body>
