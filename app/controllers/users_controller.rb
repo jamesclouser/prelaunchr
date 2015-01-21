@@ -11,31 +11,26 @@ class UsersController < ApplicationController
     end
 
     def new
-        @bodyId = 'home'
-        @is_mobile = mobile_device?
+      # remove this later
+      redirect_to "http://ultimate-bundles.com/diy-bundle-2015/"
+      # end of remove this later
 
-        # remove this later
-        @referred_by = User.find_by_referral_code(cookies[:h_ref])
-        if @referred_by
-          redirection_url = @referred_by.infusionsoft_affiliate_link
-        else
-          redirection_url = "http://ultimate-bundles.com/diy-bundle-2015//"
-        end
 
-        redirect_to redirection_url
-        # end of remove this later
+      #@bodyId = 'home'
+      #@is_mobile = mobile_device?
 
-        #@user = User.new
 
-        #@ip_limit = false
+      #@user = User.new
 
-        #if params.has_key?(:ip_limit)
-        #  @ip_limit = true
-        #end
+      #@ip_limit = false
 
-        #respond_to do |format|
-        #  format.html # new.html.erb
-        #end
+      #if params.has_key?(:ip_limit)
+      #  @ip_limit = true
+      #end
+
+      #respond_to do |format|
+      #  format.html # new.html.erb
+      #end
     end
 
     def create
