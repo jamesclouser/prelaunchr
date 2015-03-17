@@ -1973,8 +1973,8 @@ users = {
   "rinnace@gmail.com" => "https://us154.isrefer.com/go/diyraf/a3980/",
   "backroadsliving@gmail.com" => "https://us154.isrefer.com/go/diyraf/a3982/",
   "oursouthernhomesc@gmail.com" => "https://us154.isrefer.com/go/diyraf/a3984/",
-  "sheplansdinner@gmail.com" => "",	https://us154.isrefer.com/go/diyraf/a3988/
-  "penny@greenkidcrafts.com" => "https://us154.isrefer.com/go/diyraf/a3990/",
+  "sheplansdinner@gmail.com" => "https://us154.isrefer.com/go/diyraf/a3988/"
+  "penny@greenkidcrafts.com" => "https://us154.isrefer.com/go/diyraf/a3990/"
 }
 
 users.each do |e, url|
