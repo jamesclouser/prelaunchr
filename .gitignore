@@ -20,3 +20,4 @@
 database.yml
 
 .elasticbeanstalk
+.env
