@@ -148,6 +148,11 @@ class UsersController < ApplicationController
 
     private
 
+    def user_params
+      params.require(:episode).permit(:name, :email, :infusionsoft_affiliate_link)
+       
+    end
+
     def skip_first_page
         if !Rails.application.config.ended
             email = cookies[:h_email]
