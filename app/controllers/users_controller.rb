@@ -12,24 +12,24 @@ class UsersController < ApplicationController
 
     def new
       # remove this later
-      #redirect_to "http://ultimate-bundles.com/diy-bundle-2015/"
+      redirect_to "http://ultimate-bundles.com/diy-bundle-2015/"
       # end of remove this later
 
 
-      @bodyId = 'home'
-      @is_mobile = mobile_device?
+      #@bodyId = 'home'
+      #@is_mobile = mobile_device?
 
-      @user = User.new
+      #@user = User.new
 
-      @ip_limit = false
+      #@ip_limit = false
 
-      if params.has_key?(:ip_limit)
-        @ip_limit = true
-      end
+      #if params.has_key?(:ip_limit)
+      #  @ip_limit = true
+      #end
 
-      respond_to do |format|
-        format.html # new.html.erb
-      end
+      #respond_to do |format|
+      #  format.html # new.html.erb
+      #end
     end
 
     def create
