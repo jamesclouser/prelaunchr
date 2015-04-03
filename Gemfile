@@ -8,6 +8,7 @@ gem 'rails', '4.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'activeadmin', github: 'activeadmin'
+gem 'bootstrap-sass', '~> 3.3.4'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 gem 'dotenv-rails', :groups => [:development, :test]
