@@ -32,7 +32,9 @@
         <div class="subtitle">&mdash;&mdash; Mini Video-eCourse &mdash;&mdash;</div>
         <div class="byline">Get Access Right Now!</div>
 
-        <div class="col-md-8 col-md-offset-2">
+        <%= image_tag "homemaker/arrow.png", style: "position:relative; right: 16%; top:-30px; float: right;"%>
+        <div class="col-md-6 col-md-offset-3">
+
           <%= form_for @user, :html => {  :role => 'form' }, :url => { :action => "create" } do |f| %>
             <div class="form-group">
               <%= f.text_field :name, :placeholder => "Your First Name", :class => "form-control input-lg", :style => "width: 100%;" %>
