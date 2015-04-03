@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'refer-a-friend' => 'users#refer'
 
   get 'privacy-policy' => 'users#policy'
+  
+  resources :videos, only: [:index]
 
   unless Rails.application.config.consider_all_requests_local
       get '*not_found', to: 'users#redirect', :format => false
