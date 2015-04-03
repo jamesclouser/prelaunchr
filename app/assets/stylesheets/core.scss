@@ -1,36 +1,4 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.container-fluid {
-margin: 0;
-padding: 0;
-}
-
-form{
-	margin-bottom: 0;
-}
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
-
 /* Home */
-
-html.home{
-	background: #ffffff;
-}
-
-#home{
-	padding-bottom: 50px;
-}
 
 #home .page-content{
 	width: 1400px;
