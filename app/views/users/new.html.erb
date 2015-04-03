@@ -1,71 +1,68 @@
 <div class="hero">
+  <div class="container-fluid">
+    <div class="col-sm-10 col-sm-offset-2 col-md-7 col-md-offset-5 col-xs-12">
 
-</div>
-
-<div class="col-sm-6 col-sm-offset-3 col-xs-12">
-  <p class="large brandon">Connect with your creative side in 2015</p>
-</div>
-<div class="col-sm-6 col-sm-offset-3 col-xs-12">
-  <p class="small brandon">Learn the four steps to rediscover your inner creative genius.</p>
-</div>
-
-<% if Rails.application.config.ended %>
-  <div class="ended">
-    <p class="thanks brandon">THANK YOU FOR PARTICIPATING<br>IN OUR PRE-LAUNCH.</p>
-    <p class="compiling brandon">WE ARE COMPILING REWARDS RIGHT NOW AND WILL EMAIL<br/>COUPON CODES TO ALL RECIPIENTS IN THE NEXT DAY OR TWO</p>
-    <p class="go-to brandon">In the meantime, head to  <a href="http://www.ultimate-bundles.com/">WWW.ULTIMATE-BUNDLES.COM</a></p>
-    <p class="again brandon">Thank You Again!</p>
-  </div>
-  
-<% elsif @ip_limit %>
-
-  <div class="col-sm-8 col-sm-offset-2 col-xs-12">
-    <div class="ended">
-      <p class="thanks brandon">We’re sorry, but only 1 email sign-up is allowed per IP address / household.</p>
-
-      <p>To view your number of referrals, make sure to use the same browser on the same device that you used to sign up originally.</p>
-
-      <p>If you’ve cleared your browser history or cache, you will no longer be able to see the number of referrals you’ve received, but you will still receive credit for them, and any corresponding rewards that you’ve earned will be sent by the end of January, 2015.</p>
-
-      <p>To continue to share your code and receive rewards, you can still access your referral code from the email you received when you first signed up, entitled: "Your 4-steps mini-course”</p>
-
-      <p>We’re excited to share the Ultimate DIY Bundle with you, and hope that you find it as life changing as we have.  We’ll send you more information about it very shortly, so be sure to look out for those emails.</p>
-
-      <p>Thanks so much for your interest!</p>
-    </div>
-  </div>
-<% else %>
-
-  <div class="col-sm-5 col-sm-offset-1 col-xs-12">
-    <br><br>
-    <div class="col-xs-12">
-      <p class="byline brandon">Get it FREE now:</p>
-    </div>
-    <div class="col-xs-12">
-      <%= form_for @user, :html => {  :role => 'form' }, :url => { :action => "create" } do |f| %>
-        <div class="form-group">
-          <label>First Name</label>
-          <%= f.text_field :name, :placeholder => "Your First Name", :class => "form-control input-lg" %>
+      <% if Rails.application.config.ended %>
+        <div class="ended">
+          <p class="thanks brandon">THANK YOU FOR PARTICIPATING<br>IN OUR PRE-LAUNCH.</p>
+          <p class="compiling brandon">WE ARE COMPILING REWARDS RIGHT NOW AND WILL EMAIL<br/>COUPON CODES TO ALL RECIPIENTS IN THE NEXT DAY OR TWO</p>
+          <p class="go-to brandon">In the meantime, head to  <a href="http://www.ultimate-bundles.com/">WWW.ULTIMATE-BUNDLES.COM</a></p>
+          <p class="again brandon">Thank You Again!</p>
         </div>
-        <div class="form-group">
-          <label>Email</label>
-          <%= f.text_field :email, :placeholder => "Your Email", :class => "form-control input-lg" %>
+      <% elsif @ip_limit %>
+
+        <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+          <div class="ended">
+            <p class="thanks brandon">We’re sorry, but only 1 email sign-up is allowed per IP address / household.</p>
+
+            <p>To view your number of referrals, make sure to use the same browser on the same device that you used to sign up originally.</p>
+
+            <p>If you’ve cleared your browser history or cache, you will no longer be able to see the number of referrals you’ve received, but you will still receive credit for them, and any corresponding rewards that you’ve earned will be sent by the end of January, 2015.</p>
+
+            <p>To continue to share your code and receive rewards, you can still access your referral code from the email you received when you first signed up, entitled: "Your 4-steps mini-course”</p>
+
+            <p>We’re excited to share the Ultimate DIY Bundle with you, and hope that you find it as life changing as we have.  We’ll send you more information about it very shortly, so be sure to look out for those emails.</p>
+
+            <p>Thanks so much for your interest!</p>
+          </div>
         </div>
-        <div class="form-group">
-          <button class="btn btn-primary btn-lg btn-block" style="background-color: #f24646;" name="commit" type="submit">Yes, I want the 4 steps </button>
+      <% else %>
+        <%= image_tag "homemaker/3_simple_steps.png", class: "signup-header-image img-responsive" %>
+        <h2>to Stress-Free Homemaking!</h2>
+        <div class="subtitle">&mdash;&mdash; Mini Video-eCourse &mdash;&mdash;</div>
+        <div class="byline">Get Access Right Now!</div>
+
+        <div class="col-md-8 col-md-offset-2">
+          <%= form_for @user, :html => {  :role => 'form' }, :url => { :action => "create" } do |f| %>
+            <div class="form-group">
+              <%= f.text_field :name, :placeholder => "Your First Name", :class => "form-control input-lg", :style => "width: 100%;" %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :email, :placeholder => "Your Email", :class => "form-control input-lg", :style => "width: 100%;" %>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-lg btn-block" style="background-color: #f1592a;" name="commit" type="submit">Yes, Give Me Access Right Now </button>
+            </div>
+          <% end %>
+        </div>
+        <div class="col-md-10 col-md-offset-1 col-xs-12">
+          <p class="fine-print"><em>* 1 sign-up per household</em></p>
         </div>
       <% end %>
     </div>
+  </div>
+</div>
 
-  </div>
-  <div class="col-sm-4 col-sm-offset-1 col-xs-12" style="padding-top: 12px;">
-    <%= image_tag "creativity/diy_bundle.jpg", :class => "img-responsive", :style => "margin-left: auto; margin-right: auto;" %>
-  </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3" style="text-align: center;">
+      <div class="footer">
+        &copy; 2015 Ultimate Bundles | Privacy Policy | Terms of Use
+      </div>
+    </div>
+  </row>
+</div>
 
-  <div class="col-md-10 col-md-offset-1 col-xs-12">
-    <p class="fine-print brandon"><em>* 1 sign-up per household</em></p>
-  </div>
-<% end %>
 
 <!-- Facebook Conversion Code for Visit RAF Landing Page UDIYB -->
 <script>(function() {

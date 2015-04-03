@@ -1,34 +1,35 @@
-<div class="header">
-  <div class="content">
-    <div class="col-xs-12">
-      <p class="logo brandon">THANK YOU! <span style="text-transform: none;" class="hidden-xs">Watch your Inbox for your free gift</span></p>
-    </div>
-  </div>
-</div>
+<div class="hero">
+  <div class="container-fluid">
+    <div class="col-sm-10 col-sm-offset-2 col-md-7 col-md-offset-5 col-xs-12">
 
-<div class="hero-refer">
+      <%= image_tag "homemaker/thank_you.png", class: "refer-header-image img-responsive" %>
+      <p class="refer-header">Access your course now. But first...</p>
+      <p class="refer-subheader">THINK YOUR FRIENDS COULD<br> USE LESS STRESS, TOO?</p>
+      <p class="refer-byline">INVITE FRIENDS & EARN REWARDS</p>
 
-</div>
+      <p class="share-text">Share your unique link via email, Facebook or Twitter<br>
+        and earn rewards for each friend who signs up.</p>
 
-<div class="page-content">
-  <div class="col-md-8 col-md-offset-2 col-xs-12">
-    <div class="share-wrap">
-      <p class="why brandon">Don't leave your friends behind</p>
-      <p class="title brandon">INVITE FRIENDS & Earn Rewards</p>
-      <p class="subtitle brandon">Share your unique link via email, Facebook or Twitter and earn rewards for each friend who signs up.</p>
-      <div id="sharable" class="copy-link brandon" onclick="selectText('sharable')">http://4stepcreativity.com/?ref=<%= @user.referral_code %></div>
-
-      <% twitter_message = "I just rediscovered my inner creative genius. Wanna join me? Plus, earn 1yr of Better Homes and Gardens for FREE." %>
-      <div class="social-links">
-        <a href="http://www.facebook.com/sharer/sharer.php?u=http://4stepcreativity.com/?ref=<%= CGI::escape(@user.referral_code) %>" class="fb" target="_blank"></a>
-        <div class="sep"></div>
-        <a href="http://twitter.com/share?url=http://4stepcreativity.com/?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
-        <div class="sep"></div>
-        <a href="mailto:?subject=You%20need%20to%20check%20this%20out&body=Hi,%0D%0A%0D%0AI just signed up to take the 4-step creativity mini-course.%0D%0A%0D%0AI’d love it if you’d join me!%0D%0A%0D%0AIt’ll help me tap into my creative side again. Plus I can easily get a free 1-year subscription to Better Homes and Gardens Magazine, or even a free Ultimate DIY Bundle (over $1,000 value) when it’s available, and you can too. Go here to find out more http://4stepcreativity.com/?ref=<%= CGI::escape(@user.referral_code) %>%0D%0A%0D%0ABut, you’ll need to act fast, because the mini-course and the awesome rewards are only available until 11:59 PM on Friday, March 27th" class="email"></a>
+      <div class="row">
+        <div class="col-xs-5 col-xs-offset-1 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
+          <div class="share-box">
+            <a href="http://www.facebook.com/sharer/sharer.php?u=http://4stepcreativity.com/?ref=<%= CGI::escape(@user.referral_code) %>" class="fb" target="_blank"><%= image_tag "homemaker/facebook.png" %></a>
+            &nbsp;&nbsp;
+            <a href="http://twitter.com/share?url=http://4stepcreativity.com/?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape('I just rediscovered my inner creative genius. Wanna join me? Plus, earn 1yr of Better Homes and Gardens for FREE.') %>" class="twit" target="_blank"><%= image_tag "homemaker/twitter.png" %></a>
+            &nbsp;&nbsp;
+            <a href="mailto:?subject=You%20need%20to%20check%20this%20out&body=Hi,%0D%0A%0D%0AI just signed up to take the 4-step creativity mini-course.%0D%0A%0D%0AI’d love it if you’d join me!%0D%0A%0D%0AIt’ll help me tap into my creative side again. Plus I can easily get a free 1-year subscription to Better Homes and Gardens Magazine, or even a free Ultimate DIY Bundle (over $1,000 value) when it’s available, and you can too. Go here to find out more http://4stepcreativity.com/?ref=<%= CGI::escape(@user.referral_code) %>%0D%0A%0D%0ABut, you’ll need to act fast, because the mini-course and the awesome rewards are only available until 11:59 PM on Friday, March 27th" class="email">
+              <%= image_tag "homemaker/email.png" %>
+            </a>
+          </div>
+        </div>
+        <div class="col-xs-5 col-sm-3">
+          <button class="btn course-button">Take Me to The Course</button>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 
 <%
     referrals_count = @user.referrals.count
@@ -48,13 +49,13 @@
  %>
 
 <div class="col-md-10 col-md-offset-1 col-xs-12">
+  <p class="callout">Here's How It Works:</p>
   <div class="prizes <% if found %>prize-<%= found["class"] %><% end %>">
     <div class="page-content">
-      <p class="callout brandon">Here's How It Works:</p>
       <ul class="products clearfix">
-        <li class="title brandon"><p class="friends">Friends Joined</p><p class="rewards">Rewards</p></li>
+        <li class="title"><p class="friends">Friends Joined</p><p class="rewards">Rewards</p></li>
         <% stops.each do |stop| %>
-          <li class="product brandon <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'four' %>last<% end %>">
+          <li class="product <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'four' %>last<% end %>">
               <div class="circle"><%= stop["count"] %></div>
               <div class="sep"></div>
               <p><%= stop["html"].html_safe %></p>
@@ -86,18 +87,33 @@
       %>
 
       <% if referrals_count == 0 %>
-        <p class="place brandon"><span>No</span> friends have joined...Yet!</p>
+        <p class="place"><span>No</span> friends have joined...Yet!</p>
       <% else %>
-        <p class="place brandon"><span><%= referrals_count %></span> <%= words %> joined</p>
+        <p class="place"><span><%= referrals_count %></span> <%= words %> joined</p>
       <% end %>
-      <p class="check brandon">Keep checking</p>
+      <p class="check">Keep checking</p>
 
-      <p class="fine-print brandon"><em>* 1 sign-up per household</em></p>
-      
-      <a class="policy brandon" href="/privacy-policy" target="_blank">Privacy Policy</a>
+      <p class="fine-print"><em>* 1 sign-up per household</em></p>
+
+
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3" style="text-align: center;">
+      <div class="footer">
+        &copy; 2015 Ultimate Bundles |
+        <a class="policy" href="/privacy-policy" target="_blank">Privacy Policy</a> |
+        Terms of Use
+      </div>
+    </div>
+  </row>
+</div>
+
+
+
 
 <script>
 function selectText(containerid) {
