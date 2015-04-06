@@ -1,123 +1,126 @@
 #videos {
   background-color: #f2f2f2;
-}
 
-.header {
-  background-color: #464646;
-  height: 80px;
-  padding-top: 28px;
 
-  ul.navigation {
-    width: 100%;
-    position: relative;
-    z-index: 1;
-    list-style-type: none;
-    padding-top: 6px;
+  .header {
+    background-color: #464646;
+    height: 80px;
+    padding-top: 28px;
 
-    li {
-      height: 100%;
-      color: #b7b7b7;
-      font-weight: 500;
-      font-size: 20px;
-      float: left;
-      margin-right: 14px;
-      width: 16%;
+    ul.navigation {
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      list-style-type: none;
+      padding-top: 6px;
 
-      a {
+      li {
+        height: 100%;
         color: #b7b7b7;
-        text-decoration: none;
-      }
-      a:hover {
-        color: #ffe5ac;
-        text-decoration: underline;
+        font-weight: 500;
+        font-size: 20px;
+        float: left;
+        margin-right: 14px;
+        width: 20%;
+
+        a {
+          color: #b7b7b7;
+          text-decoration: none;
+        }
+        a:hover {
+          color: #ffe5ac;
+          text-decoration: underline;
+        }
       }
     }
   }
-}
 
-.title {
-  text-align: center;
-  color: #636363;
-  font-size: 54px;
-  font-weight: 300;
-  margin-top: 80px;
-  margin-bottom: 30px;
+  .title {
+    text-align: center;
+    color: #636363;
+    font-size: 54px;
+    font-weight: 300;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    line-height: 110%;
 
-  strong {
-    font-weight: 600;
+    strong {
+      font-weight: 600;
+    }
   }
-}
 
-.subtitle {
-  text-align: center;
-  color: #636363;
-  font-size: 22px;
-  font-weight: 300;
-  margin-bottom: 40px;
-}
+  .subtitle {
+    text-align: center;
+    color: #636363;
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    line-height: 110%;
+  }
 
-.video-thumbnail {
-  width: 220px;
-  height: 110px;
-  margin-bottom: 5px;
-  margin-left: 10px;
-}
+  .video-thumbnail {
+    max-width: 220px;
+    max-height: 110px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
 
-.share-box {
-  margin-left: 10px;
-  width: 220px;
-  height: 110px;
-  border: 1px solid #cacaca;
-  padding: 14px;
-  font-size: 16px;
-  color: #898989;
-  text-align: center;
+  .share-box {
+    margin-left: 10px;
+    max-width: 220px;
+    max-height: 110px;
+    border: 1px solid #cacaca;
+    padding: 14px;
+    font-size: 16px;
+    color: #898989;
+    text-align: center;
   
-  .points {
-    color: #f1592a;
+    .points {
+      color: #f1592a;
+    }
   }
-}
 
-.buy-button {
-  padding: 20px;
-  background: #f1592a;
-  border: 1px solid #ffffff;
-  @include border-radius(6px);
-  @include center-block;
-  width: 320px;
-  font-size: 36px;
-  height: 80px;
-  font-weight: 400;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+  .buy-button {
+    padding: 20px;
+    background: #f1592a;
+    border: 1px solid #ffffff;
+    @include border-radius(6px);
+    @include center-block;
+    width: 320px;
+    font-size: 36px;
+    height: 80px;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
-.nest-img {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  width: 253px;
-  height: 190px;
-  @include center-block;
-}
+  .nest-img {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 253px;
+    height: 190px;
+    @include center-block;
+  }
 
-.quote {
-  background: image-url("videos/quote.png") no-repeat;
-  @include image-2x("videos/quote2x.png", 1084px, 180px);
-  padding-left: 80px;
-  padding-top: 10px;
-  margin: 30px;
-  font-size: 24px;
-  color: #636363;
-  line-height: 110%;
-  min-height: 70px;
-  font-weight: 300;
-}
+  .quote {
+    background: image-url("videos/quote.png") no-repeat;
+    @include image-2x("videos/quote2x.png", 1084px, 180px);
+    padding-left: 80px;
+    padding-top: 10px;
+    margin: 30px;
+    font-size: 24px;
+    color: #636363;
+    line-height: 110%;
+    min-height: 70px;
+    font-weight: 300;
+  }
 
-.citation {
-  text-align: right;
-  color: #f1592a;
-  font-transform: uppercase;
-  font-size: 22px;
-  margin-right: 40px;
-  margin-bottom: 30px;
+  .citation {
+    text-align: right;
+    color: #f1592a;
+    font-transform: uppercase;
+    font-size: 22px;
+    margin-right: 40px;
+    margin-bottom: 30px;
+  }
 }

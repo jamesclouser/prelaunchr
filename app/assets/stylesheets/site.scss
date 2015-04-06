@@ -35,8 +35,7 @@ body {
   }
 
   h2 {
-    @include center-block;
-    width: 644px;
+    text-align: center;
     color: #ffffff;
     font-size: 50px;
     font-style: italic;
@@ -44,11 +43,11 @@ body {
     padding: 10px 0px;
     margin-top: 10px;
     margin-bottom: 10px;
+    line-height: 110%;
   }
 
   .subtitle {
-    @include center-block;
-    width: 540px;
+    text-align: center;
     color: #ffe5ac;
     font-size: 40px;
     font-weight: 300;
@@ -56,11 +55,11 @@ body {
     margin-bottom: 20px;
     display: block;
     height: 40px;
+    line-height: 110%;
   }
 
   .byline {
-    @include center-block;
-    width: 400px;
+    text-align: center;
     color: #ffffff;
     font-size: 36px;
     font-weight: 600;
@@ -68,17 +67,18 @@ body {
     height: 40px;
     margin-top: 10px;
     margin-bottom: 10px;
+    line-height: 110%;
   }
 
   p.fine-print {
-    @include center-block;
+    text-align: center;
     width: 200px;
     color: #dedede;
+    line-height: 110%;
   }
 
   p.refer-header {
-    @include center-block;
-    width: 644px;
+    text-align: center;
     color: #ffffff;
     font-size: 40px;
     font-style: italic;
@@ -86,11 +86,11 @@ body {
     padding: 10px 0px;
     margin-top: 20px;
     margin-bottom: 10px;
+    line-height: 110%;
   }
 
   .refer-subheader {
-    @include center-block;
-    width: 600px;
+    text-align: center;
     color: #ffffff;
     font-size: 32px;
     font-weight: 400;
@@ -100,11 +100,11 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: center;
+    line-height: 110%;
   }
 
   .refer-byline {
-    @include center-block;
-    width: 600px;
+    text-align: center;
     color: #ffe5ac;
     font-size: 32px;
     font-weight: 400;
