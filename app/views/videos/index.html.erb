@@ -24,12 +24,12 @@
   </div>
   <div class="row">
     <div class="col-sm-9">
-      <%= image_tag "videos/video1_thumb.jpg", class: "img-responsive", style: "width: 100%;" %>
+      <div class="video-container">
+        <iframe src="https://player.vimeo.com/video/123675247?title=0&byline=0&portrait=0" width="850" height="478" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
     </div>
     <div class="col-sm-3">
-      <%= image_tag "videos/video2_thumb.jpg", class: "video-thumbnail" %>
-      <%= image_tag "videos/video3_thumb.jpg", class: "video-thumbnail" %>
-      <%= image_tag "videos/video4_thumb.jpg", class: "video-thumbnail" %>
+      <%= render "thumbnails_#{@video_id}" if @video_id %>
       <div class="share-box">
         <p>Share with others and<br> get bonuses!<br><br>
         You currently have...<br>
@@ -42,9 +42,9 @@
     <div class="col-xs-12">
       <p class="title">Get the Ultimate Homemaking Bundle</p>
       <p class="subtitle">Start Feathering Your Nest Today!</p>
-      
-      <button class="buy-button">Buy Now</button>
-      
+      <% if @video_id == 104 %>
+        <button class="buy-button" id="buy-now-btn" style="display: none;">Buy Now</button>
+      <% end %>
       <%= image_tag "videos/nest.png", class: "nest-img" %>
     </div>
   </div>
@@ -80,3 +80,18 @@
     </div>
   </row>
 </div>
+
+<% if @video_id == 104 %>
+  <script>
+    setTimeout(function() {
+      $('#buy-now-btn').show();
+    }, 9000);
+  </script>
+<% end %>
+
+<script>
+  $(document).ready(function(){
+    // Target your .container, .wrapper, .post, etc.
+    $(".video-container").fitVids();
+  });
+</script>
