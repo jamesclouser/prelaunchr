@@ -1,24 +1,22 @@
 #videos {
   background-color: #f2f2f2;
 
-
   .header {
     background-color: #464646;
     height: 80px;
-    padding-top: 28px;
+    padding-top: 30px;
 
     ul.navigation {
       width: 100%;
       position: relative;
       z-index: 1;
       list-style-type: none;
-      padding-top: 6px;
-
+      
       li {
         height: 100%;
         color: #b7b7b7;
         font-weight: 500;
-        font-size: 20px;
+        font-size: 18px;
         float: left;
         margin-right: 14px;
         width: 20%;
@@ -148,5 +146,16 @@
     font-size: 22px;
     margin-right: 40px;
     margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  #videos {
+    .header {
+      padding-top: 16px;
+    }
+    ul.navigation {
+      margin-top: 10px;
+    }
   }
 }
