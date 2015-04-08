@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'refer-a-friend' => 'users#refer'
 
   get 'privacy-policy' => 'users#policy'
+  get 'terms-of-use' => 'users#terms'
   
   resources :videos, only: [:index]
   get "/videos/:video_id", to: "videos#index", as: "video_id"

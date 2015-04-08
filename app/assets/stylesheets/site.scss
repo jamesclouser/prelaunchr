@@ -155,20 +155,25 @@ body {
 }
 
 .footer {
+  text-align: center;
   margin-top: 30px;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 30px;
   text-decoration: none;
-}
-
-.fine-print{
-	text-align: center;
-	font-size: 12px;
-	color: #999999;
-	width: 100%;
-	font-weight: 500;
-	margin-top: 5px;
-	display: block;
-	text-decoration: none;
+  @include breakpoint(xs) {
+    font-size: 14px;
+  }
+  a.fine-print {
+    text-decoration: none;
+    color: #333333;
+  }
+  a.fine-print:visited {
+    text-decoration: none;
+    color: #333333;
+  }
+  a.fine-print:hover {
+    text-decoration: underline;
+    color: #999999;
+  } 
 }
