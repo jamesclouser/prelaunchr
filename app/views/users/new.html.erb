@@ -13,7 +13,7 @@
 
         <div class="col-sm-8 col-sm-offset-2 col-xs-12">
           <div class="ended">
-            <p class="thanks brandon">We’re sorry, but only 1 email sign-up is allowed per IP address / household.</p>
+            <p class="thanks">We’re sorry, but only 1 email sign-up is allowed per IP address / household.</p>
 
             <p>To view your number of referrals, make sure to use the same browser on the same device that you used to sign up originally.</p>
 
@@ -28,34 +28,39 @@
         </div>
       <% else %>
         <%= image_tag "homemaker/3_simple_steps.png", class: "signup-header-image img-responsive" %>
-        <h2>to Stress-Free Homemaking!</h2>
+        <div class="title">to Stress-Free Homemaking!</div>
         <div class="subtitle">&mdash;&mdash; Mini Video-eCourse &mdash;&mdash;</div>
         <div class="byline">Get Access Right Now!</div>
 
-        <%= image_tag "homemaker/arrow.png", style: "position:relative; right: 16%; top:-30px; float: right;"%>
-        <div class="col-md-6 col-md-offset-3">
+        <%= image_tag "homemaker/arrow.png", style: "position:relative; right: 14%; top:-30px; float: right;", class: "hidden-sm hidden-xs" %>
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 
           <%= form_for @user, :html => {  :role => 'form' }, :url => { :action => "create" } do |f| %>
             <div class="form-group">
-              <%= f.text_field :name, :placeholder => "Your First Name", :class => "form-control input-lg", :style => "width: 100%;" %>
+              <%= f.text_field :name, :placeholder => "Your First Name", :class => "form-control input-lg", :style => "width: 100%; font-size: 120%" %>
             </div>
             <div class="form-group">
-              <%= f.text_field :email, :placeholder => "Your Email", :class => "form-control input-lg", :style => "width: 100%;" %>
+              <%= f.text_field :email, :placeholder => "Your Email", :class => "form-control input-lg", :style => "width: 100%; font-size: 120%" %>
             </div>
             <div class="form-group">
               <button class="btn btn-lg btn-block" style="background-color: #f1592a;" name="commit" type="submit">Yes, Give Me Access Right Now </button>
             </div>
           <% end %>
         </div>
-        <div class="col-md-10 col-md-offset-1 col-xs-12">
-          <p class="fine-print"><em>* 1 sign-up per household</em></p>
-        </div>
       <% end %>
     </div>
   </div>
 </div>
 
+<div class="container-fluid">
+  <div class="col-md-10 col-md-offset-1 col-xs-12">
+    <p class="fine-print" style="text-align: center;"><em>* 1 sign-up per household</em></p>
+  </div>
+</div>
+
 <%= render 'layouts/footer' %>
+
+
 
 <!-- Facebook Conversion Code for UHomB RAF Front Page -->
 <script>(function() {
