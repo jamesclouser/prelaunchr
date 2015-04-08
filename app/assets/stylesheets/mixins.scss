@@ -10,18 +10,27 @@
   }
 }
 
-@mixin breakpoint($point) {
-  @if $point == large {
-    @media (min-width: 64.375em) { @content; }
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: 767px) { @content; }
   }
-  @else if $point == medium {
-    @media (min-width: 50em) { @content; }
+
+  @else if $class == sm {
+    @media (min-width: 768px) { @content; }
   }
-  @else if $point == small {
-    @media (min-width: 37.5em)  { @content; }
+
+  @else if $class == md {
+    @media (min-width: 992px) { @content; }
+  }
+
+  @else if $class == lg {
+    @media (min-width: 1200px) { @content; }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
   }
 }
-
 @mixin center-block {
   display: block;
   margin-left: auto;
