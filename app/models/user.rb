@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   REFERRAL_STEPS = [
     {
       'count' => 1,
-      "html" => "$5 Off<br>Ultimate DIY Ultimate Bundle 2015",
+      "html" => "$5 Off<br>The Ultimate Homemaking Bundle",
       "class" => "two",
       "image" =>  "creativity/reward1.jpg"
     },
@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
     },
     {
       'count' => 10,
-      "html" => "FREE<br>Ultimate DIY Bundle 2015<br>($34.95 Value)",
+      "html" => "FREE<br>Ultimate Homemaking Bundle<br>($34.95 Value)",
       "class" => "four",
       "image" => "creativity/reward3.jpg"
     }
