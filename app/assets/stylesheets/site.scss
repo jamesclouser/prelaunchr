@@ -20,17 +20,21 @@ body {
   padding-top: 20px;
   margin-bottom: 30px;
 
+  @include breakpoint(xs) {
+    height: 535px;
+  }
+
   .signup-header-image {
     @include center-block;
     width: 567px;
-    height: 194px;
+    height: auto;
     @include image-2x("homemaker/3_simple_steps2x.png", 1134px, 387px);
   }
 
   .refer-header-image {
     @include center-block;
     width: 542px;
-    height: 90px;
+    height: auto;
     @include image-2x("homemaker/thank_you2x.png", 1084px, 180px);
   }
 
@@ -60,14 +64,13 @@ body {
     margin-top: 10px;
     margin-bottom: 20px;
     display: block;
-    height: 40px;
     line-height: 110%;
     @include breakpoint(sm) {
       font-size: 32px;
     }
     @include breakpoint(xs) {
       font-size: 22px;
-    }    
+    }
   }
 
   .byline {
@@ -76,17 +79,27 @@ body {
     font-size: 36px;
     font-weight: 600;
     font-transform: uppercase;
-    height: 40px;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     line-height: 110%;
     @include breakpoint(sm) {
       font-size: 30px;
     }
     @include breakpoint(xs) {
       font-size: 24px;
-    }  
+      margin-bottom: 10px;
+    }
   }
+  
+  #signup-btn {
+    background-color: #f1592a;
+  }
+
+  #signup-btn:hover {
+    background-color: #f1592a;
+    font-style: bold;
+  }
+
 
   p.fine-print {
     text-align: center;
@@ -109,7 +122,7 @@ body {
       font-size: 32px;
     }
     @include breakpoint(xs) {
-      font-size: 28px;
+      font-size: 20px;
     }
   }
 
@@ -129,7 +142,7 @@ body {
       font-size: 28px;
     }
     @include breakpoint(xs) {
-      font-size: 24px;
+      font-size: 22px;
     }
   }
 
@@ -147,7 +160,7 @@ body {
       font-size: 28px;
     }
     @include breakpoint(xs) {
-      font-size: 24px;
+      font-size: 26px;
     }
   }
 
@@ -163,8 +176,21 @@ body {
       font-size: 20px;
     }
     @include breakpoint(xs) {
-      font-size: 18px;
-    }    
+      font-size: 12px;
+    }
+  }
+
+  .white-arrow {
+    position: relative;
+    left: 250px;
+    top: -40px;
+    float:left;
+    @include breakpoint(md) {
+      left: 18%;
+    }
+    @include breakpoint(sm) {
+      left: 14%;
+    }
   }
 
   .share-box {
@@ -213,5 +239,5 @@ body {
   a.fine-print:hover {
     text-decoration: underline;
     color: #999999;
-  } 
+  }
 }

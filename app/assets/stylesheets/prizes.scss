@@ -13,6 +13,13 @@
 	color: #818181;
 	font-weight: 300;
 	margin: 20px 0 50px 0;
+
+  @include breakpoint(sm) {
+    font-size: 36px;
+  }
+  @include breakpoint(xs) {
+    font-size: 30px;
+  }
 }
 
 #refer .prizes .progress{
