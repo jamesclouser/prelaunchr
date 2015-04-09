@@ -11,9 +11,9 @@ class UsersController < ApplicationController
   end
 
   def new
-    # remove this later
-    #redirect_to "http://ultimate-bundles.com/diy-bundle-2015/"
-    # end of remove this later
+    if Time.now.to_i > Time.parse("2015-04-18 21:00:00 -0700").to_i
+      redirect_to "http://ultimate-bundles.com/homemaking-bundle-2015/"
+    end
 
     @bodyId = 'home'
     @is_mobile = mobile_device?
