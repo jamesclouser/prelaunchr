@@ -1,5 +1,7 @@
 <div id="video-wrapper">
-  <%= image_tag "videos/video1_thumb.jpg", class: "video-thumbnail" %>
+  <%= link_to "/videos/101" do %>
+    <%= image_tag "videos/video1_thumb.jpg", class: "video-thumbnail" %>
+  <% end %>
 </div>
 <div id="video-wrapper-disabled">
   <%= image_tag "videos/video3_thumb.jpg", class: "video-thumbnail" %>

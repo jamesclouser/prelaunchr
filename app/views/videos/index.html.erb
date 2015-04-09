@@ -5,10 +5,25 @@
     </div>
     <div class="col-sm-6 col-xs-12">
       <ul class="navigation">
-        <li><%= link_to "Video 1", "#" %></li>
-        <li><%= link_to "Video 2", "#" %></li>
-        <li><%= link_to "Video 3", "#" %></li>
-        <li><%= link_to "Video 4", "#" %></li>
+        <li><%= link_to "Video 1", "/videos/101" %></li>
+        
+        <% if @video_id >= 102 %>
+          <li><%= link_to "Video 2", "/videos/102" %></li>
+        <% else %>
+          <li><%= link_to "Video 2", "#" %></li>
+        <% end %>
+
+        <% if @video_id >= 103 %>
+          <li><%= link_to "Video 3", "/videos/103" %></li>
+        <% else %>
+          <li><%= link_to "Video 3", "#" %></li>
+        <% end %>
+
+        <% if @video_id >= 104 %>
+          <li><%= link_to "Video 4", "/videos/104"  %></li>
+        <% else %>
+          <li><%= link_to "Video 4", "#" %></li>
+        <% end %>
       </ul>
     </div>
   </div>
@@ -25,7 +40,7 @@
   <div class="row">
     <div class="col-sm-9">
       <div class="video-container">
-        <iframe src="https://player.vimeo.com/video/123675247?title=0&byline=0&portrait=0" width="850" height="478" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/<%= video_url(@video_id) %>?autoplay=1&title=0&byline=0&portrait=0" width="850" height="478" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
     </div>
     <div class="col-sm-3">
