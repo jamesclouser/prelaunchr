@@ -56,6 +56,10 @@
     line-height: 110%;
   }
 
+  .video-container {
+    margin-top: 10px;
+  }
+
   .video-thumbnail {
     width: 100%;
     height: 100%;
@@ -67,10 +71,7 @@
     margin-bottom: 5px;
     margin-left: 10px;
     float: left;
-    margin-top: 0px;
-    @include breakpoint(sm) {
-      margin-top: 10px;
-    }
+    padding-top: 10px;
   }
 
   #video-wrapper-disabled {
@@ -90,15 +91,16 @@
 
   .share-box {
     margin-left: 10px;
+    width: 100%;
     max-width: 198px;
     max-height: 110px;
     border: 1px solid #cacaca;
     padding: 10px;
-    font-size: 16px;
+    font-size: 15px;
     color: #898989;
     text-align: center;
     float: left;
-  
+
     .points {
       color: #f1592a;
     }
