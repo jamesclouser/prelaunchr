@@ -32,8 +32,7 @@
         <div class="subtitle">&mdash;&mdash; Mini Video-eCourse &mdash;&mdash;</div>
         <div class="byline">Get Access Right Now!</div>
 
-        <%= image_tag "homemaker/arrow.png", style: "position:relative; right: 14%; top:-30px; float: right;", class: "hidden-sm hidden-xs" %>
-        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
 
           <%= form_for @user, :html => {  :role => 'form' }, :url => { :action => "create" } do |f| %>
             <div class="form-group">
@@ -46,6 +45,9 @@
               <button class="btn btn-lg btn-block" id="signup-btn" name="commit" type="submit">Yes, Give Me Access Right Now </button>
             </div>
           <% end %>
+        </div>
+        <div class="col-sm-1">
+          <%= image_tag "homemaker/arrow.png", class: "orange-arrow hidden-xs" %>
         </div>
       <% end %>
     </div>

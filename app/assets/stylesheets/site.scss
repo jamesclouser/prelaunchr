@@ -180,17 +180,14 @@ body {
     }
   }
 
+  .orange-arrow {
+    position: relative;
+    top: -30px;
+  }
+
   .white-arrow {
     position: relative;
-    left: 250px;
     top: -40px;
-    float:left;
-    @include breakpoint(md) {
-      left: 18%;
-    }
-    @include breakpoint(sm) {
-      left: 14%;
-    }
   }
 
   .share-box {
