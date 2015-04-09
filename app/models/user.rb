@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
       'count' => 1,
       "html" => "$5 Off<br>The Ultimate Homemaking Bundle",
       "class" => "two",
-      "image" =>  "creativity/reward1.jpg"
+      "image" =>  "homemaker/reward-1.jpg"
     },
     {
       'count' => 5,
@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
       'count' => 10,
       "html" => "FREE<br>Ultimate Homemaking Bundle<br>($34.95 Value)",
       "class" => "four",
-      "image" => "creativity/reward3.jpg"
+      "image" => "homemaker/reward-3.jpg"
     }
   ]
 
