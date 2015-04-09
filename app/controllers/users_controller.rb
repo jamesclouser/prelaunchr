@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    unless params.has_key?(:user) && params[:user][:email] && params[:user][:name]
+    unless params.has_key?(:user) && params[:user][:email] != '' && params[:user][:name] != ''
       return redirect_to :action => "new"
     end
 
