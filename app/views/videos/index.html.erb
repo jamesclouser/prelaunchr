@@ -10,19 +10,19 @@
         <% if @video_id >= 102 %>
           <li><%= link_to "Video 2", "/videos/102" %></li>
         <% else %>
-          <li>Video 2</li>
+          <li><span class="disabled">Video 2</span></li>
         <% end %>
 
         <% if @video_id >= 103 %>
           <li><%= link_to "Video 3", "/videos/103" %></li>
         <% else %>
-          <li>Video 3</li>
+          <li><span class="disabled">Video 3</span></li>
         <% end %>
 
         <% if @video_id >= 104 %>
           <li><%= link_to "Video 4", "/videos/104"  %></li>
         <% else %>
-          <li>Video 4</li>
+          <li><span class="disabled">Video 4</span></li>
         <% end %>
       </ul>
     </div>
@@ -32,20 +32,19 @@
 <div class="container" style="background-color: #ffffff;">
   <div class="row">
     <div class="col-xs-12">
-      <p class="title">
-        <% if @video_id == 101 %>
-          <strong>Video 1:</strong> The Secret to Stress-Free Laundry</p>
-          <p class="subtitle">Never Get Behind Again</p>
-        <% elsif @video_id == 102 %>
-          <strong>Video 2:</strong> The Secret to a Sparkling Clean Kitchen</p>
-          <p class="subtitle">Start the Day Fresh</p>
-        <% elsif @video_id == 103 %>
-          <strong>Video 3:</strong> TThe Secret to Super Simple Meal Planning</p>
-          <p class="subtitle">Avoid the 5 O'Clock Scramble</p>
-        <% elsif @video_id == 104 %>
-          <strong>Video 4:</strong> The Secret to a Speedy Nighttime Routine</p>
-          <p class="subtitle">Set Yourself Up for Success</p>
-        <% end %>
+      <% if @video_id == 101 %>
+        <p class="title"><strong>Video 1:</strong> The Secret to Stress-Free Laundry</p>
+        <p class="subtitle">Never Get Behind Again</p>
+      <% elsif @video_id == 102 %>
+        <p class="title"><strong>Video 2:</strong> The Secret to a Sparkling Clean Kitchen</p>
+        <p class="subtitle">Start the Day Fresh</p>
+      <% elsif @video_id == 103 %>
+        <p class="title"><strong>Video 3:</strong> TThe Secret to Super Simple Meal Planning</p>
+        <p class="subtitle">Avoid the 5 O'Clock Scramble</p>
+      <% elsif @video_id == 104 %>
+        <p class="title"><strong>Video 4:</strong> The Secret to a Speedy Nighttime Routine</p>
+        <p class="subtitle">Set Yourself Up for Success</p>
+      <% end %>
     </div>
   </div>
   <div class="row">
@@ -66,39 +65,47 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-xs-12">
-      <p class="title">Get the Ultimate Homemaking Bundle</p>
-      <p class="subtitle">Start Feathering Your Nest Today!</p>
-      <% if @video_id == 104 %>
-        <button class="buy-button" id="buy-now-btn" style="display: none;">Buy Now</button>
-      <% end %>
-      <%= image_tag "videos/nest.png", class: "nest-img" %>
-    </div>
-  </div>
+  <% if @video_id == 104 %>
+    <div id="buy-now-container" style="display: none;">
+      <div class="row">
+        <div class="col-xs-12">
+          <p class="title">Get the Ultimate Homemaking Bundle</p>
+          <p class="subtitle">Start Feathering Your Nest Today!</p>
+          <button class="buy-button">Buy Now</button>
+          <%= image_tag "videos/nest.png", class: "nest-img" %>
+        </div>
+      </div>
 
-  <div class="row">
-    <div class="col-xs-12">
-      <p class="title">Readers Like You</p>
+      <div class="row">
+        <div class="col-xs-12">
+          <p class="title">Readers Like You</p>
 
-      <p class="quote">
-        Just wanted to offer up my extreme gratitude to you as well as all the amazing contributors of this bundle. I feel so blessed to be able to benefit from all of this knowledge/wisdom/experience. I'm LOVING the bundle already!”
-      </p>
-      <p class="citation">HAPPY CUSTOMER—GAYLA WESTBROOK</p>
-      <p class="quote">
-        It's an amazing bundle! It has helped me so much already! Can't wait to see how myself and family change! Thank you for offering this. It really was an answered prayer!”
-      </p>
-      <p class="citation">HAPPY CUSTOMER—KATRINA BROOKS</p>
-      <p class="quote">
-        I bought one of your bundles and I still use the recipe ebooks every single week!”
-      </p>
-      <p class="citation">HAPPY CUSTOMER—SARAH NICHOLS</p>
-      <p class="quote">
-        I can't tell you how happy this makes me. I love your bundles! Please keep them coming!”
-      </p>
-      <p class="citation">HAPPY CUSTOMER—DIANA EDLIN</p>
+          <p class="quote">
+            "The bundle is filled with incredible content and financially is a steal! The bonuses are like icing on the cake and are always so much fun to redeem. I’ve also been introduced to new authors and fabulous companies that line up with my values. Thank you for providing such a wonderful product"
+          </p>
+          <p class="citation">LEEANN T.</p>
+          <p class="quote">
+            "These bundles are amazing. You can practically guarantee you will find plenty of resources that will be just what you have been looking for. In my opinion, they are definitely worth it."
+          </p>
+          <p class="citation">ANGELA | GREENVILLE, TX</p>
+          <p class="quote">
+            "The Ultimate Bundles are well worth the money – plus some! The materials are high quality and the topics are broad so as to meet a lot of needs. Thanks and I’m looking forward to future ones! P.S. – The extras are just as wonderful!"
+          </p>
+          <p class="citation">ANI P</p>
+          <p class="quote">
+            "I have so far purchased three Ultimate Bundles and they all have been excellent. The content is relevant, the authors are concise, humble, and generous, and the philosophy that permeates so many of the books has made self-improvement fun and easy."
+          </p>
+          <p class="citation">KATHRYN T. | MIDDLETON, TN</p>
+          <p class="quote">
+            "What a wonderful blessing to have purchased the bundle. The bonus offers alone are worth the price of the bundle. So many of my favorite bloggers contributed and I was able to find new bloggers who share my interests and offer useful advice and recipes."
+          </p>
+          <p class="citation">SOCCY R. | LAGOS, NIGERIA</p>
+        </div>
+
+        <a href="http://ultimate-bundles.com/homemaking-bundle-2015/">See what hundreds of other homemakers are saying...</a>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
 
 <%= render 'layouts/footer' %>
@@ -106,8 +113,8 @@
 <% if @video_id == 104 %>
   <script>
     setTimeout(function() {
-      $('#buy-now-btn').show();
-    }, 9000);
+      $('#buy-now-container').slideDown();
+    }, 460000);
   </script>
 <% end %>
 
