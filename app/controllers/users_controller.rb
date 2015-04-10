@@ -11,10 +11,6 @@ class UsersController < ApplicationController
   end
 
   def new
-    if Time.now.to_i > Time.parse("2015-04-18 21:00:00 -0700").to_i
-      redirect_to "http://ultimate-bundles.com/homemaking-bundle-2015/"
-    end
-
     @bodyId = 'home'
     @is_mobile = mobile_device?
 
@@ -26,8 +22,12 @@ class UsersController < ApplicationController
       @ip_limit = true
     end
 
-    respond_to do |format|
-      format.html # new.html.erb
+    if Time.now.to_i > Time.parse("2015-04-23 21:00:00 -0700").to_i
+      redirect_to "http://ultimate-bundles.com/homemaking-bundle-2015/"
+    else
+      respond_to do |format|
+        format.html # new.html.erb
+      end
     end
   end
 
