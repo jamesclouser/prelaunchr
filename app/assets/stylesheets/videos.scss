@@ -161,6 +161,25 @@
       font-size: 12px;
     }
   }
+  
+  a.big-link {
+    text-align: center;
+    color: #636363;
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    line-height: 110%;
+    text-decoration: none;
+    display: block;
+
+    @include breakpoint(xs) {
+      font-size: 20px;
+    }
+  }
+  a.big-link:hover {
+    text-decoration: underline;
+    font-weight: 600;
+  }
 }
 
 @media (max-width: 760px) {
