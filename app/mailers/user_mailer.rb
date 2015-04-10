@@ -3,6 +3,6 @@ class UserMailer < ActionMailer::Base
 
     def signup_email(user)
         @user = user
-        mail(:to => user.email, :subject => "Your Mini Video-ecourse")
+        mail(:to => user.email, :subject => "Your Mini Video-eCourse")
     end
 end
