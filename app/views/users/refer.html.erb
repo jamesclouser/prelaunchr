@@ -34,19 +34,19 @@
 </div>
 
 <%
-    referrals_count = @user.referrals.count
+    @referrals_count = @user.referrals.count
 
     stops = User::REFERRAL_STEPS
 
     found = nil
 
     stops.reverse_each { |stop|
-        if stop["count"] <= referrals_count and !found
-            stop["selected"] = true
-            found = stop
-        else
-            stop["selected"] = false
-        end
+      if stop["count"] <= @referrals_count and !found
+        stop["selected"] = true
+        found = stop
+      else
+        stop["selected"] = false
+      end
     }
  %>
 
@@ -83,15 +83,15 @@
     <div class="page-content">
       <%
         words = 'friend has'
-        if referrals_count > 1
+        if @referrals_count > 1
           words = 'friends have'
         end
       %>
 
-      <% if referrals_count == 0 %>
+      <% if @referrals_count == 0 %>
         <p class="place"><span>No</span> friends have joined...Yet!</p>
       <% else %>
-        <p class="place"><span><%= referrals_count %></span> <%= words %> joined</p>
+        <p class="place"><span><%= @referrals_count %></span> <%= words %> joined</p>
       <% end %>
       <p class="check">Keep checking</p>
 
