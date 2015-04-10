@@ -63,7 +63,7 @@ class User < ActiveRecord::Base
     Rails.logger.info ifs_result
     Rails.logger.info '------------ END INFUSIONSOFT'
   end
-    
+
   private
 
   def create_referral_code
@@ -82,7 +82,7 @@ class User < ActiveRecord::Base
     if (self.referrer_id && self.referrer_id > 0) || self.infusionsoft_affiliate_link.blank?
       UserMailer.delay.signup_email(self)
     else
-      AffiliateMailer.delay.signup_email(self)
+      #AffiliateMailer.delay.signup_email(self)
     end
   end
 end
