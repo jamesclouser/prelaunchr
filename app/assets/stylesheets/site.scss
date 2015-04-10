@@ -24,6 +24,15 @@ body {
     height: 535px;
   }
 
+  .ended {
+    color: #eeeeee;
+    font-size: 14px;
+    
+    .thanks {
+      font-size: 18px;
+    }
+  }
+
   .signup-header-image {
     @include center-block;
     width: 567px;
