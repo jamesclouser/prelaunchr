@@ -6,7 +6,7 @@ ActiveAdmin.register User do
     column :referral_code
     column :infusionsoft_affiliate_link
     column :referrer_id
-    default_actions
+    actions
   end
 
   controller do
