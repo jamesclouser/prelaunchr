@@ -100,10 +100,18 @@
     color: #898989;
     text-align: center;
     float: left;
+    
+    p {
+      margin-top: 6px;
+    }
 
     .points {
       color: #f1592a;
     }
+  }
+
+  .fb-share-button {
+    top: -4px;  
   }
 
   .buy-button {
