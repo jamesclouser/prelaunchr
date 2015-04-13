@@ -26,9 +26,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def authenticate
-    authenticate_or_request_with_http_basic do |username, password|
-      username == "ultimate" && password == "bundles"
-    end
-  end
+  #def authenticate
+  #  authenticate_or_request_with_http_basic do |username, password|
+  #    username == "ultimate" && password == "bundles"
+  #  end
+  #end
 end
