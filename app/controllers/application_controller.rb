@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :authenticate
+  #before_filter :authenticate
   before_filter :ref_to_cookie
 
   def mobile_device?
