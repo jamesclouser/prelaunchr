@@ -79,8 +79,8 @@ class User < ActiveRecord::Base
   end
 
   def send_welcome_email
-    if (self.referrer_id && self.referrer_id > 0) || self.infusionsoft_affiliate_link.blank?
-      UserMailer.delay.signup_email(self)
-    end
+    #if (self.referrer_id && self.referrer_id > 0) || self.infusionsoft_affiliate_link.blank?
+    UserMailer.delay.signup_email(self)
+    #end
   end
 end
