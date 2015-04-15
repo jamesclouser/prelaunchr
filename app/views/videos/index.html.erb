@@ -48,7 +48,7 @@
         <p class="title"><strong>Video 2:</strong> The Secret to a Sparkling Clean Kitchen</p>
         <p class="subtitle">Start the Day Fresh</p>
       <% elsif @video_id == 103 %>
-        <p class="title"><strong>Video 3:</strong> TThe Secret to Super Simple Meal Planning</p>
+        <p class="title"><strong>Video 3:</strong> The Secret to Super Simple Meal Planning</p>
         <p class="subtitle">Avoid the 5 O'Clock Scramble</p>
       <% elsif @video_id == 104 %>
         <p class="title"><strong>Video 4:</strong> The Secret to a Speedy Nighttime Routine</p>
@@ -61,6 +61,20 @@
       <div class="video-container">
         <iframe src="https://player.vimeo.com/video/<%= video_url(@video_id) %>?autoplay=1&title=0&byline=0&portrait=0" width="850" height="478" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
+      <br>
+      <% if @video_id == 101 %>
+        <p class="subtitle"><a href="http://2015uhomb-4steps.s3.amazonaws.com/4%20Simple%20Steps%20to%20Stress-Free%20Homemaking_Step1.pdf?utm_source=stressfreehomemaking&utm_medium=website&utm_content=step1&utm_campaign=uhomb2015" target="_blank">Download the PDF printable for Video #1</a></p>
+        <p class="subtitle"><em>Video #2 will be available soon! Watch your email!</em></p>
+      <% elsif @video_id == 102 %>
+        <p class="subtitle"><a href="http://2015uhomb-4steps.s3.amazonaws.com/4%20Simple%20Steps%20to%20Stress-Free%20Homemaking_Step2.pdf?utm_source=stressfreehomemaking&utm_medium=website&utm_content=step2&utm_campaign=uhomb2015" target="_blank">Download the PDF printable for Video #2</a></p>
+        <p class="subtitle"><em>Video #3 will be available soon! Watch your email!</em></p>
+      <% elsif @video_id == 103 %>
+        <p class="subtitle"><a href="http://2015uhomb-4steps.s3.amazonaws.com/4%20Simple%20Steps%20to%20Stress-Free%20Homemaking_Step3.pdf?utm_source=stressfreehomemaking&utm_medium=website&utm_content=step3&utm_campaign=uhomb2015" target="_blank">Download the PDF printable for Video #3</a></p>      
+        <p class="subtitle"><em>Video #4 will be available soon! Watch your email!</em></p>
+      <% elsif @video_id == 104 %>
+        <p class="subtitle"><a href="http://2015uhomb-4steps.s3.amazonaws.com/4%20Simple%20Steps%20to%20Stress-Free%20Homemaking_Step4.pdf?utm_source=stressfreehomemaking&utm_medium=website&utm_content=step4&utm_campaign=uhomb2015" target="_blank">Download the PDF printable for Video #4</a></p>
+        <p class="subtitle"><a href="http://2015uhomb-4steps.s3.amazonaws.com/4%20Simple%20Steps%20to%20Stress-Free%20Homemaking.zip?utm_source=stressfreehomemaking&utm_medium=website&utm_content=steps1-4&utm_campaign=uhomb2015" target="_blank">Download a .zip of all 4 PDF printables</a></p> 
+      <% end %>
     </div>
     <div class="col-xs-12 col-sm-3">
       <%= render "thumbnails_#{@video_id}" if @video_id %>
