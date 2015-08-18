@@ -8,8 +8,8 @@ body {
 
 .hero {
 	width: 100%;
-	height: 635px;
-  background: image-url("homemaker/hero-image.jpg") no-repeat;
+	height: 800px;
+  background: image-url("home/hero-healthy.jpg") no-repeat;
 	/*background-size: 1683px 446px;*/
   background-repeat: no-repeat;
   background-position: right center;
@@ -19,7 +19,7 @@ body {
   padding-top: 20px;
   margin-bottom: 30px;
 
-  @include breakpoint(xs) {
+  @include screen(320px, 767px) {
     height: 535px;
   }
 
@@ -46,6 +46,22 @@ body {
     /*@include image-2x("homemaker/thank_you2x.png", 1084px, 180px);*/
   }
 
+  .header-box {
+    border: 3px solid #5e5957;
+    color: #5e5957;
+    font-size: 22px;
+    padding: 6px;
+    text-transform: uppercase;
+    width: 640px;
+    margin: -23px auto 20px auto;
+    text-align: center;
+    font-weight: 400;
+    @include screen(320px, 767px) {
+      font-size: 14px;
+      width: 380px;
+    }
+  }
+
   .title {
     text-align: center;
     color: #ffffff;
@@ -56,56 +72,72 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
     line-height: 110%;
-    @include breakpoint(sm) {
+    @include screen(768px, 1024px) {
       font-size: 40px;
     }
-    @include breakpoint(xs) {
+    @include screen(320px, 767px) {
       font-size: 24px;
     }
   }
 
   .subtitle {
     text-align: center;
-    color: #ffe5ac;
-    font-size: 42px;
-    font-weight: 300;
-    margin-top: 10px;
+    color: #b63415;
+    font-style: italic;
+    font-size: 34px;
+    font-weight: 200;
+    margin-top: 20px;
     margin-bottom: 20px;
     display: block;
     line-height: 110%;
-    @include breakpoint(sm) {
-      font-size: 32px;
+    @include screen(768px, 1024px) {
+      font-size: 30px;
     }
-    @include breakpoint(xs) {
+    @include screen(320px, 767px) {
       font-size: 22px;
     }
   }
 
   .byline {
     text-align: center;
-    color: #ffffff;
-    font-size: 36px;
-    font-weight: 600;
-    font-transform: uppercase;
+    color: #504136;
+    font-size: 20px;
+    font-weight: 400;
     margin-top: 10px;
     margin-bottom: 30px;
     line-height: 110%;
-    @include breakpoint(sm) {
-      font-size: 30px;
+    @include screen(768px, 1024px) {
+      font-size: 16px;
     }
-    @include breakpoint(xs) {
-      font-size: 24px;
+    @include screen(320px, 767px) {
+      font-size: 12px;
       margin-bottom: 10px;
     }
   }
-  
-  #signup-btn {
-    background-color: #f1592a;
+
+  .audio-course-box {
+    border: 3px solid #bb432f;
+    color: #bb432f;
+    font-size: 20px;
+    padding: 8px;
+    text-transform: uppercase;
+    width: 280px;
+    margin: 20px auto;
+    text-align: center;
+    font-weight: 400;
   }
 
-  #signup-btn:hover {
-    background-color: #f1592a;
+  button#signup-btn {
+    background-color: #43b77a;
+    text-shadow: none;
+    color: #ffffff;
+    
+  }
+
+  button#signup-btn:hover {
     font-style: bold;
+    background-color: #43b77a;
+    color: #ffffff;
   }
 
 
@@ -126,10 +158,10 @@ body {
     margin-top: 20px;
     margin-bottom: 10px;
     line-height: 110%;
-    @include breakpoint(sm) {
+    @include screen(768px, 1024px) {
       font-size: 32px;
     }
-    @include breakpoint(xs) {
+    @include screen(320px, 767px) {
       font-size: 20px;
     }
   }
@@ -189,8 +221,7 @@ body {
   }
 
   .orange-arrow {
-    position: relative;
-    top: -30px;
+    margin-top: 40px;
   }
 
   .white-arrow {
