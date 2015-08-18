@@ -120,6 +120,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def thankyou
+    
+  end
+
   def refer
     email = cookies[:h_email]
 
