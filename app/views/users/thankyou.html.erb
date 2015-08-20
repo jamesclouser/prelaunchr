@@ -2,103 +2,23 @@
   <div class="container-fluid">
     <div class="col-sm-10 col-sm-offset-2 col-md-7 col-md-offset-5 col-xs-12">
 
-      <%= image_tag "homemaker/thank_you.png", class: "refer-header-image img-responsive" %>
-      <p class="refer-header">Access your course now. But first...</p>
-      <p class="refer-subheader">THINK YOUR FRIENDS COULD<br> USE LESS STRESS, TOO?</p>
-      <p class="refer-byline">INVITE FRIENDS & EARN REWARDS</p>
-
-      <p class="share-text">Share your unique link via email, Facebook or Twitter<br>
-        and earn rewards for each friend who signs up.</p>
-
-      <div class="row">
-        <div class="col-sm-1 col-sm-offset-1 col-lg-1 col-lg-offset-2">
-          <%= image_tag "homemaker/white_arrow.png", class: "white-arrow hidden-xs"%>
-        </div>
-        <div class="col-xs-6 col-sm-5 col-lg-3">
-          <div class="share-box">
-            <a href="http://www.facebook.com/sharer/sharer.php?u=http://stressfreehomemaking.com/?ref=<%= CGI::escape(@user.referral_code) %>" class="fb" target="_blank"><%= image_tag "homemaker/facebook.png" %></a>
-            &nbsp;&nbsp;
-            <a href="http://twitter.com/share?url=http://stressfreehomemaking.com/?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape('I’m giving homemaking stress the boot. Wanna join me?') %>" class="twit" target="_blank"><%= image_tag "homemaker/twitter.png" %></a>
-            &nbsp;&nbsp;
-            <a href="mailto:?subject=You%20need%20to%20check%20this%20out&body=Hi,%0D%0A%0D%0AI’m giving homemaking stress the boot, by using these 4 simple steps.%0D%0A%0D%0ADo you want to join me? http://stressfreehomemaking.com/?ref=<%= CGI::escape(@user.referral_code) %>%0D%0A%0D%0AThis site will be up for another week or so, so you’ll want to check it out now!" class="email">
-              <%= image_tag "homemaker/email.png" %>
-            </a>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-4">
-          <%= link_to "Take Me to the Course", videos_url, class: "btn course-button" %>
-        </div>
+      <%= image_tag "home/thank-you.png", class: "refer-header-image img-responsive" %>
+      <p class="refer-header">Get your family started with healthier habits right now by checking out Day 1 of the eCourse. </p>
+      
+      <%= link_to "Take Me To The Course", videos_url, class: "btn course-button" %>
+      
+      <div class="course-box">
+        <p>Two ways to make sure you don't miss out on your eCourse:</p>
+        <ol>
+          <li>Watch your inbox for an email from “Stephanie @ Spark Health”. That’s how you’ll receive each new eCourse lesson.</li>
+          <li>Make sure our eCourse emails don’t get marked as spam by either a) dragging an email from us to the folder marked “Primary” (in Gmail) or b) add the address "stephanie@sparkhealth.co” to your Contacts.</li>
+        </ol>
       </div>
+
     </div>
   </div>
 </div>
 
-<%
-    @referrals_count = @user.referrals.count
-
-    stops = User::REFERRAL_STEPS
-
-    found = nil
-
-    stops.reverse_each { |stop|
-      if stop["count"] <= @referrals_count and !found
-        stop["selected"] = true
-        found = stop
-      else
-        stop["selected"] = false
-      end
-    }
- %>
-
-<div class="col-md-10 col-md-offset-1 col-xs-12">
-  <p class="callout">Here's How It Works:</p>
-  <div class="prizes <% if found %>prize-<%= found["class"] %><% end %>">
-    <div class="page-content">
-      <ul class="products clearfix">
-        <li class="title"><p class="friends">Friends Joined</p><p class="rewards">Rewards</p></li>
-        <% stops.each do |stop| %>
-          <li class="product <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'four' %>last<% end %>">
-              <div class="circle"><%= stop["count"] %></div>
-              <div class="sep"></div>
-              <p><%= stop["html"].html_safe %></p>
-
-              <div class="reward">
-                <%= image_tag stop["image"], height: '254' %>
-              </div>
-          </li>
-        <% end %>
-      </ul>
-
-      <div class="progress">
-        <div class="mover">
-          <div class="bar clearfix"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-10 col-md-offset-1 col-xs-12">
-  <div class="prizes <% if found %>prize-<%= found["class"] %><% end %>">
-    <div class="page-content">
-      <%
-        words = 'friend has'
-        if @referrals_count > 1
-          words = 'friends have'
-        end
-      %>
-
-      <% if @referrals_count == 0 %>
-        <p class="place"><span>No</span> friends have joined...Yet!</p>
-      <% else %>
-        <p class="place"><span><%= @referrals_count %></span> <%= words %> joined</p>
-      <% end %>
-      <p class="check">Keep checking</p>
-
-      <p class="fine-print" style="text-align: center;"><em>* 1 sign-up per household</em></p>
-    </div>
-  </div>
-</div>
 
 <%= render 'layouts/footer' %>
 

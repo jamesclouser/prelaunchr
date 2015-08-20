@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'users/index' => 'users#index'
 
   get 'refer-a-friend' => 'users#refer'
+  get 'thank-you' => 'users#thankyou'
 
   get 'privacy-policy' => 'users#policy'
   get 'terms-of-use' => 'users#terms'

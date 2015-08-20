@@ -108,11 +108,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       if !@user.nil?
         cookies[:h_email] = { :value => @user.email }
-        #format.html { redirect_to '/refer-a-friend' }
         unless @user.infusionsoft_affiliate_link.blank?
           format.html { redirect_to @user.infusionsoft_affiliate_link }
         else
-          format.html { redirect_to '/refer-a-friend' }
+          format.html { redirect_to '/thank-you' }
         end
       else
         format.html { redirect_to root_path, :alert => "Something went wrong!" }
@@ -121,7 +120,20 @@ class UsersController < ApplicationController
   end
 
   def thankyou
-    
+    email = cookies[:h_email]
+
+    @bodyId = 'refer'
+    @is_mobile = mobile_device?
+
+    @user = User.find_by_email(email)
+
+    respond_to do |format|
+      if !@user.nil?
+        format.html
+      else
+        format.html { redirect_to root_path, :alert => "Something went wrong!" }
+      end
+    end
   end
 
   def refer
@@ -159,7 +171,7 @@ class UsersController < ApplicationController
     if !Rails.application.config.ended
       email = cookies[:h_email]
       if email and !User.find_by_email(email).nil?
-        redirect_to '/refer-a-friend'
+        redirect_to '/thank-you'
       else
         cookies.delete :h_email
       end
