@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   resources :videos, only: [:index]
   get "/videos/:video_id", to: "videos#index", as: "video_id"
 
+  resources :lessons, only: [:index]
+  get "/lessons/:lesson_id", to: "lessons#index", as: "lesson_id"
+
+
   unless Rails.application.config.consider_all_requests_local
       get '*not_found', to: 'users#redirect', :format => false
   end
