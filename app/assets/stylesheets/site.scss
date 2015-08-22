@@ -49,15 +49,23 @@ body {
   .header-box {
     border: 3px solid #5e5957;
     color: #5e5957;
-    font-size: 22px;
+    font-size: 20px;
     padding: 6px;
     text-transform: uppercase;
-    width: 640px;
+    width: 600px;
     margin: -23px auto 20px auto;
     text-align: center;
     font-weight: 400;
-    @include screen(320px, 767px) {
+    @include screen(1201px, 1400px) {
+      width: 500px;
+      font-size: 16px;
+    }
+    @include screen(768px, 1200px) {
+      width: 420px;
       font-size: 14px;
+    }
+    @include screen(320px, 767px) {
+      font-size: 12px;
       width: 380px;
     }
   }
