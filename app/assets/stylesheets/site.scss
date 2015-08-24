@@ -238,7 +238,7 @@ body {
     background: transparent;
     border: 3px solid #b98a63;
   
-    width: 460px;
+    width: 520px;
     margin: 30px auto;
     display: block;
     
@@ -270,7 +270,7 @@ body {
     }
     li {
       color: #b98a63;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 400;
       margin: 10px;
       @include screen(768px, 1024px) {
