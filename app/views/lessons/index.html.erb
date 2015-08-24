@@ -10,28 +10,28 @@
 <div class="header">
   <div class="container">
     <div class="col-sm-6 col-xs-12">
-      <%= image_tag "videos/header_logo.png", class: "img-responsive" %>
+      <%= image_tag "lessons/4habits_header.png", class: "img-responsive" %>
     </div>
     <div class="col-sm-6 col-xs-12">
       <ul class="navigation">
-        <li><%= link_to "Lesson 1", "/lessons/101" %></li>
+        <li><%= link_to "Habit 1", "/lessons/101" %></li>
 
         <% if @lesson_id >= 102 %>
-          <li><%= link_to "Lesson 2", "/lessons/102" %></li>
+          <li><%= link_to "Habit 2", "/lessons/102" %></li>
         <% else %>
-          <li><span class="disabled">Lesson 2</span></li>
+          <li><span class="disabled">Habit 2</span></li>
         <% end %>
 
         <% if @lesson_id >= 103 %>
-          <li><%= link_to "Lesson 3", "/lessons/103" %></li>
+          <li><%= link_to "Habit 3", "/lessons/103" %></li>
         <% else %>
-          <li><span class="disabled">Lesson 3</span></li>
+          <li><span class="disabled">Habit 3</span></li>
         <% end %>
 
         <% if @lesson_id >= 104 %>
-          <li><%= link_to "Lesson 4", "/lessons/104"  %></li>
+          <li><%= link_to "Habit 4", "/lessons/104"  %></li>
         <% else %>
-          <li><span class="disabled">Lesson 4</span></li>
+          <li><span class="disabled">Habit 4</span></li>
         <% end %>
       </ul>
     </div>
@@ -45,14 +45,14 @@
         <p class="title"><strong>Habit 1:</strong> Nurture your best self</p>
         <p class="subtitle">with Heather Dessinger</p>
       <% elsif @lesson_id == 102 %>
-        <p class="title"><strong>Video 2:</strong> The Secret to a Sparkling Clean Kitchen</p>
-        <p class="subtitle">Start the Day Fresh</p>
+        <p class="title"><strong>Habit 2:</strong> Keep your family fit</p>
+        <p class="subtitle">with Crystal Paine</p>
       <% elsif @lesson_id == 103 %>
-        <p class="title"><strong>Video 3:</strong> The Secret to Super Simple Meal Planning</p>
-        <p class="subtitle">Avoid the 5 O'Clock Scramble</p>
+        <p class="title"><strong>Habit 3:</strong> Eat more homemade meals around the table</p>
+        <p class="subtitle">with Katie Kimball</p>
       <% elsif @lesson_id == 104 %>
-        <p class="title"><strong>Video 4:</strong> The Secret to a Speedy Nighttime Routine</p>
-        <p class="subtitle">Set Yourself Up for Success</p>
+        <p class="title"><strong>Habit 4:</strong> Reach for natural remedies with confidence</p>
+        <p class="subtitle">with Katie - Wellness Mama</p>
       <% end %>
     </div>
   </div>
@@ -61,25 +61,72 @@
       <% if @lesson_id == 101 %>
         <%= image_tag "lessons/habit_1.jpg", class: "img-responsive center-block" %>
         <br>
-        <p class="subtitle"><a href="http://2015uhomb-4steps.s3.amazonaws.com/4%20Simple%20Steps%20to%20Stress-Free%20Homemaking_Step1.pdf?utm_source=stressfreehomemaking&utm_medium=website&utm_content=step1&utm_campaign=uhomb2015" target="_blank">Download the PDF printable for Habit #1</a></p>
-        <p class="subtitle"><em>Lesson #2 will be available soon! Watch your email!</em></p>
+        <div class="audio-player">
+          <audio src="http://2015uhlb-4habits.s3.amazonaws.com/habit1.mp3" preload="auto" />
+        </div>
+        <p class="subtitle">
+          <%= link_to (image_tag "lessons/download.png"), "http://2015uhlb-4habits.s3.amazonaws.com/habit1.mp3", target: "_blank" %> 
+          <%= link_to "Download MP3", "http://2015uhlb-4habits.s3.amazonaws.com/habit1.mp3", target: "_blank" %>
+        </p>
+        <p class="subtitle">
+          <%= link_to (image_tag "lessons/pdf-icon.png"), "http://2015uhlb-4habits.s3.amazonaws.com/habit1-nurture-self-4essentialhabitsofhealthyfamilies.pdf" %> 
+          <a href="http://2015uhlb-4habits.s3.amazonaws.com/habit1-nurture-self-4essentialhabitsofhealthyfamilies.pdf" target="_blank">Download the PDF printable for Habit #1</a></p>
+        <p class="subtitle">
+          <a href="http://2015uhlb-4habits.s3.amazonaws.com/habit1-nurture-self-4essentialhabitsofhealthyfamilies.docx" target="_blank">Download the Transcript</a></p>
+        <p class="subtitle"><em>Habit #2 will be available soon! Watch your email!</em></p>
+
       <% elsif @lesson_id == 102 %>
+
         <%= image_tag "lessons/habit_2.jpg", class: "img-responsive center-block" %>
         <br>
-        <p class="subtitle"><a href="http://2015uhomb-4steps.s3.amazonaws.com/4%20Simple%20Steps%20to%20Stress-Free%20Homemaking_Step2.pdf?utm_source=stressfreehomemaking&utm_medium=website&utm_content=step2&utm_campaign=uhomb2015" target="_blank">Download the PDF printable for Video #2</a></p>
-        <p class="subtitle"><em>Video #3 will be available soon! Watch your email!</em></p>
+        <div class="audio-player">
+          <audio src="http://2015uhlb-4habits.s3.amazonaws.com/habit2.mp3" preload="auto" />
+        </div>
+        <p class="subtitle">
+          <%= link_to (image_tag "lessons/download.png"), "http://2015uhlb-4habits.s3.amazonaws.com/habit2.mp3", target: "_blank" %> 
+          <%= link_to "Download MP3", "http://2015uhlb-4habits.s3.amazonaws.com/habit2.mp3", target: "_blank" %>
+        </p>
+        <p class="subtitle">
+          <%= link_to (image_tag "lessons/pdf-icon.png"), "http://2015uhlb-4habits.s3.amazonaws.com/habit2-get-fit-4essentialhabitsofhealthyfamilies.pdf" %> 
+          <a href="http://2015uhlb-4habits.s3.amazonaws.com/habit2-get-fit-4essentialhabitsofhealthyfamilies.pdf" target="_blank">Download the PDF printable for Habit #2</a></p>
+        <p class="subtitle">
+          <a href="http://2015uhlb-4habits.s3.amazonaws.com/habit2-get-fit-4essentialhabitsofhealthyfamilies.docx" target="_blank">Download the Transcript</a></p>
+        <p class="subtitle"><em>Habit #3 will be available soon! Watch your email!</em></p>
+
       <% elsif @lesson_id == 103 %>
+
         <%= image_tag "lessons/habit_3.jpg", class: "img-responsive center-block" %>
         <br>
-
-        <p class="subtitle"><a href="http://2015uhomb-4steps.s3.amazonaws.com/4%20Simple%20Steps%20to%20Stress-Free%20Homemaking_Step3.pdf?utm_source=stressfreehomemaking&utm_medium=website&utm_content=step3&utm_campaign=uhomb2015" target="_blank">Download the PDF printable for Video #3</a></p>      
+        <div class="audio-player">
+          <audio src="http://2015uhlb-4habits.s3.amazonaws.com/habit3.mp3" preload="auto" />
+        </div>
+        <p class="subtitle">
+          <%= link_to (image_tag "lessons/download.png"), "http://2015uhlb-4habits.s3.amazonaws.com/habit3.mp3", target: "_blank" %> 
+          <%= link_to "Download MP3", "http://2015uhlb-4habits.s3.amazonaws.com/habit3.mp3", target: "_blank" %>
+        </p>
+        <p class="subtitle">
+          <%= link_to (image_tag "lessons/pdf-icon.png"), "http://2015uhlb-4habits.s3.amazonaws.com/habit3-homemade-meals-4essentialhabitsofhealthyfamilies.pdf" %> 
+          <a href="http://2015uhlb-4habits.s3.amazonaws.com/habit3-homemade-meals-4essentialhabitsofhealthyfamilies.pdf" target="_blank">Download the PDF printable for Habit #3</a></p>
+        <p class="subtitle">
+          <a href="http://2015uhlb-4habits.s3.amazonaws.com/habit3-homemade-meals-4essentialhabitsofhealthyfamilies.docx" target="_blank">Download the Transcript</a></p>
         <p class="subtitle"><em>Habit #4 will be available soon! Watch your email!</em></p>
+
       <% elsif @lesson_id == 104 %>
+
         <%= image_tag "lessons/habit_4.jpg", class: "img-responsive center-block" %>
         <br>
-
-        <p class="subtitle"><a href="http://2015uhomb-4steps.s3.amazonaws.com/4%20Simple%20Steps%20to%20Stress-Free%20Homemaking_Step4.pdf?utm_source=stressfreehomemaking&utm_medium=website&utm_content=step4&utm_campaign=uhomb2015" target="_blank">Download the PDF printable for Video #4</a></p>
-        <p class="subtitle"><a href="http://2015uhomb-4steps.s3.amazonaws.com/4%20Simple%20Steps%20to%20Stress-Free%20Homemaking.zip?utm_source=stressfreehomemaking&utm_medium=website&utm_content=steps1-4&utm_campaign=uhomb2015" target="_blank">Download a .zip of all 4 PDF printables</a></p> 
+        <div class="audio-player">
+          <audio src="http://2015uhlb-4habits.s3.amazonaws.com/habit4.mp3" preload="auto" />
+        </div>
+        <p class="subtitle">
+          <%= link_to (image_tag "lessons/download.png"), "http://2015uhlb-4habits.s3.amazonaws.com/habit4.mp3", target: "_blank" %> 
+          <%= link_to "Download MP3", "http://2015uhlb-4habits.s3.amazonaws.com/habit4.mp3", target: "_blank" %>
+        </p>
+        <p class="subtitle">
+          <%= link_to (image_tag "lessons/pdf-icon.png"), "http://2015uhlb-4habits.s3.amazonaws.com/habit4-natural-remedies-4essentialhabitsofhealthyfamilies.pdf" %> 
+          <a href="http://2015uhlb-4habits.s3.amazonaws.com/habit4-natural-remedies-4essentialhabitsofhealthyfamilies.pdf" target="_blank">Download the PDF printable for Habit #4</a></p>
+        <p class="subtitle">
+          <a href="http://2015uhlb-4habits.s3.amazonaws.com/habit4-natural-remedies-4essentialhabitsofhealthyfamilies.docx" target="_blank">Download the Transcript</a></p>
       <% end %>
     </div>
     <div class="col-xs-12 col-sm-3">
@@ -141,9 +188,11 @@
 
 <script>
   $(document).ready(function(){
-    // Target your .container, .wrapper, .post, etc.
-    $(".video-container").fitVids();
+    audiojs.events.ready(function() {
+      var as = audiojs.createAll();
+    });
   });
+  
 </script>
   
 <!-- Google Tag Manager -->

@@ -2,9 +2,9 @@
   background-color: #f2f2f2;
 
   .header {
-    background-color: #464646;
+    background-color: #eeeeee;
     height: 80px;
-    padding-top: 30px;
+    padding-top: 20px;
 
     ul.navigation {
       width: 100%;
@@ -58,16 +58,26 @@
     }
   }
 
+  .audio-player {
+    width: 460px;
+    margin: 0px auto;
+  }
+
   .subtitle {
     text-align: center;
     color: #636363;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 300;
-    margin-bottom: 30px;
-    line-height: 110%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 100%;
+
 
     @include breakpoint(xs) {
       font-size: 20px;
+    }
+    img {
+      vertical-align: middle;
     }
   }
 

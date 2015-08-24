@@ -20,11 +20,11 @@ body {
   margin-bottom: 30px;
 
   @include screen(320px, 767px) {
-    height: 535px;
+    height: 660px;
   }
 
   .ended {
-    color: #eeeeee;
+    color: #999999;
     font-size: 14px;
     
     .thanks {
@@ -64,10 +64,15 @@ body {
       width: 420px;
       font-size: 14px;
     }
-    @include screen(320px, 767px) {
+    @include screen(420px, 767px) {
       font-size: 12px;
       width: 380px;
     }
+    @include screen(320px, 419px) {
+      font-size: 10px;
+      width: 320px;
+    }
+
   }
 
   .title {
@@ -186,10 +191,10 @@ body {
     margin-bottom: 10px;
     text-align: center;
     line-height: 110%;
-    @include breakpoint(sm) {
+    @include screen(768px, 1024px) {
       font-size: 28px;
     }
-    @include breakpoint(xs) {
+    @include screen(320px, 767px) {
       font-size: 22px;
     }
   }
@@ -204,10 +209,10 @@ body {
     display: block;
     line-height: 110%;
     text-align: center;
-    @include breakpoint(sm) {
+    @include screen(768px, 1024px) {
       font-size: 28px;
     }
-    @include breakpoint(xs) {
+    @include screen(320px, 767px) {
       font-size: 26px;
     }
   }
@@ -220,10 +225,10 @@ body {
     margin-top: 10px;
     margin-bottom: 40px;
     text-align: center;
-    @include breakpoint(sm) {
+    @include screen(768px, 1024px) {
       font-size: 20px;
     }
-    @include breakpoint(xs) {
+    @include screen(320px, 767px) {
       font-size: 12px;
     }
   }
@@ -237,6 +242,14 @@ body {
     margin: 30px auto;
     display: block;
     
+    @include screen(420px, 767px) {
+      width: 400px;
+    }
+
+    @include screen(320px, 419px) {
+      width: 310px;
+    }
+
     p {
       color: #b98a63;
       font-size: 30px;
@@ -245,10 +258,10 @@ body {
       margin-top: 10px;
       margin-bottom: 40px;
       text-align: center;
-      @include breakpoint(sm) {
+      @include screen(768px, 1024px) {
         font-size: 20px;
       }
-      @include breakpoint(xs) {
+      @include screen(320px, 767px) {
         font-size: 12px;
       }
     }
@@ -260,11 +273,12 @@ body {
       font-size: 24px;
       font-weight: 400;
       margin: 10px;
-      @include breakpoint(sm) {
+      @include screen(768px, 1024px) {
         font-size: 18px;
       }
-      @include breakpoint(xs) {
+      @include screen(320px, 767px) {
         font-size: 12px;
+        color: #333333;
       }
 
     }
@@ -318,7 +332,7 @@ body {
   font-size: 18px;
   margin-bottom: 30px;
   text-decoration: none;
-  @include breakpoint(xs) {
+  @include screen(320px, 767px) {
     font-size: 14px;
   }
   a.fine-print {
