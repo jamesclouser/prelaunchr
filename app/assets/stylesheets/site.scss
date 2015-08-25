@@ -234,14 +234,14 @@ body {
   }
 
   .course-box {
-    padding: 20px;
+    padding: 12px;
     background: transparent;
     border: 3px solid #b98a63;
   
-    width: 520px;
+    width: 600px;
     margin: 30px auto;
     display: block;
-    
+
     @include screen(420px, 767px) {
       width: 400px;
     }
@@ -252,11 +252,11 @@ body {
 
     p {
       color: #b98a63;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 600;
       line-height: 1.1;
       margin-top: 10px;
-      margin-bottom: 40px;
+      margin-bottom: 10px;
       text-align: center;
       @include screen(768px, 1024px) {
         font-size: 20px;
@@ -270,11 +270,11 @@ body {
     }
     li {
       color: #b98a63;
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 400;
       margin: 10px;
       @include screen(768px, 1024px) {
-        font-size: 18px;
+        font-size: 14px;
       }
       @include screen(320px, 767px) {
         font-size: 12px;
@@ -323,6 +323,11 @@ body {
     color: #43b77a;
     border: 3px solid #43b77a;
   }
+}
+
+.video-container {
+  margin-top: 10px;
+  text-align: center;
 }
 
 .footer {
