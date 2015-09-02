@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       @ip_limit = true
     end
 
-    if Time.now.to_i > Time.parse("2015-09-01 21:00:00 -0700").to_i
+    if Time.now.to_i > Time.parse("2015-10-01 21:00:00 -0700").to_i
       redirect_to "http://ultimate-bundles.com/homemaking-bundle-2015/"
     else
       respond_to do |format|
