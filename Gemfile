@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.3'
+ruby '2.3.1'
 
 gem 'rails', '4.2.3'
 
@@ -30,7 +30,8 @@ group :development, :test do
 end
 
 gem 'delayed_job_active_record'
-gem 'unicorn'
+gem 'puma'
+gem 'sqlite3'
 
 group :staging, :production do
   gem 'rails_12factor'
