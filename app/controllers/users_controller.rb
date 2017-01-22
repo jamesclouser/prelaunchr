@@ -22,8 +22,8 @@ class UsersController < ApplicationController
       @ip_limit = true
     end
 
-    if Time.now.to_i > Time.parse("2015-09-06 00:00:00 -0800").to_i
-      redirect_to "http://ultimate-bundles.com/healthy-living-bundle-2015/"
+    if Time.now.to_i > Time.parse("2017-02-28 00:00:00 -0800").to_i
+      redirect_to "https://ultimate-bundles.com"
     else
       respond_to do |format|
         format.html # new.html.erb
