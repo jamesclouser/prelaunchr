@@ -31,7 +31,6 @@ end
 
 gem 'delayed_job_active_record'
 gem 'puma'
-gem 'sqlite3'
 
 group :staging, :production do
   gem 'rails_12factor'
