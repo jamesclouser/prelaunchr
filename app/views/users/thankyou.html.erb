@@ -1,60 +1,31 @@
-<div class="hero">
-  <div class="container-fluid">
-    <div class="col-sm-10 col-sm-offset-2 col-md-7 col-md-offset-5 col-xs-12">
+<!--SECTION: HEADER-->
+<section class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<%= image_tag "users/header.png", :class => "img-responsive" %>
+			</div>
+		</div>
+	</div>
+</section>
 
-      <%= image_tag "home/thank-you.png", class: "refer-header-image img-responsive" %>
-
-      <div class="video-container">
-        <iframe src="https://player.vimeo.com/video/137210120" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      </div>
-      <!--<p class="refer-header">Get your family started with healthier habits right now by checking out Day 1 of the eCourse. </p>-->
-
-      <%= link_to "Take Me To The Course", lessons_url, class: "btn course-button" %>
-
-      <div class="course-box">
-        <p>Two ways to make sure you don't miss out on your eCourse:</p>
-        <ol>
-          <li>Watch your inbox for an email from “Stephanie @ Spark Health”. That’s how you’ll receive each new eCourse lesson.</li>
-          <li>Make sure our eCourse emails don’t get marked as spam by either a) dragging an email from us to the folder marked “Primary” (in Gmail) or b) add the address "stephanie@sparkhealth.co” to your Contacts.</li>
-        </ol>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-<%= render 'layouts/footer' %>
-
-
-<script>
-function selectText(containerid) {
-    if (document.selection) {
-        var range = document.body.createTextRange();
-        range.moveToElementText(document.getElementById(containerid));
-        range.select();
-    } else if (window.getSelection) {
-        var range = document.createRange();
-        range.selectNode(document.getElementById(containerid));
-        window.getSelection().addRange(range);
-    }
-}
-
-<script>
-  $(document).ready(function(){
-    // Target your .container, .wrapper, .post, etc.
-    $(".video-container").fitVids();
-  });
-</script>
-
-</script>
-
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KLCQR3"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KLCQR3');</script>
-<!-- End Google Tag Manager —>
+<!--SECTION: THANKS-->
+<section class="thanks container-fluid">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<%= image_tag "users/thank.png", :class => "img-responsive, img-center" %>
+			</div>
+			<div class="col-sm-10 col-sm-offset-1 text-center">
+				<h4>The Photography Strengths Assessment is headed your way.</h4>
+			</div>
+			<div class="col-sm-12 text-center">
+				<i class="fa fa-flash orange"></i>
+			</div>
+			<div class="col-sm-10 col-sm-offset-1">
+				<p>We’ve just sent you a confirmation email that includes access to The Photography Strengths Assessment. Take it as soon as you can! Your journey to the life of your dreams starts NOW!</p>
+				<p>If you don’t receive your confirmation email soon, check your spam folder just in case. Feel free to contact us at stephanie [at] ultimatebundles.com if you need assistance or have any questions!</p>
+			</div>
+		</div>
+	</div>
+</section>

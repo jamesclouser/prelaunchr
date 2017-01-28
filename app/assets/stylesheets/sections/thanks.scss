@@ -1,0 +1,56 @@
+.site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.thanks {
+    width: 100%;
+    background: $seafoam;
+    /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(#dfedee, $seafoam);
+    /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(#dfedee, $seafoam);
+    /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(#dfedee, $seafoam);
+    /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#dfedee, $seafoam);
+    /* Standard syntax */
+    padding-top: 55px;
+    flex: 1;
+
+    i {
+        font-size: 68px;
+        margin: {
+            top: 10px;
+            bottom: 10px;
+        }
+        transform: rotate(5deg);
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+}
+/**MEDIA QUERIES*/
+@media only screen and (max-width:1200px) {
+    .thanks {
+        i {
+            font-size: 58px;
+        }
+    }
+}
+@media only screen and (max-width:992px) {
+    .thanks {
+        i {
+            font-size: 48px;
+        }
+    }
+}
+@media only screen and (max-width:768px) {
+    .thanks {
+        i {
+            font-size: 38px;
+        }
+    }
+}

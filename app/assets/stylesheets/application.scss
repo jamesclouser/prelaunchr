@@ -1,9 +1,19 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
-@import "mixins";
-@import "media_queries";
-@import "site";
-@import "lessons";
-@import "active_admin";
+@import 'elements/font-awesome';
+@import 'elements/fonts';
+@import 'elements/typography';
+@import 'elements/helpers';
+@import 'elements/responsive-align';
+@import 'elements/button';
+@import 'sections/header';
+@import 'sections/assessment';
+@import 'sections/discover';
+@import 'sections/david';
+@import 'sections/webinars';
+@import 'sections/results';
+@import 'sections/next';
+@import 'sections/scores';
+@import 'sections/thanks';
+@import 'sections/footer';

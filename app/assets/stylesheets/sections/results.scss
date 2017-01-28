@@ -1,0 +1,107 @@
+.results {
+    padding-top: 35px;
+    background: {
+        image: url("users/BG.png");
+        size: cover;
+    }
+
+    &__score {
+        height: 300px;
+        width: 300px;
+        border: 20px dashed #969595;
+        border-radius: 100%;
+        margin: {
+            top: 20px;
+            bottom: 20px;
+        }
+
+        h1 {
+            padding-top: 44px;
+            font-size: 120px;
+            line-height: 1;
+        }
+    }
+
+    &__social {
+        .fa {
+            font-size: 40.17px;
+            color: white;
+            height: 70px;
+            width: 70px;
+            line-height: 70px;
+            border-radius: 100%;
+            margin: {
+                left: 5px;
+                right: 5px;
+                bottom: 5px;
+            }
+
+            &-twitter {
+                background-color: #1da1f3;
+            }
+
+            &-facebook {
+                background-color: #3b5998;
+            }
+        }
+    }
+
+    &__scroll {
+        background-color: $orange;
+        margin-top: 10px;
+        padding: {
+            top: 10px;
+            bottom: 10px;
+        }
+
+        .fa {
+            font-size: 35px;
+            margin: {
+                left: 12px;
+                right: 12px;
+            }
+        }
+    }
+}
+/**MEDIA QUERIES**/
+@media only screen and (max-width:1200px) {
+    .results {
+        padding-top: 25px;
+    }
+}
+@media only screen and (max-width:992px) {
+    .results {
+        padding-top: 20px;
+    }
+}
+@media only screen and (max-width:768px) {
+    .results {
+        padding-top: 15px;
+
+        &__score {
+            height: 200px;
+            width: 200px;
+            border: 10px dashed #969595;
+            border-radius: 100%;
+            margin: {
+                top: 20px;
+                bottom: 20px;
+            }
+
+            h1 {
+                padding-top: 27px;
+                font-size: 60px;
+                line-height: 1;
+            }
+        }
+
+        &__social {
+            .fa {
+                height: 50px;
+                width: 50px;
+                line-height: 50px;
+                font-size: 30px;
+            }
+        }
+    }
+}

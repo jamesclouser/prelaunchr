@@ -1,0 +1,76 @@
+.button {
+    -moz-box-shadow: inset 0 1px 0 0 #f5cb93;
+    -webkit-box-shadow: inset 0 1px 0 0 #f5cb93;
+    box-shadow: inset 0 1px 0 0 #f5cb93;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f5cb93 ), color-stop(1, #f96204 ));
+    background: -moz-linear-gradient(top, #f5cb93 5%, #f96204 100%);
+    background: -webkit-linear-gradient(top, #f5cb93 5%, #f96204 100%);
+    background: -o-linear-gradient(top, #f5cb93 5%, #f96204 100%);
+    background: -ms-linear-gradient(top, #f5cb93 5%, #f96204 100%);
+    background: linear-gradient(to bottom, #f5cb93 5%, #f96204 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=  '#f5cb93 ', endColorstr='#f96204 ',GradientType=0);
+    background-color: #f5cb93;
+    border: 0 solid white;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font: {
+        family: 'Oswald', sans-serif;
+        weight: 300;
+        size: 31px;
+    }
+    letter-spacing:0.075em;
+    padding: 16px 22px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #f96204;
+
+    &--big {
+        font-size: 32.5px;
+    }
+
+    &--small {
+        font-size: 30.63px;
+    }
+
+    i {
+        margin-left: 5px;
+    }
+
+    &:hover {
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f96204 ), color-stop(1, #f5cb93 ));
+        background: -moz-linear-gradient(top, #f96204 5%, #f5cb93 100%);
+        background: -webkit-linear-gradient(top, #f96204 5%, #f5cb93 100%);
+        background: -o-linear-gradient(top, #f96204 5%, #f5cb93 100%);
+        background: -ms-linear-gradient(top, #f96204 5%, #f5cb93 100%);
+        background: linear-gradient(to bottom, #f96204 5%, #f5cb93 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=  '#f96204 ', endColorstr='#f5cb93 ',GradientType=0);
+        background-color: #f96204;
+        color: #ffffff;
+    }
+
+    &:active {
+        position: relative;
+        top: 1px;
+    }
+}
+/***MEDIA QUERIES***/
+@media only screen and (max-width:1200px) {
+    .button {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .button {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .button {
+        font-size: 15px;
+    }
+}

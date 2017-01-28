@@ -1,0 +1,116 @@
+.webinars {
+    padding: {
+        top: 80px;
+        bottom: 180px;
+    }
+
+    &__header {
+        img {
+            margin-bottom: 60px;
+        }
+
+        p {
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            margin: {
+                top: 40px;
+                bottom: 40px;
+            }
+        }
+    }
+
+    &__webinar {
+        margin: {
+            top: 30px;
+            bottom: 30px;
+        }
+    }
+}
+/**MEDIA QUERIES**/
+@media only screen and (max-width:1200px) {
+    .webinars {
+        padding: {
+            top: 70px;
+            bottom: 170px;
+        }
+
+        &__header {
+            img {
+                margin-bottom: 50px;
+            }
+
+            p {
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                margin: {
+                    top: 30px;
+                    bottom: 30px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:992px) {
+    .webinars {
+        padding: {
+            top: 60px;
+            bottom: 160px;
+        }
+
+        &__header {
+            img {
+                margin-bottom: 40px;
+            }
+
+            p {
+                margin-bottom: 15px;
+            }
+
+            h1 {
+                margin: {
+                    top: 20px;
+                    bottom: 20px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:768px) {
+    .webinars {
+        padding: {
+            top: 30px;
+            bottom: 100px;
+        }
+
+        &__header {
+            img {
+                margin-bottom: 30px;
+            }
+
+            p {
+                margin-bottom: 10px;
+            }
+
+            h1 {
+                margin: {
+                    top: 20px;
+                    bottom: 10px;
+                }
+            }
+        }
+
+        &__webinar {
+            img {
+                margin-bottom: 20px;
+            }
+            margin: {
+                top: 30px;
+                bottom: 30px;
+            }
+        }
+    }
+}

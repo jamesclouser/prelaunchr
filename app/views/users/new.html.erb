@@ -1,71 +1,101 @@
-<div class="hero">
-  <div class="container-fluid">
-    <div class="col-sm-10 col-sm-offset-2 col-md-5 col-md-offset-6 col-xs-12">
+<!--SECTION: HEADER-->
+<section class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<%= image_tag "users/header.png", :class => "img_responsive" %>
+			</div>
+		</div>
+	</div>
+</section>
 
-      <% if Rails.application.config.ended %>
-        <div class="ended">
-          <p class="thanks brandon">THANK YOU FOR PARTICIPATING<br>IN OUR PRE-LAUNCH.</p>
-          <p class="compiling brandon">WE ARE COMPILING REWARDS RIGHT NOW AND WILL EMAIL<br/>COUPON CODES TO ALL RECIPIENTS IN THE NEXT DAY OR TWO</p>
-          <p class="go-to brandon">In the meantime, head to  <a href="http://www.ultimate-bundles.com/">WWW.ULTIMATE-BUNDLES.COM</a></p>
-          <p class="again brandon">Thank You Again!</p>
-        </div>
-      <% elsif @ip_limit %>
+<!--SECTION: ASSESSMENT-->
+<section class="assessment container">
+	<div class="row">
+		<div class="col-sm-5">
+			<h3 class="clear-margin-top"><span class="orange">Take the FREE </span>Photography Strengths Assessment!</h3>
+			<p>You’ll evaluate where you’re at when it comes to lighting, composition, editing, business, creativity, and camera fundamentals.</p>
+			<p>Identify your strengths & discover how you can grow as a photographer with this 5-minute online assessment!</p>
+			<a href="#optin"><button class="button btn">GET INSTANT ACCESS<i class="fa fa-flash"></i></button></a>
+		</div>
+		<div class="col-sm-7">
+			<%= image_tag "users/video.png", :class => "img_responsive" %>
+		</div>
+	</div>
+</section>
 
-        <div class="col-lg-10 col-lg-offset-2 col-md-12">
-          <div class="ended">
-            <p class="thanks">We’re sorry, but only 1 email sign-up is allowed per IP address / household.</p>
+<!--SECTION: DISCOVER-->
+<section class="discover container-fluid">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center" id="optin">
+				<h2>Discover your unique Photography Strengths now!</h2>
+			</div>
+			<div class="col-sm-12 text-center">
+				<%= image_tag "users/ass_icon.png" %>
+			</div>
+			<div class="col-sm-10 col-sm-offset-1">
+				<p>
+					The FREE Photography Strengths Assessment tool helps you clarify where you naturally excel as a photographer and where you may need to improve, and points you in the direction of where to next based on your unique personal assessment.
+				</p>
+				<p>
+					Enter your email below for instant access and get ready to take your photography skills to the next level…
+				</p>
+			</div>
+			<div class="col-sm-12 text-center">
+				<div class="discover__cta">
 
-            <p>To access your course, make sure to use the same browser on the same device that you used to sign up originally.</p>
+				<%= form_for @user, :html => {  :role => 'form' }, :url => { :action => "create" } do |f| %>
 
-            <p>Thanks so much for your interest!</p>
-          </div>
-        </div>
-      <% else %>
-        <div class="header-box">Presented by Ultimate Bundles and Spark Health</div>
-        <%= image_tag "home/healthy-headline.png", class: "signup-header-image img-responsive" %>
-        <div class="audio-course-box"><%= image_tag "home/headphones.png" %> Mini Audio eCourse</div>
-        <div class="subtitle">Get access right now!</div>
-        <div class="byline">Get free instant access to “The 4 Essential Habits of Healthy Families”, our newsletter, and exclusive offers just for you!</div>
+					<div class="form-group">
+						<%= f.text_field :name, :placeholder => "NAME", :class => "form-control" %>
+					</div>
 
-        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2">
+					<div class="form-group">
+						<%= f.text_field :email, :placeholder => "YOUR BEST EMAIL", :class => "form-control" %>
+					</div>
 
-          <%= form_for @user, :html => {  :role => 'form' }, :url => { :action => "create" } do |f| %>
-            <div class="form-group">
-              <%= f.text_field :name, :placeholder => "Your First Name", :class => "form-control input-lg", :style => "width: 100%; font-size: 120%" %>
-            </div>
-            <div class="form-group">
-              <%= f.text_field :email, :placeholder => "Your Email", :class => "form-control input-lg", :style => "width: 100%; font-size: 120%" %>
-            </div>
-            <div class="form-group">
-              <button class="btn btn-lg btn-block" id="signup-btn" name="commit" type="submit">Yes, Give Me Access Right Now </button>
-            </div>
-          <% end %>
-        </div>
-        <div class="col-sm-1">
-          <%= image_tag "homemaker/arrow.png", class: "orange-arrow hidden-xs" %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+					<div class="form-group">
+						<button class="button btn--big btn" id="signup-btn" name="commit" type="submit">GET INSTANCE ACCESS<i class="fa fa-lock"></i></button>
+					</div>
 
-<div class="container-fluid">
-  <div class="col-md-10 col-md-offset-1 col-xs-12">
-    <p class="fine-print" style="text-align: center;"><em>* 1 sign-up per household</em></p>
-  </div>
-</div>
+				<% end %>
+				</div>
+			</div>
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<small><i class="fa fa-lock"></i>Your information is 100% secure. We hate spam, too. You’ll only receive your Photography Strengths Assessment results and updates about our newest photography resources. You can unsubscribe at any time.</small>
+			</div>
+		</div>
+	</div>
+</section>
 
-<%= render 'layouts/footer' %>
-
-
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KLCQR3"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KLCQR3');</script>
-<!-- End Google Tag Manager —>
-
-
+<!--SECTION: DAVID-->
+<section class="david container-fluid">
+	<div class="row david__contents">
+		<div class="col-sm-12">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-2">
+						<h2 class="text-center white">A free tool from David Molnar and the  Ultimate Photography Bundle</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 text-center">
+						<%= image_tag "users/David_Molnar.png", :class => "img-responsive, img-center" %>
+						<p class="white text-left">
+							David Molnar is a celebrity and advertising photographer, believer and family man. His work has been seen on over 28 million Pepsi and Mountain Dew cans, in People Magazine, on American Idol, and in The New York Times. Feeling so blessed to be realizing
+							his dreams, David is now helping tens of thousands of photographers pursue THEIR dreams by creating world-class photo education, inspiration & resources.
+						</p>
+					</div>
+					<div class="col-sm-6 text-center">
+						<%= image_tag "users/UPB17_Logo.png", :class => "img-responsive, img-center" %>
+						<p class="white text-left">
+							The Ultimate Photography Bundle is the premier package of world-class photography education, inspiration, editing, and business resources from over 40 top professional photographers. Coming soon at an unbelievable price for 6 days only. Watch your email
+							to find out when it’s available!
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

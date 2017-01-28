@@ -136,7 +136,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def refer
+  def results
+    if params.key?("token")
+      @quiz_results_id = params[:token].to_i
+    end
     email = cookies[:h_email]
 
     @bodyId = 'refer'
@@ -153,8 +156,22 @@ class UsersController < ApplicationController
     end
   end
 
-  def policy
 
+  def refer
+    email = cookies[:h_email]
+
+    @bodyId = 'refer'
+    @is_mobile = mobile_device?
+
+    @user = User.find_by_email(email)
+
+    respond_to do |format|
+      if !@user.nil?
+        format.html
+      else
+        format.html { redirect_to root_path, :alert => "Something went wrong!" }
+      end
+    end
   end
 
   def redirect

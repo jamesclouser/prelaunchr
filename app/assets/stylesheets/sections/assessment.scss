@@ -1,0 +1,58 @@
+.assessment {
+    margin: {
+        top: 55px;
+        bottom: 70px;
+    }
+
+    h3 {
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        margin-top: 20px;
+    }
+}
+/**MEDIA QUERIES**/
+@media only screen and (max-width:1200px) {
+    .assessment {
+        margin: {
+            top: 35px;
+            bottom: 50px;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+    }
+}
+@media only screen and (max-width:992px) {
+    .assessment {
+        margin: {
+            top: 25px;
+            bottom: 40px;
+        }
+    }
+}
+@media only screen and (max-width:768px) {
+    .assessment {
+        margin: {
+            top: 15px;
+            bottom: 30px;
+        }
+
+        .btn {
+            margin: {
+                top: 10px;
+                bottom: 10px;
+            }
+        }
+    }
+}

@@ -5,23 +5,25 @@
 <!--[if IE 9 ]>    <html class="ie9 <%= @bodyId %>"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="<%= @bodyId %>"> <!--<![endif]-->
 <head>
-  <title>The 4 Essential Habits of Healthy Families</title>
+  <title>The Photography Strengths Assessment</title>
   <link rel="icon" href="<%= asset_path('favicon.jpg') %>" type="image/x-icon">
   <link rel="shortcut icon" href="<%= asset_path('favicon.jpg') %>" type="image/x-icon">
 
-  <meta property="og:title" content="The 4 Essential Habits of Healthy Families."/>
-  <meta property="og:description" content="The 4 Essential Habits of Healthy Families."/>
+  <meta property="og:title" content="The Photography Strengths Assessment"/>
+  <meta property="og:description" content="The Photography Strengths Assessment"/>
   <meta property="og:url" content="<%= root_url %>"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <script src="/audiojs/audio.min.js"></script>
 
   <%= csrf_meta_tags %>
 </head>
 <body id="<%= @bodyId %>">
 
 <%= yield %>
+
+<%= render "layouts/footer" %>
+
+<%= javascript_include_tag "application" %>
 
 </body>
 </html>

@@ -12,19 +12,15 @@ Rails.application.routes.draw do
   get 'refer-a-friend' => 'users#refer'
   get 'thank-you' => 'users#thankyou'
 
-  get 'privacy-policy' => 'users#policy'
-  get 'terms-of-use' => 'users#terms'
-  
-  resources :videos, only: [:index]
-  get "/videos/:video_id", to: "videos#index", as: "video_id"
+#  resources :quiz, only: [:index]
+#  get "/quiz/:results_id", to: "quiz#index", as: "results_id"
 
-  resources :lessons, only: [:index]
-  get "/lessons/:lesson_id", to: "lessons#index", as: "lesson_id"
-
+  get 'results' => 'users#results'
 
   unless Rails.application.config.consider_all_requests_local
       get '*not_found', to: 'users#redirect', :format => false
   end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

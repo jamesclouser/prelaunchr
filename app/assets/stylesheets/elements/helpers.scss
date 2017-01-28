@@ -1,0 +1,101 @@
+$gray: #3a3a3c;
+$seafoam: #b9d8da;
+$olive: #8d8e4a;
+$orange: #f96a12;
+
+.white {
+    color: white;
+}
+
+.black {
+    color: black;
+}
+
+.gray {
+    color: $gray;
+}
+
+.seafoam {
+    color: $seafoam;
+}
+
+.olive {
+    color: $olive;
+}
+
+.orange {
+    color: $orange;
+}
+
+.block-center {
+    margin: 0 auto;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+.img-center img {
+    margin: 0 auto;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.clear-margins {
+    margin: 0;
+}
+
+.clear-margin-top {
+    margin-top: 0;
+}
+
+.center-vertical {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.center-horizontal {
+    display: flex !important;
+    justify-content: center!important;
+}
+
+.separator {
+    margin: {
+        top: 30px;
+        bottom: 30px;
+    }
+}
+
+.bottom-separator {
+    margin-bottom: 5px;
+}
+
+.bottom-margin {
+    margin-bottom: 40px;
+}
+
+.width800 {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/***MEDIA QUERIES***/
+@media only screen and (max-width: 1000px) {
+    .separator {
+        margin: {
+            top: 25px;
+            bottom: 25px;
+        }
+    }
+}
+@media only screen and (max-width: 450px) {
+    .separator {
+        margin: {
+            top: 10px;
+            bottom: 10px;
+        }
+    }
+}

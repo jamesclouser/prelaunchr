@@ -1,0 +1,33 @@
+.david {
+    background-color: black;
+    padding-top: 4px;
+
+    &__contents {
+        background: {
+            image: url("../img/Italy_Background.png");
+            size: cover;
+        }
+
+        h2 {
+            margin: {
+                top: 75px;
+                bottom: 60px;
+            }
+        }
+
+        p {
+            margin: {
+                top: 30px;
+                bottom: 120px;
+            }
+        }
+    }
+}
+/**MEDIA QUERIES**/
+@media only screen and (max-width:768px) {
+    .david__contents {
+        p {
+            margin-bottom: 30px;
+        }
+    }
+}

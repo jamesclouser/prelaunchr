@@ -1,0 +1,171 @@
+.h1,
+h1 {
+	font: {
+		family: 'Oswald', sans-serif;
+		size: 40px;
+	}
+	line-height: 1.375;
+	margin: {
+		top: 15px;
+		bottom: 15px;
+	}
+}
+
+.h2,
+h2 {
+	font: {
+		family: 'Montserrat', sans-serif;
+		size: 35px;
+	}
+	margin: {
+		top: 20px;
+		bottom: 20px;
+	}
+	letter-spacing: 0;
+}
+
+.h3,
+h3 {
+	font: {
+		family: 'Montserrat', sans-serif;
+		size: 33px;
+	}
+	margin: {
+		top: 10px;
+		bottom: 10px;
+	}
+	letter-spacing: 0;
+}
+
+.h4,
+h4 {
+	font: {
+		family: 'Montserrat', sans-serif;
+		size: 30px;
+	}
+}
+
+.h5,
+h5 {
+	font: {
+		family: 'Montserrat', serif;
+		size: 21px;
+	}
+}
+
+.h6,
+h6 {
+	font: {
+		family: 'Montserrat', serif;
+		size: 15px;
+	}
+}
+
+.p,
+p {
+	font: {
+		family: 'Montserrat', serif;
+		size: 24px;
+	}
+	line-height: 1.458;
+	letter-spacing: 0;
+}
+
+.small,
+small {
+	font: {
+		family: 'Montserrat', serif;
+		size: 17px;
+	}
+	line-height: 1.765;
+}
+
+a {
+	text-decoration: inherit;
+	color: inherit;
+	outline: 0;
+
+	&:active {
+		outline: 0;
+		color: inherit;
+	}
+
+	&:hover {
+		outline: 0;
+		text-decoration: inherit;
+		color: inherit;
+	}
+}
+/***MEDIA QUERIES***/
+@media only screen and (max-width: 1200px) {
+	.h1,
+	h1 {
+		font-size: 30px;
+		margin: {
+			top: 12px;
+			bottom: 12px;
+		}
+	}
+
+	.h2,
+	h2 {
+		font-size: 25px;
+		margin: {
+			top: 12px;
+			bottom: 12px;
+		}
+	}
+
+	.h3,
+	h3 {
+		font-size: 20px;
+	}
+
+	.h4,
+	h4 {
+		font-size: 16px;
+	}
+
+	.h5,
+	h5 {
+		font-size: 16px;
+	}
+
+	.p,
+	p {
+		font-size: 14px;
+	}
+
+	small {
+		font-size: 14px;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.h1,
+	h1 {
+		font-size: 25px;
+		margin: {
+			top: 5px;
+			bottom: 5px;
+		}
+	}
+
+	.h2,
+	h2 {
+		font-size: 20px;
+	}
+
+	.h3,
+	h3 {
+		font-size: 16px;
+	}
+
+	.h4,
+	h4 {
+		font-size: 14px;
+	}
+
+	small {
+		line-height: 1.458;
+	}
+}
