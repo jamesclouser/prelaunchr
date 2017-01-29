@@ -2,41 +2,41 @@
   font-family: 'Montserrat';
   font-weight: 400;
   font-style: normal;
-  src: font-url('Montserrat-regular/Montserrat-regular.eot');
-  src: font-url('Montserrat-regular/Montserrat-regular.eot?#iefix') format('embedded-opentype'),
+  src: asset-url('Montserrat-regular/Montserrat-regular.eot');
+  src: asset-url('Montserrat-regular/Montserrat-regular.eot?#iefix') format('embedded-opentype'),
        local('Montserrat-Regular'),
        local('Montserrat-regular'),
-       font-url('Montserrat-regular/Montserrat-regular.woff2') format('woff2'),
-       font-url('Montserrat-regular/Montserrat-regular.woff') format('woff'),
-       font-url('Montserrat-regular/Montserrat-regular.ttf') format('truetype'),
-       font-url('Montserrat-regular/Montserrat-regular.svg#Montserrat') format('svg');
+       asset-url('Montserrat-regular/Montserrat-regular.woff2') format('woff2'),
+       asset-url('Montserrat-regular/Montserrat-regular.woff') format('woff'),
+       asset-url('Montserrat-regular/Montserrat-regular.ttf') format('truetype'),
+       asset-url('Montserrat-regular/Montserrat-regular.svg#Montserrat') format('svg');
 }
 
 @font-face {
   font-family: 'Oswald';
   font-weight: 300;
   font-style: normal;
-  src: font-url('Oswald-300/Oswald-300.eot');
-  src: font-url('Oswald-300/Oswald-300.eot?#iefix') format('embedded-opentype'),
+  src: asset-url('Oswald-300/Oswald-300.eot');
+  src: asset-url('Oswald-300/Oswald-300.eot?#iefix') format('embedded-opentype'),
        local('Oswald Light'),
        local('Oswald-300'),
-       font-url('Oswald-300/Oswald-300.woff2') format('woff2'),
-       font-url('Oswald-300/Oswald-300.woff') format('woff'),
-       font-url('Oswald-300/Oswald-300.ttf') format('truetype'),
-       font-url('Oswald-300/Oswald-300.svg#Oswald') format('svg');
+       asset-url('Oswald-300/Oswald-300.woff2') format('woff2'),
+       asset-url('Oswald-300/Oswald-300.woff') format('woff'),
+       asset-url('Oswald-300/Oswald-300.ttf') format('truetype'),
+       asset-url('Oswald-300/Oswald-300.svg#Oswald') format('svg');
 }
 
 @font-face {
   font-family: 'Oswald';
   font-weight: 400;
   font-style: normal;
-  src: font-url('Oswald-regular/Oswald-regular.eot');
-  src: font-url('Oswald-regular/Oswald-regular.eot?#iefix') format('embedded-opentype'),
+  src: asset-url('Oswald-regular/Oswald-regular.eot');
+  src: asset-url('Oswald-regular/Oswald-regular.eot?#iefix') format('embedded-opentype'),
        local('Oswald Regular'),
        local('Oswald-regular'),
-       font-url('Oswald-regular/Oswald-regular.woff2') format('woff2'),
-       font-url('Oswald-regular/Oswald-regular.woff') format('woff'),
-       font-url('Oswald-regular/Oswald-regular.ttf') format('truetype'),
-       font-url('Oswald-regular/Oswald-regular.svg#Oswald') format('svg');
+       asset-url('Oswald-regular/Oswald-regular.woff2') format('woff2'),
+       asset-url('Oswald-regular/Oswald-regular.woff') format('woff'),
+       asset-url('Oswald-regular/Oswald-regular.ttf') format('truetype'),
+       asset-url('Oswald-regular/Oswald-regular.svg#Oswald') format('svg');
 }
 
