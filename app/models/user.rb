@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :name, presence: true
 
   before_create :create_referral_code
-  #after_create :send_welcome_email
+  after_create :send_welcome_email
 
   REFERRAL_STEPS = [
     {

@@ -1,8 +1,8 @@
 class UserMailer < ActionMailer::Base
-    default from: "UltimateBundles <customerservice@ultimate-bundles.com>"
+    default from: "Ultimate Bundles <customerservice@ultimate-bundles.com>"
 
     def signup_email(user)
         @user = user
-        mail(:to => user.email, :subject => "Your Mini Video-eCourse")
+        mail(:to => user.email, :subject => "Access confirmed: Discover your Photography Strengths score!")
     end
 end
