@@ -99,3 +99,18 @@ $orange: #f96a12;
         }
     }
 }
+
+.video-responsive {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	margin: 0 auto;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+	}
+}
