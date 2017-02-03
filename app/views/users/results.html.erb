@@ -207,16 +207,16 @@
 		<div class="row row-eq-height scores__category">
 			<div class="col-sm-3 scores__category__score text-center">
 				<h1 class="scores__category__score__header clear-margin-top white">CREATIVITY</h1>
-				<h1 class="scores__category__score__number block-center white">NA</h1>
+				<h1 class="scores__category__score__number block-center white"><%= category_score(@results, 'creativity').round %></h1>
 			</div>
 			<div class="col-sm-9 scores__category__remarks">
 				<h4 class="clear-margin-top">
 				
-					<% if category_score(@results, 'camera essentials').round >= 95 %>
+					<% if category_score(@results, 'creativity').round >= 95 %>
 						Creativity Pro.
-					<% elsif category_score(@results, 'camera essentials').round >= 85 %>
+					<% elsif category_score(@results, 'creativity').round >= 85 %>
 						Creativity Semi-Pro.
-					<% elsif category_score(@results, 'camera essentials').round >= 60 %>
+					<% elsif category_score(@results, 'creativity').round >= 60 %>
 						Creativity Apprentice.
 					<% else %>
 						Creativity Rookie.
@@ -225,11 +225,11 @@
 				</h4>
 				<p class="white">
 				
-					<% if category_score(@results, 'camera essentials').round >= 95 %>
+					<% if category_score(@results, 'creativity').round >= 95 %>
 						Your mind is an open portal for the Muse and you’re able to be inspired by almost anything. You create works of art that have moved people to tears.
-					<% elsif category_score(@results, 'camera essentials').round >= 85 %>
+					<% elsif category_score(@results, 'creativity').round >= 85 %>
 						You draw inspiration from your surroundings, and sometimes come up with brilliant ideas, but you don’t feel consistently creative.
-					<% elsif category_score(@results, 'camera essentials').round >= 60 %>
+					<% elsif category_score(@results, 'creativity').round >= 60 %>
 						You want to be more creative, but sometimes you struggle with feeling like an imposter and creating art you think is original.
 					<% else %>
 						You’re new to the idea of thinking creatively and sometimes feel like you’re walking through a fog when it comes to generating new ideas.

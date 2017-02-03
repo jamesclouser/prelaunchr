@@ -154,7 +154,7 @@ class UsersController < ApplicationController
 
     @user = User.find_by_email(email)
 
-	update_infusionsoft_contact.delay
+	infusionsoft_add_quiz_completion_tag.delay
 
     respond_to do |format|
       if !@user.nil?
@@ -169,11 +169,10 @@ class UsersController < ApplicationController
     redirect_to root_path, :status => 404
   end
 
-  def update_infusionsoft_contact
+  def infusionsoft_add_quiz_completion_tag
 	contact = Infusionsoft.contact_find_by_email(@user.email, ['id'])
 
 	if contact.any?
-		Infusionsoft.contact_update(contact[0]['id'], { :_2017UPBQuizlink => "http://assessment.ultimate-bundles.com/?ref=#{@user.referral_code}" })
 		Infusionsoft.contact_add_to_group(contact[0]['id'], 4232)
 	end
   end

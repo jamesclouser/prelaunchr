@@ -20,6 +20,6 @@ module QuizHelper
 		end
 	end
 
-	(score / 60) * 100
+	(score / 72) * 100
   end
 end

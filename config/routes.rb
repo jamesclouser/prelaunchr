@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'users/index' => 'users#index'
 
 #  get 'refer-a-friend' => 'users#refer'
-#  get 'thank-you' => 'users#thankyou'
+  get 'thank-you' => 'users#thankyou'
 
 #  resources :quiz, only: [:index]
 #  get "/quiz/:results_id", to: "quiz#index", as: "results_id"

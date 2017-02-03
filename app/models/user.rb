@@ -41,6 +41,8 @@ class User < ActiveRecord::Base
       Kernel.sleep(0.3)
       optin_result = Infusionsoft.email_optin(self.email, "RAF App Opt-In")
       Rails.logger.info optin_result
+	  custom_field_result = Infusionsoft.contact_update(contact_id, { :_2017UPBQuizlink => "http://assessment.ultimate-bundles.com/?ref=#{self.referral_code}" })
+	  Rails.logger.info custom_field_result
     end
     Rails.logger.info '------------ END INFUSIONSOFT'
   end
@@ -59,6 +61,7 @@ class User < ActiveRecord::Base
     #elsif contact.count > 0 && self.referrals.count == 10
     #  ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1466)
     # end
+
 
     Rails.logger.info ifs_result
     Rails.logger.info '------------ END INFUSIONSOFT'
@@ -80,7 +83,8 @@ class User < ActiveRecord::Base
 
   def send_welcome_email
     #if (self.referrer_id && self.referrer_id > 0) || self.infusionsoft_affiliate_link.blank?
-    UserMailer.delay.signup_email(self)
-    #end
+  	if self.infusionsoft_affiliate_link.blank?  
+  	  UserMailer.delay.signup_email(self)
+    end
   end
 end
