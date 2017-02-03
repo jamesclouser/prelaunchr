@@ -43,8 +43,8 @@
 				<small>Your Photography Strengths Assessment score is...</small>
 			</div>
 			<div class="col-sm-12 text-center results__social">
-				<i class="fa fa-twitter"></i>
-				<i class="fa fa-facebook"></i>
+				<a href="http://twitter.com/share?url=http://assessment.ultimate-bundles.com/?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape('The Photography Strengths Assessment') %>" target="_blank"><i class="fa fa-twitter"></i></a>
+				<a href="http://www.facebook.com/sharer/sharer.php?u=http://assessment.ultimate-bundles.com/?ref=<%= CGI::escape(@user.referral_code) %>" target="_blank"><i class="fa fa-facebook"></i></a>
 				<h5 class="clear-margin-top">Share Your Score.</h5>
 			</div>
 		</div>
