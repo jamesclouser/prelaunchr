@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
     Rails.logger.info contact_id
     if contact_id
       Kernel.sleep(0.3)
-      group_result = Infusionsoft.contact_add_to_group(contact_id, 2112)
+      group_result = Infusionsoft.contact_add_to_group(contact_id, 4230)
       Rails.logger.info group_result
       Kernel.sleep(0.3)
       optin_result = Infusionsoft.email_optin(self.email, "RAF App Opt-In")
