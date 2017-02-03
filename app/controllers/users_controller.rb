@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  helper QuizHelper
   before_filter :skip_first_page, :only => :new
 
   def index
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
     @ip_limit = false
 
     if params.has_key?(:ip_limit)
-      @ip_limit = true
+      @ip_limit = false
     end
 
     if Time.now.to_i > Time.parse("2017-02-28 00:00:00 -0800").to_i
@@ -51,7 +52,7 @@ class UsersController < ApplicationController
         )
       end
 
-      if cur_ip.count > 2
+      if cur_ip.count > 2 
         return redirect_to :action => "new", :ip_limit => true
       else
         cur_ip.count = cur_ip.count + 1
@@ -138,8 +139,11 @@ class UsersController < ApplicationController
 
   def results
     if params.key?("token")
-      @quiz_results_id = params[:token].to_i
-    end
+      token = params[:token].to_s
+      uri = URI("http://quiz.ultimate-bundles.com/user_data/?token=#{token}")
+	  @results = JSON.parse(Net::HTTP.get(uri))
+    end 
+
     email = cookies[:h_email]
 
     @bodyId = 'refer'

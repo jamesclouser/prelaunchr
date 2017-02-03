@@ -12,21 +12,21 @@ class User < ActiveRecord::Base
   REFERRAL_STEPS = [
     {
       'count' => 1,
-      "html" => "$5 Off<br>The Ultimate Homemaking Bundle",
+      "html" => "",
       "class" => "two",
-      "image" =>  "homemaker/reward-1.jpg"
+      "image" =>  ""
     },
     {
       'count' => 5,
-      "html" => "1-Year Subscription<br>to Better Homes and Gardens<br>",
+      "html" => "",
       "class" => "three",
-      "image" => "creativity/reward2.jpg"
+      "image" => ""
     },
     {
       'count' => 10,
-      "html" => "FREE<br>Ultimate Homemaking Bundle<br>($34.95 Value)",
+      "html" => "",
       "class" => "four",
-      "image" => "homemaker/reward-3.jpg"
+      "image" => ""
     }
   ]
 
@@ -52,13 +52,13 @@ class User < ActiveRecord::Base
     Rails.logger.info self.email
     Rails.logger.info contact.inspect
 
-    if contact.count > 0 && self.referrals.count == 1
-      ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1462)
-    elsif contact.count > 0 && self.referrals.count == 5
-      ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1464)
-    elsif contact.count > 0 && self.referrals.count == 10
-      ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1466)
-    end
+    # if contact.count > 0 && self.referrals.count == 1
+    #  ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1462)
+    # elsif contact.count > 0 && self.referrals.count == 5
+    #  ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1464)
+    #elsif contact.count > 0 && self.referrals.count == 10
+    #  ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1466)
+    # end
 
     Rails.logger.info ifs_result
     Rails.logger.info '------------ END INFUSIONSOFT'
