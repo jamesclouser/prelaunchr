@@ -154,7 +154,7 @@ class UsersController < ApplicationController
 
     @user = User.find_by_email(email)
 
-	infusionsoft_add_quiz_completion_tag.delay
+	infusionsoft_add_quiz_completion_tag
 
     respond_to do |format|
       if !@user.nil?
@@ -170,10 +170,12 @@ class UsersController < ApplicationController
   end
 
   def infusionsoft_add_quiz_completion_tag
-	contact = Infusionsoft.contact_find_by_email(@user.email, ['id'])
+	if @user
+		contact = Infusionsoft.contact_find_by_email(@user.email, ['id'])
 
-	if contact.any?
-		Infusionsoft.contact_add_to_group(contact[0]['id'], 4232)
+		if contact.any?
+			Infusionsoft.contact_add_to_group(contact[0]['id'], 4232)
+		end
 	end
   end
 
