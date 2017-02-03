@@ -52,12 +52,12 @@ class UsersController < ApplicationController
         )
       end
 
-      if cur_ip.count > 2 
-        return redirect_to :action => "new", :ip_limit => true
-      else
-        cur_ip.count = cur_ip.count + 1
-        cur_ip.save
-      end
+      #if cur_ip.count > 2 
+      #  return redirect_to :action => "new", :ip_limit => true
+      #else
+      #  cur_ip.count = cur_ip.count + 1
+      #  cur_ip.save
+      #end
 
       @user = User.new(:email => params[:user][:email], :name => params[:user][:name].titleize)
 
