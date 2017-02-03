@@ -138,12 +138,15 @@ class UsersController < ApplicationController
   end
 
   def results
+	token = 'a693468295a446c0bae8cca67f677d32'
+	
     if params.key?("token")
       token = params[:token].to_s
-      uri = URI("http://quiz.ultimate-bundles.com/user_data/?token=#{token}")
-	  @results = JSON.parse(Net::HTTP.get(uri))
     end 
 
+	uri = URI("http://quiz.ultimate-bundles.com/user_data/?token=#{token}")
+	@results = JSON.parse(Net::HTTP.get(uri))
+
     email = cookies[:h_email]
 
     @bodyId = 'refer'
@@ -151,23 +154,7 @@ class UsersController < ApplicationController
 
     @user = User.find_by_email(email)
 
-    respond_to do |format|
-      if !@user.nil?
-        format.html
-      else
-        format.html { redirect_to root_path, :alert => "Something went wrong!" }
-      end
-    end
-  end
-
-
-  def refer
-    email = cookies[:h_email]
-
-    @bodyId = 'refer'
-    @is_mobile = mobile_device?
-
-    @user = User.find_by_email(email)
+	update_infusionsoft_contact.delay
 
     respond_to do |format|
       if !@user.nil?
@@ -180,6 +167,15 @@ class UsersController < ApplicationController
 
   def redirect
     redirect_to root_path, :status => 404
+  end
+
+  def update_infusionsoft_contact
+	contact = Infusionsoft.contact_find_by_email(@user.email, ['id'])
+
+	if contact.any?
+		Infusionsoft.contact_update(contact[0]['id'], { :_2017UPBQuizlink => "http://assessment.ultimate-bundles.com/?ref=#{@user.referral_code}" })
+		Infusionsoft.contact_add_to_group(contact[0]['id'], 4232)
+	end
   end
 
   private
