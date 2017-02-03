@@ -17,11 +17,11 @@ class UsersController < ApplicationController
 
     @user = User.new
 
-    @ip_limit = false
+    #@ip_limit = false
 
-    if params.has_key?(:ip_limit)
-      @ip_limit = false
-    end
+    #if params.has_key?(:ip_limit)
+    #  @ip_limit = false
+    #end
 
     if Time.now.to_i > Time.parse("2017-02-28 00:00:00 -0800").to_i
       redirect_to "https://ultimate-bundles.com"
