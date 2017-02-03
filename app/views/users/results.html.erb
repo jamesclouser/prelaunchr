@@ -421,3 +421,9 @@
 		</div>
 	</div>
 </section>
+
+<div class="container">
+	<% if @user.referrals.count > 0 %>
+		<small>Affiliate Referrals: <%= @user.referrals.count %></small>
+  <% end %>
+</div>
