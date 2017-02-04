@@ -158,7 +158,7 @@ class UsersController < ApplicationController
 
     @user = User.find_by_email(email)
 
-	infusionsoft_add_quiz_completion_tag
+	@user.delay.infusionsoft_add_quiz_completion_tag
 
     respond_to do |format|
       if !@user.nil?
@@ -173,20 +173,10 @@ class UsersController < ApplicationController
     redirect_to root_path, :status => 404
   end
 
-  def infusionsoft_add_quiz_completion_tag
-	if @user
-		contact = Infusionsoft.contact_find_by_email(@user.email, ['id'])
-
-		if contact.any?
-			Infusionsoft.contact_add_to_group(contact[0]['id'], 4232)
-		end
-	end
-  end
-
   private
 
   def user_params
-    params.require(:episode).permit(:name, :email, :infusionsoft_affiliate_link)
+    params.permit(:name, :email, :infusionsoft_affiliate_link, :token)
   end
 
   def skip_first_page

@@ -47,6 +47,11 @@ class User < ActiveRecord::Base
     Rails.logger.info '------------ END INFUSIONSOFT'
   end
 
+  def infusionsoft_add_quiz_completion_tag
+	contact = Infusionsoft.contact_find_by_email(self.email, ['id'])
+	Infusionsoft.contact_add_to_group(contact[0]['id'], 4232)
+  end
+
   def infusionsoft_referral
     contact = Infusionsoft.contact_find_by_email(self.email, ['id'])
     Kernel.sleep(0.3)
