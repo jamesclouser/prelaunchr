@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get 'results' => 'users#results'
 
+  get 'upcoming-webinars' => 'users#upcomingwebinars'
+
   unless Rails.application.config.consider_all_requests_local
       get '*not_found', to: 'users#redirect', :format => false
   end

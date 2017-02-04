@@ -137,6 +137,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def upcomingwebinars
+
+  end
+
   def results
 	token = 'a693468295a446c0bae8cca67f677d32'
 	
