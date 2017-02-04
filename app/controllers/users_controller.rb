@@ -142,23 +142,22 @@ class UsersController < ApplicationController
   end
 
   def results
-	token = 'a693468295a446c0bae8cca67f677d32'
-	
-    if params.key?("token")
-      token = params[:token].to_s
-    end 
-
-	uri = URI("http://quiz.ultimate-bundles.com/user_data/?token=#{token}")
-	@results = JSON.parse(Net::HTTP.get(uri))
-
     email = cookies[:h_email]
-
-    @bodyId = 'refer'
-    @is_mobile = mobile_device?
-
     @user = User.find_by_email(email)
 
 	@user.delay.infusionsoft_add_quiz_completion_tag
+
+    if params.key?("token")
+      token = params[:token].to_s
+	  @user.quiz_token = token
+	  @user.save
+    end 
+
+	uri = URI("http://quiz.ultimate-bundles.com/user_data/?token=#{@user.quiz_token}")
+	@results = JSON.parse(Net::HTTP.get(uri))
+
+    @bodyId = 'refer'
+    @is_mobile = mobile_device?
 
     respond_to do |format|
       if !@user.nil?
