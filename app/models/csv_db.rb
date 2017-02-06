@@ -15,6 +15,7 @@ class CsvDb
           end
         end
         new_object.save
+		new_object.delay.add_to_infusionsoft
       end
     end
   end
