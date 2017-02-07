@@ -149,7 +149,10 @@ GEM
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
+<<<<<<< HEAD
     pg (0.19.0)
+=======
+>>>>>>> 06bc3315913124d5505c7d904ff00d405358e2b5
     polyamorous (1.3.1)
       activerecord (>= 3.0)
     pry (0.10.4)
@@ -248,13 +251,13 @@ DEPENDENCIES
   fitvidsjs_rails
   infusionsoft
   jquery-rails
-  pg
   pry
   puma
   rails (= 4.2.3)
   rails_12factor
   sass-rails (~> 5.0)
   spring
+  sqlite3
   thin
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
