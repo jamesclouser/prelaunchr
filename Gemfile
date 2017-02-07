@@ -15,7 +15,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'fitvidsjs_rails'
 gem 'infusionsoft'
 gem 'jquery-rails'
-gem 'pg'
+gem 'sqlite3'
 gem 'sass-rails',   '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
