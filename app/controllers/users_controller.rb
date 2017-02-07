@@ -92,7 +92,7 @@ class UsersController < ApplicationController
         #  ifs_result = Infusionsoft.contact_add_to_group(contact[0]["id"], 1220)
         end
 
-        puts ifs_result
+        #puts ifs_result
         puts '------------'
       end
 
