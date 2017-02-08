@@ -1,20 +1,20 @@
 module QuizHelper
-  def category_score(response, category)
+  def category_score(category)
 	score = 0
 
-	response['data'][category].each do |question|
+	@results['data'][category].each do |question|
 		score += question['answer'].to_f
 	end
 
 	(score / 12) * 100
   end
 
-  def total_score(response)
+  def total_score()
 	score = 0
 
-	response['data'].each_key do |category|
+	@results['data'].each_key do |category|
 		if category != 'email' and category != 'token'
-			response['data'][category].each do |question|
+			@results['data'][category].each do |question|
 				score += question['answer'].to_f
 			end
 		end

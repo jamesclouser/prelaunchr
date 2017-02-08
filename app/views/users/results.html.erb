@@ -16,21 +16,21 @@
 			<div class="col-sm-8 col-sm-offset-2 text-center">
 				<h4>You’re shooting at the 
 					
-					<% if total_score(@results).round >= 90 %>
+					<% if total_score().round >= 90 %>
 						Master Photographer
-					<% elsif total_score(@results).round >= 80 %>
+					<% elsif total_score().round >= 80 %>
 						Pro Photographer
-					<% elsif total_score(@results).round >= 70 %>
+					<% elsif total_score().round >= 70 %>
 						Semi-Pro Photographer
-					<% elsif total_score(@results).round >= 60 %>
+					<% elsif total_score().round >= 60 %>
 						Advanced Amateur Photographer
-					<% elsif total_score(@results).round >= 50 %>
+					<% elsif total_score().round >= 50 %>
 						Emerging Photographer
-					<% elsif total_score(@results).round >= 40 %>
+					<% elsif total_score().round >= 40 %>
 						Advanced Rookie Photographer
-					<% elsif total_score(@reuslts).round >= 20 %>
+					<% elsif total_score().round >= 20 %>
 						Rookie Photographer
-					<% elsif total_score(@results).round > 0 %>
+					<% elsif total_score().round > 0 %>
 						Beginner Photographer 
 					<% end %>	
 
@@ -39,7 +39,7 @@
 		</div>
 		<div class="row">
 			<div class="block-center text-center results__score">
-				<h1 class="orange clear-margins"><%= total_score(@results).round %></h1>
+				<h1 class="orange clear-margins"><%= total_score().round %></h1>
 				<small>Your Photography Strengths Assessment score is...</small>
 			</div>
 			<div class="col-sm-12 text-center results__social">
@@ -72,16 +72,16 @@
 		<div class="row row-eq-height scores__category">
 			<div class="col-sm-3 scores__category__score text-center">
 				<h1 class="scores__category__score__header clear-margin-top white">LIGHTING</h1>
-				<h1 class="scores__category__score__number block-center white"><%= category_score(@results, 'lighting').round %></h1>
+				<h1 class="scores__category__score__number block-center white"><%= category_score('lighting').round %></h1>
 			</div>
 			<div class="col-sm-9 scores__category__remarks">
 				<h4 class="clear-margin-top">
 					
-					<% if category_score(@results, 'lighting').round >= 95 %>
+					<% if category_score('lighting').round >= 95 %>
 						Lighting Pro.
-					<% elsif category_score(@results, 'lighting').round >= 85 %>
+					<% elsif category_score('lighting').round >= 85 %>
 						Lighting Semi-Pro.
-					<% elsif category_score(@results, 'lighting').round >= 60 %>
+					<% elsif category_score('lighting').round >= 60 %>
 						Lighting Apprentice.
 					<% else %>
 						Lighting Rookie.
@@ -90,11 +90,11 @@
 				</h4>
 				<p class="white">
 
-					<% if category_score(@results, 'lighting').round >= 95 %>
+					<% if category_score('lighting').round >= 95 %>
 						It doesn’t matter what the situation is, whether day or night, indoor or outdoors, rain or shine, you do not depend on light to get the best shot. You bend the light to your will.
-					<% elsif category_score(@results, 'lighting').round >= 85 %>
+					<% elsif category_score('lighting').round >= 85 %>
 						You know how to adapt to the lighting challenges of most situations, but sometimes it takes you a few tries to get it just right.
-					<% elsif category_score(@results, 'lighting').round >= 60 %>
+					<% elsif category_score('lighting').round >= 60 %>
 						You’ve learned a few things about lighting, but don’t always feel confident sho to work with.
 					<% else %>
 					    You love taking pictures in any kind of lighting situation, but you get frustrated when what you see with your eye doesn’t end up on the photo.
@@ -105,16 +105,16 @@
 		<div class="row row-eq-height scores__category">
 			<div class="col-sm-3 scores__category__score text-center">
 				<h1 class="scores__category__score__header clear-margin-top white">COMPOSITION</h1>
-				<h1 class="scores__category__score__number block-center white"><%= category_score(@results, 'compositions').round %></h1>
+				<h1 class="scores__category__score__number block-center white"><%= category_score('compositions').round %></h1>
 			</div>
 			<div class="col-sm-9 scores__category__remarks">
 				<h4 class="clear-margin-top">
 			
-					<% if category_score(@results, 'compositions').round >= 95 %>
+					<% if category_score('compositions').round >= 95 %>
 						Composition Pro.
-					<% elsif category_score(@results, 'compositions').round >= 85 %>
+					<% elsif category_score('compositions').round >= 85 %>
 						Composition Semi-Pro.
-					<% elsif category_score(@results, 'compositions').round >= 60 %>
+					<% elsif category_score('compositions').round >= 60 %>
 						Composition Apprentice.
 					<% else %>
 						Composition Rookie.
@@ -123,11 +123,11 @@
 				</h4>
 				<p class="white">
 
-					<% if category_score(@results, 'compositions').round >= 95 %>
+					<% if category_score('compositions').round >= 95 %>
 						You compose a photo like Beethoven composed a symphony. You’re not afraid to completely break down a scene and put it back together as you see fit, then pose your subject in the newly re-composed elements, and make what you envision show up in the frame just as you intended.
-					<% elsif category_score(@results, 'compositions').round >= 85 %>
+					<% elsif category_score('compositions').round >= 85 %>
 						You plan your shot like a pro should and consider how to pose your subject and the scene in order to capture the scene as close as possible to what you envisioned.
-					<% elsif category_score(@results, 'compositions').round >= 60 %>
+					<% elsif category_score('compositions').round >= 60 %>
 						You think before you press the shutter button. You try to line up your subject within the frame and hope for the best.
 					<% else %>
 						You tend to point and shoot and hope for the best. Sometimes you capture a great image, but not always.
@@ -139,16 +139,16 @@
 		<div class="row row-eq-height scores__category">
 			<div class="col-sm-3 scores__category__score text-center">
 				<h1 class="scores__category__score__header clear-margin-top white">EDITING</h1>
-				<h1 class="scores__category__score__number block-center white"><%= category_score(@results, 'editing').round %></h1>
+				<h1 class="scores__category__score__number block-center white"><%= category_score('editing').round %></h1>
 			</div>
 			<div class="col-sm-9 scores__category__remarks">
 				<h4 class="clear-margin-top">
 				
-					<% if category_score(@results, 'editing').round >= 95 %>
+					<% if category_score('editing').round >= 95 %>
 						Editing Pro.
-					<% elsif category_score(@results, 'editing').round >= 85 %>
+					<% elsif category_score('editing').round >= 85 %>
 						Editing Semi-Pro.
-					<% elsif category_score(@results, 'editing').round >= 60 %>
+					<% elsif category_score('editing').round >= 60 %>
 						Editing Apprentice.
 					<% else %>
 						Editing Rookie.
@@ -157,11 +157,11 @@
 				</h4>
 				<p class="white">
 
-					<% if category_score(@results, 'editing').round >= 95 %>
+					<% if category_score('editing').round >= 95 %>
 						You can edit any photo and create magazine quality images every time. Your organization and workflow system is the envy of your peers and your editing skills with Lightroom and Photoshop are legendary.
-					<% elsif category_score(@results, 'editing').round >= 85 %>
+					<% elsif category_score('editing').round >= 85 %>
 						You know your way around Lightroom and Photoshop, but you also know you’re not using either tool to it’s full potential. You have a pretty good workflow for editing and organizing your photos but it’s not a perfect.
-					<% elsif category_score(@results, 'editing').round >= 60 %>
+					<% elsif category_score('editing').round >= 60 %>
 						You occasionally edit your photos and most of them are backed up on your computer, but your images aren’t organized and you don’t use Lightroom or Photoshop very often.
 					<% else %>
 						You rarely edit your photos, if ever, and you know they could look better, but you don’t know where to start or how to organize them.
@@ -173,16 +173,16 @@
 		<div class="row row-eq-height scores__category">
 			<div class="col-sm-3 scores__category__score text-center">
 				<h1 class="scores__category__score__header clear-margin-top white">BUSINESS</h1>
-				<h1 class="scores__category__score__number block-center white"><%= category_score(@results, 'business').round %></h1>
+				<h1 class="scores__category__score__number block-center white"><%= category_score('business').round %></h1>
 			</div>
 			<div class="col-sm-9 scores__category__remarks">
 				<h4 class="clear-margin-top">
 				
-					<% if category_score(@results, 'business').round >= 95 %>
+					<% if category_score('business').round >= 95 %>
 						Business Pro.
-					<% elsif category_score(@results, 'business').round >= 85 %>
+					<% elsif category_score('business').round >= 85 %>
 						Business Semi-Pro.
-					<% elsif category_score(@results, 'business').round >= 60 %>
+					<% elsif category_score('business').round >= 60 %>
 						Business Apprentice.
 					<% else %>
 						Business Rookie.
@@ -191,11 +191,11 @@
 				</h4>
 				<p class="white">
 
-					<% if category_score(@results, 'business').round >= 95 %>
+					<% if category_score('business').round >= 95 %>
 						You make a great living as a professional photographer and take advantage of all revenues streams available to you. You have great relationships with your clients and they refer you like crazy because of the amazing experience you give them. You may even have to turn down shoots because you’re too busy.
-					<% elsif category_score(@results, 'business').round >= 85 %>
+					<% elsif category_score('business').round >= 85 %>
 						You make some money from your photography, but maybe not enough to live on without feeling stressed. You want to close more leads, sell more prints and albums and wish you had systems in place that made your work more efficient.
-					<% elsif category_score(@results, 'business').round >= 60 %>
+					<% elsif category_score('business').round >= 60 %>
 						You make a little money from your photography, but you have yet to break even and are frustrated with the results of your business so far.
 					<% else %>
 						You make little to no money from your photography and aren’t sure if you’d be able to.
@@ -207,16 +207,16 @@
 		<div class="row row-eq-height scores__category">
 			<div class="col-sm-3 scores__category__score text-center">
 				<h1 class="scores__category__score__header clear-margin-top white">CREATIVITY</h1>
-				<h1 class="scores__category__score__number block-center white"><%= category_score(@results, 'creativity').round %></h1>
+				<h1 class="scores__category__score__number block-center white"><%= category_score('creativity').round %></h1>
 			</div>
 			<div class="col-sm-9 scores__category__remarks">
 				<h4 class="clear-margin-top">
 				
-					<% if category_score(@results, 'creativity').round >= 95 %>
+					<% if category_score('creativity').round >= 95 %>
 						Creativity Pro.
-					<% elsif category_score(@results, 'creativity').round >= 85 %>
+					<% elsif category_score('creativity').round >= 85 %>
 						Creativity Semi-Pro.
-					<% elsif category_score(@results, 'creativity').round >= 60 %>
+					<% elsif category_score('creativity').round >= 60 %>
 						Creativity Apprentice.
 					<% else %>
 						Creativity Rookie.
@@ -225,11 +225,11 @@
 				</h4>
 				<p class="white">
 				
-					<% if category_score(@results, 'creativity').round >= 95 %>
+					<% if category_score('creativity').round >= 95 %>
 						Your mind is an open portal for the Muse and you’re able to be inspired by almost anything. You create works of art that have moved people to tears.
-					<% elsif category_score(@results, 'creativity').round >= 85 %>
+					<% elsif category_score('creativity').round >= 85 %>
 						You draw inspiration from your surroundings, and sometimes come up with brilliant ideas, but you don’t feel consistently creative.
-					<% elsif category_score(@results, 'creativity').round >= 60 %>
+					<% elsif category_score('creativity').round >= 60 %>
 						You want to be more creative, but sometimes you struggle with feeling like an imposter and creating art you think is original.
 					<% else %>
 						You’re new to the idea of thinking creatively and sometimes feel like you’re walking through a fog when it comes to generating new ideas.
@@ -241,16 +241,16 @@
 		<div class="row row-eq-height scores__category">
 			<div class="col-sm-3 scores__category__score text-center">
 				<h1 class="scores__category__score__header clear-margin-top white">CAMERA FUNDAMENTALS</h1>
-				<h1 class="scores__category__score__number block-center white"><%= category_score(@results, 'camera essentials').round %></h1>
+				<h1 class="scores__category__score__number block-center white"><%= category_score('camera essentials').round %></h1>
 			</div>
 			<div class="col-sm-9 scores__category__remarks">
 				<h4 class="clear-margin-top">
 					
-					<% if category_score(@results, 'camera essentials').round >= 95 %>
+					<% if category_score('camera essentials').round >= 95 %>
 						Camera Pro.
-					<% elsif category_score(@results, 'camera essentials').round >= 85 %>
+					<% elsif category_score('camera essentials').round >= 85 %>
 						Camera Semi-Pro.
-					<% elsif category_score(@results, 'camera essentials').round >= 60 %>
+					<% elsif category_score('camera essentials').round >= 60 %>
 						Camera Apprentice.
 					<% else %>
 						Camera Rookie.
@@ -259,11 +259,11 @@
 				</h4>
 				<p class="white">
 
-					<% if category_score(@results, 'camera essentials').round >= 95 %>
+					<% if category_score('camera essentials').round >= 95 %>
 						You know your camera forwards and backwards, never use auto mode, and can adjust different settings without having to take your eye off the viewfinder.
-					<% elsif category_score(@results, 'camera essentials').round >= 85 %>
+					<% elsif category_score('camera essentials').round >= 85 %>
 						You know how to wield your camera with relative ease, but you still have to think about how different settings work together and sometimes you might switch to auto mode out of convenience.
-					<% elsif category_score(@results, 'camera essentials').round >= 60 %>
+					<% elsif category_score('camera essentials').round >= 60 %>
 						You understand your camera has features you’re not using, but are intimidated to leave the safety of auto mode. You’re familiar with the user manual, but haven’t experimented with many settings.
 					<% else %>
 						You have a camera and know how to take a picture, but don’t know how to adjust any settings or switch to manual mode without referring to the user manual.
@@ -277,7 +277,7 @@
 				<h1 class="white clear-margin-top">YOUR OVERALL PHOTOGRAPHY STRENGTHS ASSESSMENT SCORE:</h1>
 			</div>
 			<div class="col-sm-6 scores__overall__number">
-				<h1 class="orange clear-margin-top"><%= total_score(@results).round %></h1>
+				<h1 class="orange clear-margin-top"><%= total_score().round %></h1>
 			</div>
 		</div>
 	</div>
