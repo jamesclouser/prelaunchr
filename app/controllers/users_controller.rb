@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     @user = User.find_by_email(params[:user][:email]);
 
     # If user doesnt exist, make them, and attach referrer
-    if @user.nil?
+    if !User.exists?(:email => params[:user][:email])
 
       cur_ip = IpAddress.find_by_address(request.env['HTTP_X_FORWARDED_FOR'])
 
