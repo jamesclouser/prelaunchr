@@ -85,14 +85,15 @@ Rails.application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.mailgun.org',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => ENV['MAILGUN_USERNAME'],
-    :password       => ENV['MAILGUN_PASSWORD'],
-    :domain         => 'ultimate-bundles.com',
-    :enable_starttls_auto => true
+	:user_name => ENV['SENDGRID_USERNAME'],
+	:password => ENV['SENDGRID_PASSWORD'],
+	:domain => 'ultimate-bundles.com',
+	:address => 'smtp.sendgrid.net',
+	:port => 587,
+	:authentication => :plain,
+	:enable_starttls_auto => true
   }
   ActionMailer::Base.delivery_method = :smtp
 end
