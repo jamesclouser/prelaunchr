@@ -1,4 +1,4 @@
-<% if Time.now.to_i < Time.new(2017,02,21, 12,00,00, "-05:00").to_i %>
+<% if Time.now.to_i > Time.new(2017,02,21, 12,00,00, "-05:00").to_i %>
 	<div class="row webinars__webinar">
 		<div class="col-sm-2">
 			<%= image_tag "users/Jeremy_Cowart.png", :class => "img-responsive img-center" %>
